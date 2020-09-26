@@ -9,5 +9,3 @@
 - [장하얀](https://github.com/white-jang) : Front-end
 - [박형민](https://github.com/thalals/) : Back-end
 - [하유민](https://github.com/qhahd78) : Front-end
-
-++ 하이
