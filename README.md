@@ -4,7 +4,7 @@
 
 ## 👨‍👨‍👨‍👧‍👧Team member
 
-- [최민석](https://github.com/minsgy) : Back-end, 대장
+- [최민석](https://github.com/minsgy) : Back-end
 - [이승준](https://github.com/g0709-19) : Front-end
 - [장하얀](https://github.com/white-jang) : Front-end
 - [박형민](https://github.com/thalals/) : Back-end
