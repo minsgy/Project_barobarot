@@ -27,10 +27,17 @@
 
   - Front-end
 
-    - templates
+        - templates
 
-        - Page 참조 받는 파일 명은 "\_\_"(underbar)를 추가해 파일 명 작성
-        - 예) \_\_main.html,
+          - Page 참조 받는 파일 명은 "\_\_"(underbar)를 추가해 파일 명 작성
+          - 예) \_\_main.html
+          - VS Code - settings - format on save 켜서 코드 정리 자동화
+          - 페이지 최상단에 주석으로 페이지 간략 설명, 작성일 표기
+          - 백엔드가 봤을 때 필요한 기능들을 단 번에 알 수 있도록 하기
+          - 참고 - [NHN 코딩 컨벤션](https://nuli.navercorp.com/data/convention/NHN_Coding_Conventions_for_Markup_Languages.pdf)
+          - 한 문서에서 동일한 ID 2번 이상 사용하지 않음.
+          - CSS 작성시 base.html 의 스타일을 확인한 뒤 중복된 선택자 없이 작성
+          - ![image](https://user-images.githubusercontent.com/60251579/94369869-3d603680-0127-11eb-82e9-34f855569439.png)
 
   - Back-END
 
@@ -52,4 +59,15 @@
         - 예) MyFirstVariable -> my_first_variable
 
     - Templates
-      - templates 폴더는 APP 폴더 별로 나누지 않고, 통합
+
+      - templates 폴더는 APP 폴더 별로 나누지 않고, 통합한다.
+      - 각 해당 되는 APP 폴더 명으로 나누어, template를 저장한다.
+      - ex) templates/order_list/order.html
+
+    - Static
+      - 각 App 폴더 static 폴더를 생성하여 저장한다.
+      - `python manage.py collectstatic` 을 통해 모든 static 파일을 모은다.
+      - css
+        - css를 담는 폴더 명이며, css 명은 html과 동일 시 한다.
+      - js
+        - js를 담는 폴더 명이며, js 명은 html과 동일 시 한다.
