@@ -4,11 +4,32 @@
 
 ## 👨‍👨‍👨‍👧‍👧Team member
 
-- [최민석](https://github.com/minsgy) : Back-end, Minsgy
+- [최민석](https://github.com/minsgy) : Back-end, Minseok
 - [이승준](https://github.com/g0709-19) : Front-end, LeeJun
 - [장하얀](https://github.com/white-jang) : Front-end, White
 - [박형민](https://github.com/thalals/) : Back-end, Hmin
 - [하유민](https://github.com/qhahd78) : Front-end, Umin
+
+## 프로젝트 실행 법
+
+1. 가상 환경 생성 및 실행
+
+- `python -m venv <가상환경 이름>`
+- WINDOWS - `. <가상환경 이름>/scripts/activate`
+- MAX - `. <가상환경 이름>/bin/activate`
+
+2. Django 설치
+
+- `pip install django==2.1.1`
+
+## Installation
+
+- Python3 == 3.8.4
+- Django==2.1.1
+- HTML5
+- CSS3
+- JS
+- JQuery
 
 ## Git Rule
 
