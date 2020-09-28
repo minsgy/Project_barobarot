@@ -14,7 +14,7 @@
 
 - ✔ Dev : 기능 및 모듈 개발을 위한 branch
 - ✔ Release : 완성 본 디버깅 과정 branch
-- ✔ Master : 최종 본
+- ✔ Master : 최종 본 branch
 
 1. 각자 로컬에서 이름으로 된 branch 생성하기 - Minsgy, Hmin, White, Umin, Leejun
 2. 각자 로컬에서 Pull Request 보낸 Commit을 **Dev Branch**에서 merge.
@@ -46,9 +46,9 @@
 
     - App Folder
 
-      - APP 폴더 이름은 첫 글자는 대문자로 한다.
+      - APP 폴더 이름은 첫 글자는 소문자로 한다.
       - APP 폴더 이름은 기능이 복수 일 경우, 's'를 붙힌다.
-      - 예) comments, Users
+      - 예) comments, users
 
     - View Function
 
