@@ -5,7 +5,7 @@
 ## 👨‍👨‍👨‍👧‍👧Team member
 
 - [최민석](https://github.com/minsgy) : Back-end(Minseok), Readme write
-- [이승준](https://github.com/g0709-19) : Front-end(LeeJu)
+- [이승준](https://github.com/g0709-19) : Front-end(LeeJun)
 - [장하얀](https://github.com/white-jang) : Front-end(White)
 - [박형민](https://github.com/thalals/) : Back-end(Hmin)
 - [하유민](https://github.com/qhahd78) : Front-end(Umin)
