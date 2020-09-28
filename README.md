@@ -15,8 +15,8 @@
 1. 가상 환경 생성 및 실행
 
 - `python -m venv <가상환경 이름>`
-- WINDOWS - `. <가상환경 이름>/scripts/activate`
-- MAX - `. <가상환경 이름>/bin/activate`
+- Windows - `. <가상환경 이름>/scripts/activate`
+- Mac- `. <가상환경 이름>/bin/activate`
 
 2. Django 설치
 
