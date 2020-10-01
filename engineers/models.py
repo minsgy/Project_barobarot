@@ -1,5 +1,6 @@
 from django.db import models
 # 설치 기사 모델
+# creater - minseok
 class Engineer(models.Model):
     name = models.CharField(max_length=10) # 설치기사 이름
     number = models.CharField(max_length=20) # 연락처
