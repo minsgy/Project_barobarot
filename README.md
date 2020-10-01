@@ -4,7 +4,7 @@
 
 ## 👨‍👨‍👨‍👧‍👧Team member
 
-- [최민석](https://github.com/minsgy) : Back-end(Minseok), Readme write
+- [최민석](https://github.com/minsgy) : Back-end(Minseok), Readme write, 설치 기사 모듈 구현,
 - [이승준](https://github.com/g0709-19) : Front-end(LeeJun)
 - [장하얀](https://github.com/white-jang) : Front-end(White)
 - [박형민](https://github.com/thalals/) : Back-end(Hmin)
@@ -15,12 +15,23 @@
 1. 가상 환경 생성 및 실행
 
 - `python -m venv <가상환경 이름>`
-- Windows - `. <가상환경 이름>/scripts/activate`
-- Mac- `. <가상환경 이름>/bin/activate`
+- Windows `. <가상환경 이름>/scripts/activate`
+- Mac `. <가상환경 이름>/bin/activate`
 
-2. Django 설치
+2. Django, Pillow 설치
 
 - `pip install django==2.1.1`
+- `pip install pillow`
+
+3. 모델 등록하기
+
+- `python manage.py makemigrations`
+- `python manage.py migrate`
+
+
+4. Superuser 생성하기
+
+- `python manage.py createsuperuser`
 
 ## Installation
 
