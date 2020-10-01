@@ -15,6 +15,8 @@
 
 body {
     font-family: 'Roboto', 'Noto Sans KR', '맑은고딕', Malgun Gothic, dotum, '돋음', arial, sans-serif;
+    /* 가로 스크롤 바 없애기 */
+    overflow-x: hidden;
 }
 
 
@@ -66,7 +68,7 @@ body {
 .zoom {
     width: 26px;
     height: 26px;
-    background: url('img/zoom.png') no-repeat 0 0;
+    background: url('base/img/zoom.png') no-repeat 0 0;
     position: absolute;
     top: 10px;
     right: 16px;
@@ -117,11 +119,11 @@ body {
 .description {
     width: 1080px;
     font-family: '맑은고딕',
-    Malgun Gothic,
-    dotum,
-    '돋음',
-    arial,
-    sans-serif;
+        Malgun Gothic,
+        dotum,
+        '돋음',
+        arial,
+        sans-serif;
     font-size: 11px;
     color: var(--footer-gray);
 }
@@ -138,7 +140,8 @@ body {
     display: flex;
 }
 
-.description ul:first-child, .description ul:nth-last-child(2) {
+.description ul:first-child,
+.description ul:nth-last-child(2) {
     margin-bottom: 10px;
 }
 
@@ -157,7 +160,58 @@ body {
 /* ************************************************************ */
 
 /* Content */
+
+/* 상품 개수 알려주는 div  */
+.first-info-box {
+    margin-top: 20px;
+    margin-left: 80px;
+}
+
+#first-info-normal {
+    font-size: 30px;
+}
+
+#first-info-bold {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* 상품 img class */
+.pictures {
+    /* text-align: center; */
+    border: 0px solid gray;
+    overflow: hidden;
+    margin: 20px;
+}
+
+/* 사진 통째로 (div) class  */
+
 .product {
-    border-style: solid;
-    border-color: black;
+    /* 상품들 가로 정렬  */
+    display: inline-block;
+}
+
+/* div id */
+#product-detail {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+/* 상품의 이름 id  */
+#product-title {
+    /* 상품 사진하고 같은 너비로 제품 이름 너비설정 */
+    width: 200px;
+}
+
+/* 상품의 가격 id  */
+#product-price {
+    width: 200px;
+    font-weight: bold;
+    color: red;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.list {
+    margin-left: 45px;
 }
