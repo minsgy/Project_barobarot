@@ -1,5 +1,15 @@
 {% extends '../base.html' %}
 
 {% block content %}
-    <h1>엔지니어 리스트 확인</h1>
+    <h1>엔지니어 리스트 확인</h1><br>
+    
+    {% for engineer in engineers %}
+        <span>
+            <a href="{% url 'detail' engineer.pk %}">
+            {{engineer.name}} / {{engineer.number}}
+        </span>
+        <img src="{{ engineer.image.url }}" alt="{{engineer.name}}" width="100px" height="100px">
+        
+    {% endfor %}
+
 {% endblock %} 

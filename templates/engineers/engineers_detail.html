@@ -1,0 +1,7 @@
+{% extends '../base.html' %}
+
+{% block content %}
+    <h1>엔지니어 개인 프로필</h1>
+    <h2>{{engineers.name}} / {{engineers.number}}</h2>
+    <img src="{{ engineers.image.url }}" alt="{{engineers.name}}" width="300px" height="300px">
+{% endblock %} 
