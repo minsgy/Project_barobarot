@@ -1,3 +1,15 @@
 from django.contrib import admin
+from . import models
 
-# Register your models here.
+# [ 형민 ] product admin custom
+
+@admin.register(models.Product)
+class ProductAdmin(admin.ModelAdmin):
+
+    ''' Product admin Custom '''
+
+    list_display = (
+        "product_name",
+        "sale",
+        "manufacture",
+    )

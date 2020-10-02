@@ -9,7 +9,7 @@ class User(AbstractUser):
 
     name = models.CharField(max_length=50, unique=True )
     number = models.CharField(max_length=50)
-    email = models.CharField(max_length=254)
+    email = models.CharField(max_length=50)
     # superhost = models.BooleanField(default=False)
 
     def __str__(self):
