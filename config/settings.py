@@ -139,4 +139,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 
 
 # 원래의 User 모델의 값을 Custom 해주기 위해, USER MODEL을 CUSTOM 한 User 모델 지정
-# AUTH_USER_MODEL = "users.User" 
+AUTH_USER_MODEL = "users.User" 
