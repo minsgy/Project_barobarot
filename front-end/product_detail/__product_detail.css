@@ -1,0 +1,246 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+:root {
+    --red-color: #ed1c24;
+    --black-color: #232a32;
+    --gray-color: #6a747c;
+    --blue-color: #093250;
+}
+
+body {
+    font-family: '맑은고딕',
+    Malgun Gothic,
+    dotum,
+    '돋음',
+    arial,
+    sans-serif;
+    font-size: 12px;
+}
+
+img {
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    color: var(--black-color);
+    text-decoration: none;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.title {
+    border-bottom: 2px solid var(--blue-color);
+    color: #232a32;
+    height: 68px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-name {
+    width: 770px;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.grade {
+    font-size: 54px;
+}
+
+.product-main {
+    height: 650px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile {
+    padding: 30px 23px 0;
+}
+
+.information {
+    margin-top: 23px;
+    width: 448px;
+}
+
+.manufacturer {
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid var(--black-color);
+}
+
+.manufacturer:hover {
+    color: var(--red-color);
+    border-color: var(--red-color);
+}
+
+.information-item li {
+    display: flex;
+}
+
+.information-item li label {
+    width: 110px;
+    color: #6a747c;
+    font-size: 13px;
+}
+
+/* 판매가, 최대혜택가 */
+.information-list li:nth-of-type(2) li label {
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.information-list li:nth-of-type(2) li:first-child {
+    margin-bottom: 10px;
+}
+
+.information-list li:nth-of-type(2) li:last-child label {
+    color: var(--red-color);
+}
+
+.model-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--black-color);
+}
+
+.text {
+    font-size: 14px;
+}
+
+.tip {
+    font-size: 12px;
+    line-height: 16px;
+    color: #9aa1af;
+}
+
+.tip:last-child {
+    color: var(--gray-color);
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.line-break {
+    margin-bottom: 15px;
+}
+
+.information-list>li:not(:last-child) li :last-child {
+    width: 338px;
+}
+
+.information-list>li {
+    padding: 11px 0;
+}
+
+.information-list>li:not(:last-child) {
+    border-bottom: 1px solid #aeb3bb;
+}
+
+.amount-controller {
+    color: #666;
+    display: flex;
+    align-items: center;
+    width: 96px;
+}
+
+.amount-controller input {
+    width: 38px;
+    height: 25px;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    border: 0;
+    border-top: 1px solid #aeb3bb;
+    border-bottom: 1px solid #aeb3bb;
+    outline: 0;
+    margin: 0;
+    width: 38px;
+    height: 23px;
+}
+
+.amount-controller button {
+    margin: 0;
+    font-size: 20px;
+    background: 0;
+    outline: 0;
+    border: 1px solid #aeb3bb;
+    cursor: pointer;
+    width: 29px;
+    height: 27px;
+}
+
+.price-text {
+    font-family: 'tahoma';
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.information-item li:last-child .price-text {
+    color: var(--red-color);
+}
+
+.buy {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.buy-button {
+    width: 251px;
+    height: 60px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: var(--red-color);
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+}
+
+
+.images {
+    width: 1006px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.images img {
+    margin-bottom: 50px;
+}
+
+.md-announcement {
+    margin-top: 30px;
+}
+
+.md-image {
+    display: flex;
+    flex-direction: column;
+    padding: 25px 28px;
+    border: 1px solid #d3d3d5;
+}
+
+.md-title {
+    display: flex;
+    background-color: var(--blue-color);
+    padding: 15px 19px;
+}
+
+.md-title label {
+    color: #fff;
+    margin-right: 30px;
+}
+
+.md-title p {
+    color: var(--gray-color)
+}

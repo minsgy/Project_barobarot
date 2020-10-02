@@ -1,0 +1,136 @@
+<!-- 
+    추후에 base.html 을 상속하여 사용할 것입니다.
+    상품 상세 페이지입니다.
+
+    아직 수정이 필요한 코드입니다...
+    
+    작성일: 2020년 9월 30일(수)
+    작성자: 이승준
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="__product_detail.css">
+</head>
+<body>
+    <div class="content-container">
+        <!-- 상품 이름 위의 회사 이름 -->
+        <div class="manufacturer-wrap">
+            <a href="#" class="manufacturer">캐리어</a>
+        </div>
+        <div class="title">
+            <span class="product-name">에어로Z 18단 2in1 에어컨</span>
+            <span class="grade">4.7</span>
+        </div>
+        <!-- title 밑에 밑줄 -->
+        <div class="product-main">
+            <div class="profile">
+                <img src="img/product_image.jpg" alt="product-image">
+            </div>
+            <div class="information">
+                <ul class="information-list">
+                    <li>
+                        <ul class="information-item">
+                            <li>
+                                <label>모델명</label>
+                                <span class="model-name">AMC16VZ4GHGH</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="information-item">
+                            <li>
+                                <label>판매가</label>
+                                <span class="price-text">1,350,000원</span>
+                            </li>
+                            <li>
+                                <label>최대혜택가</label>
+                                <span class="price-text">1,300,000원</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="information-item">
+                            <li>
+                                <label>카드 혜택</label>
+                                <div>
+                                    <p class="text line-break">삼성7%, 현대7%, BC7%, 전북7%</p>
+                                    <p class="text tip">※최종 결제금액에 따라, 할인금액은 달라질 수 있습니다.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="information-item">
+                            <li>
+                                <label>추가혜택</label>
+                                <ul>
+                                    <li>
+                                        <span class="text line-break">최대 <span class="bold">36</span>개월 무이자</span>
+                                    </li>
+                                    <li>
+                                        <span class="text line-break">하이마트 제휴카드 안내</span>
+                                    </li>
+                                    <li>
+                                        <span class="text"><span class="bold">L.POINT</span> 적립</span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="information-item">
+                            <li>
+                                <label>배송방법</label>
+                                <div>
+                                    <p class="text line-break">무료배송</p>
+                                    <p class="tip">※택배로 배송되는 경우, 코로나19 예방/고객 안전 위해 가급적 비대면 배송 진행
+                                        <br>
+                                        ※일부 상품 및 지역에 따라 배송이 지연될 수 있습니다.
+                                        <br>
+                                        ※도서/산간(제주 포함)의 경우 추가 배송비가 발생하거나 물류 사정에 따라 배송이 불가할 수 있습니다.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="information-item">
+                            <li>
+                                <label>주문수량</label>
+                                <div class="amount-controller">
+                                    <button>-</button>
+                                    <input type="text" name="amount" value="1" readonly>
+                                    <button>+</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="buy">
+                    <button class="buy-button">바로구매</button>
+                </div>
+            </div>
+        </div>
+        <div class="images">
+            <img src="img/banner.jpg" alt="banner">
+            <div class="md-announcement">
+                <div class="md-title">
+                    <label>MD 공지</label>
+                    <p>이 상품의 담당 MD가 고객님께 알려드립니다.</p>
+                </div>
+                <div class="md-image">
+                    <img src="img/md_announcement.jpg" alt="md-announcement">
+                </div>
+            </div>
+            <img src="img/covid_mask.jpg" alt="covid-mask">
+            <img src="img/item_detail.jpg" alt="product-detail">
+            <img src="img/item_detail2.jpg" alt="product-detail2">
+        </div>
+    </div>
+</body>
+</html>
