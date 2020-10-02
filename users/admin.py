@@ -11,6 +11,7 @@ class CustomUserAdmin(admin.ModelAdmin):
     fieldsets =  (
         (None, {"fields" : ("name", "number", "email")},),
     )
+    
     list_display = (
         "name",
         "email",
