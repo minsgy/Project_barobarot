@@ -165,6 +165,7 @@ body {
 .first-info-box {
     margin-top: 20px;
     margin-left: 80px;
+    margin-bottom: 20px;
 }
 
 #first-info-normal {
@@ -179,7 +180,6 @@ body {
 /* 상품 img class */
 .pictures {
     /* text-align: center; */
-    border: 0px solid gray;
     overflow: hidden;
     margin: 20px;
 }
@@ -189,6 +189,7 @@ body {
 .product {
     /* 상품들 가로 정렬  */
     display: inline-block;
+
 }
 
 /* div id */
@@ -204,14 +205,28 @@ body {
 }
 
 /* 상품의 가격 id  */
+#original-product-price {
+    width: 200px;
+    font-weight: bold;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 #product-price {
     width: 200px;
     font-weight: bold;
     color: red;
     margin-top: 10px;
     margin-bottom: 10px;
+
 }
 
 .list {
-    margin-left: 45px;
+    position: relative;
+    /* 위쪽 선 */
+    border-top: 1px solid black;
+    /* 5개씩 띄우려고 너비 값 줬습니다  */
+    width: 1300px;
 }
+
