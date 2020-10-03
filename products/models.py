@@ -10,7 +10,7 @@ class Product(models.Model):
     sale = models.FloatField()                          #할인율
     price = models.IntegerField()
     manufacture = models.CharField(max_length=50)     #제조사
-    rating = models.DecimalField(max_digits=2, decimal_places=1)        #10점 내 평점
+    rating = models.DecimalField(default=0.0, max_digits=2, decimal_places=1)        #최대 평점 9.9
     product_image = models.ImageField(upload_to="product/product_image")
     #상품 상세설명
     image_description = models.ImageField(upload_to="product/image_description")
