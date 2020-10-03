@@ -9,11 +9,11 @@
 
 body {
     font-family: '맑은고딕',
-    Malgun Gothic,
-    dotum,
-    '돋음',
-    arial,
-    sans-serif;
+        Malgun Gothic,
+        dotum,
+        '돋음',
+        arial,
+        sans-serif;
     font-size: 12px;
 }
 
@@ -134,18 +134,24 @@ a {
     margin-bottom: 15px;
 }
 
+/* 상품 정보 모델명 ~ 배송방법까지 내용의 가로 길이 고정 */
 .information-list>li:not(:last-child) li :last-child {
     width: 338px;
 }
 
+/* 상품 정보 속성 간 간격 */
 .information-list>li {
-    padding: 11px 0;
+    padding: 13px 0;
 }
 
 .information-list>li:not(:last-child) {
     border-bottom: 1px solid #aeb3bb;
 }
 
+
+
+
+/* 주문 수량 컨트롤러 */
 .amount-controller {
     color: #666;
     display: flex;
@@ -179,6 +185,9 @@ a {
     height: 27px;
 }
 
+
+
+
 .price-text {
     font-family: 'tahoma';
     font-size: 24px;
@@ -188,6 +197,11 @@ a {
 .information-item li:last-child .price-text {
     color: var(--red-color);
 }
+
+
+
+
+/* 구매 버튼 */
 
 .buy {
     text-align: center;
@@ -207,16 +221,15 @@ a {
 }
 
 
+
+/* 상품 설명 이미지 */
+
 .images {
     width: 1006px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-}
-
-.images img {
-    margin-bottom: 50px;
 }
 
 .md-announcement {
@@ -226,7 +239,7 @@ a {
 .md-image {
     display: flex;
     flex-direction: column;
-    padding: 25px 28px;
+    padding: 25px 28px 95px;
     border: 1px solid #d3d3d5;
 }
 
@@ -243,4 +256,42 @@ a {
 
 .md-title p {
     color: var(--gray-color)
+}
+
+.other-images {
+    margin-top: 20px;
+}
+
+.emplacement {
+    border: 1px solid #d7d7d9;
+    padding: 29px 49px 39px;
+}
+
+.emplacement label {
+    display: block;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 18px;
+}
+
+
+.ship-information {
+    width: 100%;
+}
+
+.ship-information label {
+    display: block;
+    font-size: 23px;
+    margin-bottom: 30px;
+}
+
+.ship-menu {
+    padding: 0 30px;
+}
+
+.ship-menu li {
+    font-size: 17px;
+    padding: 40px 0 15px;
+    border-bottom: 1px solid #232a32;
+    cursor: pointer;
 }
