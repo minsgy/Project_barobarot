@@ -25,7 +25,7 @@ urlpatterns = [
     path('payments/', include('payments.urls')),
     # path('', include('products.urls')),
     # path('', include('users.urls')),
-    # path('', include('comments.urls')),
+    path('', include('comments.urls')), # comment url 연결
 ]
 
 if settings.DEBUG:
