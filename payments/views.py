@@ -10,6 +10,6 @@ class ReservaionList(ListView) :
     ''' Checking Reservation cbv '''
 
     model = models.Paymentproduct
-    context_object_name = 'reservations'      #넘겨지는 변수 이름
-    template_name = 'reservation/check_reservaiton.html' # Default 연결 값 변경   
+    context_object_name = 'payment_products'      #넘겨지는 변수 이름
+    template_name = 'reservation/check_reservation.html' # Default 연결 값 변경   
 

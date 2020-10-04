@@ -5,14 +5,14 @@
     
     
 
-    {% for reservation in reservations %}
+    {% for paymentproduct in payment_products %}
         <span>
-            {{reservation.user.name}}<br>
-            <img src="{{ reservation.product.product_image.url }}" alt="{{product.product_name}}" width="100px" height="100px">
+            {{paymentproduct.user.name}}<br>
+            <img src="{{ paymentproduct.product.product_image.url }}" alt="{{paymentproduct.product_name}}" width="100px" height="100px">
             <br>
-            {{reservation.product.product_name}} : 결제금액 :{{reservation.product.set_saleprice}} <br>
+            {{paymentproduct.product.product_name}} : 결제금액 :{{paymentproduct.product.set_saleprice}} <br>
             
-            {{reservation.engineer.name}} <br>
+            {{paymentproduct.engineer.name}} <br>
         </span>
     {% endfor %}
 
