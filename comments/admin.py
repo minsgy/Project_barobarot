@@ -9,7 +9,7 @@ class CommentAdmin(admin.ModelAdmin):
     fieldsets = (
         (
             'Information',
-            {"fields": ("title","content","engineer")},
+            {"fields": ("title","content","engineer", "user")},
         ),
     )
 
@@ -17,4 +17,5 @@ class CommentAdmin(admin.ModelAdmin):
         'title',
         'content',
         'engineer',
+        'user',
     )

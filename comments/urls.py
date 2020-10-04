@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
-urlpatterns = [
-    # path('', views.<>, name="<>"),
 
+# app_name = comments
+urlpatterns = [
+    path('<int:cm_pk>/<int:user_pk>', views.createComment, name='create_comment'),
 ]
