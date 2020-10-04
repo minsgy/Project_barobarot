@@ -1,0 +1,19 @@
+{% extends '../base.html' %}
+
+{% block content %}
+    <h1>예약 리스트 확인</h1><br>
+    
+    
+
+    {% for paymentproduct in payment_products %}
+        <span>
+            {{paymentproduct.user.name}}<br>
+            <img src="{{ paymentproduct.product.product_image.url }}" alt="{{paymentproduct.product_name}}" width="100px" height="100px">
+            <br>
+            {{paymentproduct.product.product_name}} : 결제금액 :{{paymentproduct.product.set_saleprice}} <br>
+            
+            {{paymentproduct.engineer.name}} <br>
+        </span>
+    {% endfor %}
+
+{% endblock %} 
