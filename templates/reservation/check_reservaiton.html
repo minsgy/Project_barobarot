@@ -1,0 +1,19 @@
+{% extends '../base.html' %}
+
+{% block content %}
+    <h1>예약 리스트 확인</h1><br>
+    
+    {% comment %} {{reservations.user.name}} {% endcomment %}
+
+    {% for reservation in reservations %}
+        <span>
+            
+            <img src="{{ reservation.product.product_image.url }}" alt="{{product.product_name}}" width="100px" height="100px">
+            <br>
+            {{reservation.product.product_name}} : 결제금액 :{{reservation.product.set_saleprice}} <br>
+            
+            {{reservation.engineear.name}}
+        </span>
+    {% endfor %}
+
+{% endblock %} 

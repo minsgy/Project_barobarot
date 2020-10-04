@@ -10,8 +10,8 @@ class HomeView(ListView):
     ''' home view cbv '''
 
     model = models.Product
-    paginate_by = 10
-    paginate_orphans = 5
+    paginate_by = 20                    #한 페이지에 20 개 
+    paginate_orphans = 5                #한 페이지 5개이하는 전 페이지로
 
     context_object_name = 'products'      #넘겨지는 변수 이름
     template_name = 'products/home.html' # Default 연결 값 변경
