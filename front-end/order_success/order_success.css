@@ -32,6 +32,7 @@
 #point {
     color: black;
     font-weight: bold;
+    font-size: medium;
 }
 
 .text-box span:nth-child(4) {
