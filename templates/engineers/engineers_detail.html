@@ -1,7 +1,16 @@
-{% extends '../base.html' %}
-
-{% block content %}
-    <h1>엔지니어 개인 프로필</h1>
-    <h2>{{engineers.name}} / {{engineers.number}}</h2>
-    <img src="{{ engineers.image.url }}" alt="{{engineers.name}}" width="300px" height="300px">
-{% endblock %} 
+{% extends '../base.html' %} {% block content %}
+<h1>엔지니어 개인 프로필</h1>
+<h2>{{engineers.name}} / {{engineers.number}}</h2>
+<img src="{{ engineers.image.url }}" alt="{{engineers.name}}" width="300px" height="300px" />
+<br />
+<br /> {% for comment in engineers.comments.all %}
+<div>
+    <p>{{comment.user}} - {{ comment.title }} : {{ comment.content }} </p>
+</div>
+<div>
+    <form action="{% url 'create_comment' %}" method="POST">
+        {% csrf_token %}
+        <input type="submit"></input>
+    </form>
+</div>
+{% endfor %} {% endblock %}
