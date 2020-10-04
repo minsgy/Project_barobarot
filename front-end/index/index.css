@@ -230,3 +230,24 @@ body {
     width: 1300px;
 }
 
+/* 페이지 넘버 */
+/* a태그 아이디 */
+#page-num {
+    color: black;
+    text-align: none;
+    text-decoration: none;
+    font-size: 20px;
+    padding-right: 10px;
+
+}
+
+/* li 아이디 */
+#page-num-list {
+    display: inline-block;
+}
+
+/* ul 아이디  */
+#page-num-group {
+    text-align: center;
+    margin-bottom: 20px;
+}
