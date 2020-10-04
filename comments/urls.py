@@ -3,5 +3,5 @@ from . import views
 
 # app_name = comments
 urlpatterns = [
-    path('', views.createComment, name='create_comment'),
+    path('<int:cm_pk>/<int:user_pk>', views.createComment, name='create_comment'),
 ]

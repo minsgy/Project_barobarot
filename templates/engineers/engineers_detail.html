@@ -8,9 +8,15 @@
     <p>{{comment.user}} - {{ comment.title }} : {{ comment.content }} </p>
 </div>
 <div>
-    <form action="{% url 'create_comment' %}" method="POST">
+    <form action="{% url 'create_comment' engineers.id user.id %}" method="POST">
         {% csrf_token %}
-        <input type="submit"></input>
+        <div>
+            <span>제목:</span>
+            <input type="text" name='title'></input>
+            <span>내용:</span>
+            <input type="text" name='content'></input>
+        </div>
+        <button type="submit">출력</input>
     </form>
 </div>
 {% endfor %} {% endblock %}
