@@ -5,7 +5,7 @@ from . import models
 
 # [형민] reservation view
 
-class ReservaionList(ListView) :
+class PaymentproductList(ListView) :
 
     ''' Checking Reservation cbv '''
 
