@@ -1,0 +1,40 @@
+/* Content */
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 80px 200px 80px 200px;
+}
+
+.mg-left {
+    margin-left: 70px;
+}
+
+.mg-top {
+    margin-top: 80px;
+}
+
+.content>.bold-text {
+    font-size: 15pt;
+}
+
+hr {
+    width: 72vw;
+    /* 왜 orderer-box랑 똑같은 70vw로 하면 좀 짧지? */
+    margin: 8px 0 40px 0;
+}
+
+/* UserBox 고객(주문자) 정보 */
+
+.orderer-box {
+    width: 70vw;
+    padding: 15px 16px 15px 20px;
+    background-color: #F6F6F6;
+}
+
+.bold-text {
+    font-weight: bold;
+    margin-right: 10px;
+}

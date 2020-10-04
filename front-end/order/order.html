@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 2020. 10.4 장하얀 예약 확인 페이지 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바로바롯</title>
+    <link rel="stylesheet" href="../base/base.css">
+    <link rel="stylesheet" href="order.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Header -->
+        <div class="header">
+            <!-- Header 양 쪽 margin 주기 위해 box 따로 만듦 -->
+            <div class="header-box">
+                <a href="#">
+                    <img src="../base/img/logo.gif" alt="logo">
+                </a>
+                <!-- 경로 문제로 zoom.png 뜨지 않음-->
+                <div class="search">
+                    <input type="text">
+                    <a href="#" class="zoom"></a>
+                </div>
+                <div class="reservation">
+                    <span>
+                        <a href="#" id="reservation">
+                            예약 확인
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <span class="bold-text">고객 정보</span>
+            <hr>
+            <div class="orderer-box">
+                <span class="bold-text">주문하신 분</span><span id="name">최민석</span>
+                <span class="bold-text mg-left">이메일 주소</span><span id="email">djWJrh@naver.com</span>
+                <span class="bold-text mg-left">휴대폰 번호</span><span id="phoenNum">010-0000-0000</span>
+            </div>
+            <span class="bold-text mg-top">배송 정보</span>
+            <hr>
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <div class="footer">
+        <!-- Footer 양쪽 margin 주기 위해 가운데 box 생성 -->
+        <div class="box">
+            <img src="../base/img/footLogo.png" alt="footLogo">
+            <div class="description">
+                <ul>
+                    <li><strong>롯데하이마트 주식회사</strong></li>
+                </ul>
+                <ul>
+                    <li>대표이사 황영근, 서울 강남구 삼성로 156</li>
+                    <li>사업자등록번호 : 104-81-16860</li>
+                </ul>
+                <ul>
+                    <li>통신판매업 신고: 제2008-서울강남-2198호 [<a href="#">사업자정보확인</a>]</li>
+                    <li>의료기기판매업 신고 : 제431호 건강기능식품판매업 신고 : 제2019-0105489호</li>
+                </ul>
+                <ul>
+                    <li><span class="light-gray-text">고객지원센터 : 080-770-0070</span></li>
+                    <li><span class="light-gray-text">쇼핑몰고객센터 : 080-780-0070</span></li>
+                    <li><span class="light-gray-text">홈케어/이전설치 : 1588-9030 : 080-780-0070</span></li>
+                    <li>FAX : 050-2333-1358</li>
+                    <li><a href="#">himart.webmaster@lotte.net</a></li>
+                </ul>
+                <ul>
+                    <li>호스팅 서비스사업자 : 롯데하이마트 주식회사</li>
+                </ul>
+                <ul>
+                    <li>COPYRIGHTⓒ 2003-2020 <span class="red-text">LOTTEHIMART</span> CO., LTD. ALL RIGHT RESERVED.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="../base/base.js"></script>
+</body>
+
+</html>
