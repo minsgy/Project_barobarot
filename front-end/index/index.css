@@ -164,7 +164,7 @@ body {
 /* 상품 개수 알려주는 div  */
 .first-info-box {
     margin-top: 20px;
-    margin-left: 80px;
+    margin-left: 150px;
     margin-bottom: 20px;
 }
 
@@ -204,6 +204,18 @@ body {
     width: 200px;
 }
 
+/* 상품명 스타일 */
+#product-title-hover {
+    text-decoration: none;
+    color: black;
+}
+
+/* 상품명에 커서 올릴 때 */
+#product-title-hover:hover {
+    color: black;
+    text-decoration: underline;
+}
+
 /* 상품의 가격 id  */
 #original-product-price {
     width: 200px;
@@ -216,10 +228,15 @@ body {
 #product-price {
     width: 200px;
     font-weight: bold;
-    color: red;
+    color: #f5232a;
     margin-top: 10px;
     margin-bottom: 10px;
 
+}
+/* 최대 할인가 문구 스타일 */
+#product-price2 {
+    color: #f5232a;
+    font-size: 13px;
 }
 
 .list {
@@ -228,17 +245,24 @@ body {
     border-top: 1px solid black;
     /* 5개씩 띄우려고 너비 값 줬습니다  */
     width: 1300px;
+    margin: 0 auto;
+}
+
+/* 평점 */
+#grade {
+    font-size: 15px;
+    font-weight: bold;
 }
 
 /* 페이지 넘버 */
 /* a태그 아이디 */
+
 #page-num {
     color: black;
     text-align: none;
     text-decoration: none;
     font-size: 20px;
     padding-right: 10px;
-
 }
 
 /* li 아이디 */
@@ -246,8 +270,27 @@ body {
     display: inline-block;
 }
 
+#page-num:hover {
+    color: #f5232a;
+    text-decoration: underline;
+}
+
 /* ul 아이디  */
 #page-num-group {
     text-align: center;
     margin-bottom: 20px;
+}
+
+/* 무료배송, 오늘배송 버튼 스타일 */
+#delivery {
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 7px;
+    border: 1px solid gainsboro;
+    color: grey;
+}
+
+/* 무료배송, 오늘배송 버튼 호버 스타일 */
+#delivery:hover {
+    cursor: pointer;
 }
