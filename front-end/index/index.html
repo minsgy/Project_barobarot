@@ -46,7 +46,8 @@
             </div>
             <!-- 메인 페이지 상품 사진, 설명 시작 -->
             <div class="list">
-                <div class="product">
+                <!-- location.href='눌렀을 때 옮겨갈 주소' (제품 상세페이지로 이동) -->
+                <div class="product" onclick= "location.href='#' ">
                     <div class="pictures">
                         <!-- 클릭했을 때 상품 상세설명으로 이동 -->
                         <!-- 상품 사진 크기 200x200으로 고정.  -->
@@ -64,19 +65,22 @@
                         </p>
                         <!-- 가격부분 -->
                         <p id="original-product-price">
-                            <!-- 모델에서 숫자만 가격으로 적으면 돼요. 예) 500,000 일케 치면 500,000 원 이런 식으로 화면에 뜹니다.  -->
-                            <!-- '1억' 부분이 모델에서 가격.  -->
-                            500,000 원
+                            <!-- 모델에서 숫자만 가격으로 -->
+                            <span id="product-original-price">500,000</span>
+                            <span id="product-original-price2">원</span>
                         </p>
                         <p>
                         <!-- 여기에 할인가 -->
-                            <span id="product-price">450,000 원</span>
+                            <span id="product-price">450,000</span>
+                            <span id="product-price2">원</span>
                             <span id="product-price2">최대혜택가</span>
                         </p>
                         <!-- 별 img, 평점 부분 -->
-                        <p>
-                            <br>
-                            <img src="../base/img/star.png" alt="star" width="20px" height="20px">
+                        <p id="grade-group">
+                            <!-- <img src="../base/img/star.png" alt="star" width="20px" height="20px"> -->
+                            <a id="test">
+                                ★
+                            </a>
                         <!-- 평점 부분 -->
                             <span id="grade">4.5</span>
                         </p>
@@ -87,7 +91,7 @@
                     </div>
                 </div>
 
-                <div class="product">
+                <div class="product" onclick= "location.href='#' ">
                     <div class="pictures">
                         <a href="#">
                             <img src="../base/img/example2.jpg" alt="logo" width="200px" height="200px">
@@ -101,16 +105,21 @@
                             </a>
                         </p>
                         <p id="original-product-price">
-                            500,000 원
+                            <!-- 모델에서 숫자만 가격으로 -->
+                            <span id="product-original-price">500,000</span>
+                            <span id="product-original-price2">원</span>
                         </p>
                         <p>
-                            <span id="product-price">450,000 원</span>
+                        <!-- 여기에 할인가 -->
+                            <span id="product-price">450,000</span>
+                            <span id="product-price2">원</span>
                             <span id="product-price2">최대혜택가</span>
-                            <!-- 별 img, 평점 부분 -->
                         </p>
-                        <p>
-                            <br>
-                            <img src="../base/img/star.png" alt="star" width="20px" height="20px">
+                        <p id="grade-group">
+                            <!-- <img src="../base/img/star.png" alt="star" width="20px" height="20px"> -->
+                            <a id="test">
+                                ★
+                            </a>
                         <!-- 평점 부분 -->
                             <span id="grade">4.5</span>
                         </p>
@@ -120,7 +129,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="product">
+                <div class="product" onclick= "location.href='#' ">
                     <div class="pictures">
                         <a href="#">
                             <img src="../base/img/example3.jpg" alt="logo" width="200px" height="200px">
@@ -134,16 +143,21 @@
                             </a>
                         </p>
                         <p id="original-product-price">
-                            500,000 원
+                            <!-- 모델에서 숫자만 가격으로 -->
+                            <span id="product-original-price">500,000</span>
+                            <span id="product-original-price2">원</span>
                         </p>
                         <p>
-                            <span id="product-price">450,000 원</span>
+                        <!-- 여기에 할인가 -->
+                            <span id="product-price">450,000</span>
+                            <span id="product-price2">원</span>
                             <span id="product-price2">최대혜택가</span>
-                            <!-- 별 img, 평점 부분 -->
                         </p>
-                        <p>
-                            <br>
-                            <img src="../base/img/star.png" alt="star" width="20px" height="20px">
+                        <p id="grade-group">
+                            <!-- <img src="../base/img/star.png" alt="star" width="20px" height="20px"> -->
+                            <a id="test">
+                                ★
+                            </a>
                         <!-- 평점 부분 -->
                             <span id="grade">4.5</span>
                         </p>
@@ -152,7 +166,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="product">
+                <div class="product" onclick= "location.href='#' ">
                     <div class="pictures">
                         <a href="#">
                             <img src="../base/img/example4.jpg" alt="logo" width="200px" height="200px">
@@ -166,16 +180,21 @@
                             </a>
                         </p>
                         <p id="original-product-price">
-                            500,000 원
+                            <!-- 모델에서 숫자만 가격으로 -->
+                            <span id="product-original-price">500,000</span>
+                            <span id="product-original-price2">원</span>
                         </p>
                         <p>
-                            <span id="product-price">450,000 원</span>
+                        <!-- 여기에 할인가 -->
+                            <span id="product-price">450,000</span>
+                            <span id="product-price2">원</span>
                             <span id="product-price2">최대혜택가</span>
-                            <!-- 별 img, 평점 부분 -->
                         </p>
-                        <p>
-                            <br>
-                            <img src="../base/img/star.png" alt="star" width="20px" height="20px">
+                        <p id="grade-group">
+                            <!-- <img src="../base/img/star.png" alt="star" width="20px" height="20px"> -->
+                            <a id="test">
+                                ★
+                            </a>
                         <!-- 평점 부분 -->
                             <span id="grade">4.5</span>
                         </p>
@@ -184,7 +203,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="product">
+                <div class="product" onclick= "location.href='#' ">
                     <div class="pictures">
                         <a href="#">
                             <img src="../base/img/example5.jpg" alt="logo" width="200px" height="200px">
@@ -198,16 +217,21 @@
                             </a>
                         </p>
                         <p id="original-product-price">
-                            500,000 원
+                            <!-- 모델에서 숫자만 가격으로 -->
+                            <span id="product-original-price">500,000</span>
+                            <span id="product-original-price2">원</span>
                         </p>
                         <p>
-                            <span id="product-price">450,000 원</span>
+                        <!-- 여기에 할인가 -->
+                            <span id="product-price">450,000</span>
+                            <span id="product-price2">원</span>
                             <span id="product-price2">최대혜택가</span>
-                            <!-- 별 img, 평점 부분 -->
                         </p>
-                        <p>
-                            <br>
-                            <img src="../base/img/star.png" alt="star" width="20px" height="20px">
+                        <p id="grade-group">
+                            <!-- <img src="../base/img/star.png" alt="star" width="20px" height="20px"> -->
+                            <a id="test">
+                                ★
+                            </a>
                         <!-- 평점 부분 -->
                             <span id="grade">4.5</span>
                         </p>
@@ -217,7 +241,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="product">
+                <div class="product" onclick= "location.href='#' ">
                     <div class="pictures">
                         <a href="#">
                             <img src="../base/img/example6.jpg" alt="logo" width="200px" height="200px">
@@ -231,16 +255,21 @@
                             </a>
                         </p>
                         <p id="original-product-price">
-                            500,000 원
+                            <!-- 모델에서 숫자만 가격으로 -->
+                            <span id="product-original-price">500,000</span>
+                            <span id="product-original-price2">원</span>
                         </p>
                         <p>
-                            <span id="product-price">450,000 원</span>
+                        <!-- 여기에 할인가 -->
+                            <span id="product-price">450,000</span>
+                            <span id="product-price2">원</span>
                             <span id="product-price2">최대혜택가</span>
-                            <!-- 별 img, 평점 부분 -->
                         </p>
-                        <p>
-                            <br>
-                            <img src="../base/img/star.png" alt="star" width="20px" height="20px">
+                        <p id="grade-group">
+                            <!-- <img src="../base/img/star.png" alt="star" width="20px" height="20px"> -->
+                            <a id="test">
+                                ★
+                            </a>
                         <!-- 평점 부분 -->
                             <span id="grade">4.5</span>
                         </p>
@@ -249,7 +278,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="product">
+                <div class="product" onclick= "location.href='#' ">
                     <div class="pictures">
                         <a href="#">
                             <img src="../base/img/example2.jpg" alt="logo" width="200px" height="200px">
@@ -263,16 +292,21 @@
                             </a>
                         </p>
                         <p id="original-product-price">
-                            500,000 원
+                            <!-- 모델에서 숫자만 가격으로 -->
+                            <span id="product-original-price">500,000</span>
+                            <span id="product-original-price2">원</span>
                         </p>
                         <p>
-                            <span id="product-price">450,000 원</span>
+                        <!-- 여기에 할인가 -->
+                            <span id="product-price">450,000</span>
+                            <span id="product-price2">원</span>
                             <span id="product-price2">최대혜택가</span>
-                            <!-- 별 img, 평점 부분 -->
                         </p>
-                        <p>
-                            <br>
-                            <img src="../base/img/star.png" alt="star" width="20px" height="20px">
+                        <p id="grade-group">
+                            <!-- <img src="../base/img/star.png" alt="star" width="20px" height="20px"> -->
+                            <a id="test">
+                                ★
+                            </a>
                         <!-- 평점 부분 -->
                             <span id="grade">4.5</span>
                         </p>

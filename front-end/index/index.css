@@ -162,19 +162,23 @@ body {
 /* Content */
 
 /* 상품 개수 알려주는 div  */
+
 .first-info-box {
-    margin-top: 20px;
-    margin-left: 150px;
-    margin-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 150px;
+    padding-bottom: 20px;
+    display: flex;
 }
 
 #first-info-normal {
-    font-size: 30px;
+    font-size: 24px;
+    display: flex;
 }
 
 #first-info-bold {
-    font-size: 30px;
+    font-size: 24px;
     font-weight: bold;
+    display: flex;
 }
 
 /* 상품 img class */
@@ -190,6 +194,11 @@ body {
     /* 상품들 가로 정렬  */
     display: inline-block;
 
+}
+
+/* 제품에 마우스 올렸을 때 커서  */
+.product:hover { 
+    cursor: pointer;
 }
 
 /* div id */
@@ -208,6 +217,7 @@ body {
 #product-title-hover {
     text-decoration: none;
     color: black;
+    font-size: 13px;
 }
 
 /* 상품명에 커서 올릴 때 */
@@ -217,26 +227,39 @@ body {
 }
 
 /* 상품의 가격 id  */
-#original-product-price {
-    width: 200px;
+/* 원가 id */
+#product-original-price{
+    /* 패딩 주기 위해 블록으로 설정 */
+    display: inline-block;
+    width: 62px;
     font-weight: bold;
     color: black;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    font-size: 18px;
+    /* 위아래 간격 */
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
+#product-original-price2{
+    color: black;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+/* 할인가 id */
 #product-price {
-    width: 200px;
+    display: inline-block;
+    width: 62px;
     font-weight: bold;
     color: #f5232a;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    font-size: 18px;
 
 }
 /* 최대 할인가 문구 스타일 */
 #product-price2 {
     color: #f5232a;
-    font-size: 13px;
+    font-size: 12px;
+    font-weight: normal;
 }
 
 .list {
@@ -250,7 +273,7 @@ body {
 
 /* 평점 */
 #grade {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: bold;
 }
 
@@ -261,7 +284,7 @@ body {
     color: black;
     text-align: none;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 12px;
     padding-right: 10px;
 }
 
@@ -285,12 +308,23 @@ body {
 #delivery {
     margin-top: 10px;
     background-color: white;
-    border-radius: 7px;
+    border-radius: 6px;
     border: 1px solid gainsboro;
     color: grey;
+    font-size: 12px;
+    font-family: 'Roboto', 'Noto Sans KR', '맑은고딕', Malgun Gothic, dotum, '돋음', arial, sans-serif;
 }
 
 /* 무료배송, 오늘배송 버튼 호버 스타일 */
 #delivery:hover {
     cursor: pointer;
+}
+
+#grade-group {
+    margin-top: 7px;
+}
+#test {
+    color: #f5232a;
+    font-size: 15px;
+    text-shadow: 1px 1px 1px rgb(207, 207, 207);
 }
