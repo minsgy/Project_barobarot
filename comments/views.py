@@ -1,14 +1,12 @@
 from django.shortcuts import render, redirect
 from .models import Comment
 from engineers.models import Engineer
-from users.models import User
-from django.urls import reverse
+from django.core.exceptions import PermissionDenied
 # Create your views here.
 
-def createComment(request, cm_pk):
+def createComment(request, eg_pk):
 
-    engineer = Engineer.objects.get(pk=cm_pk)
-   # user = User.objects.get(pk=user_pk)
+    engineer = Engineer.objects.get(pk=eg_pk)
     if request.method == 'POST':
         comment = Comment()
         comment.engineer = engineer
@@ -16,6 +14,13 @@ def createComment(request, cm_pk):
         comment.title = request.POST.get('title')
         comment.content = request.POST.get('content')
         comment.save()
-        return redirect('engineers:detail', cm_pk)
+        return redirect('engineers:detail', eg_pk) 
 
+def deleteComment(request, eg_pk, cm_pk):
 
+    comment = Comment.objects.get(pk=cm_pk)
+    if request.user == comment.user:
+        comment.delete()
+        return redirect('engineers:detail', eg_pk)
+    else:
+        raise PermissionDenied
