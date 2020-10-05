@@ -24,7 +24,7 @@ urlpatterns = [
     path('engineers/', include('engineers.urls', namespace="engineers")), # 설치 기사 관련 기능
     path('payments/', include('payments.urls')),    #예약확인
     # path('', include('products.urls')),
-    # path('', include('users.urls')),
+    path('', include('users.urls', namespace="users")),
     path('', include('comments.urls', namespace="comments")), # comment url 연결
 ]
 
