@@ -1,0 +1,21 @@
+{% extends '../base.html' %}
+
+{% block content %}
+<h1>상품 디테일 확인</h1><br>
+
+<span>
+
+    <img src="{{ products.product_image.url }}" alt="{{products.product_name}}" width="100px" height="100px">
+
+    <br>
+    {{products.product_name}} : {{products.price}} <br>
+    {{products.sale}}%할인 -> {{products.set_saleprice}} <br>
+    {{products.manufacture}} / 평점 {{products.rating}} <br>
+    <img src="{{ products.image_description.url }}" alt="{{products.product_name}} 상세설명" width="100px" height="100px">
+
+
+</span>
+
+
+
+{% endblock %}

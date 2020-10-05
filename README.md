@@ -10,6 +10,12 @@
 - [박형민](https://github.com/thalals/) : Back-end(Hmin)
 - [하유민](https://github.com/qhahd78) : Front-end(Umin)
 
+## 📑 Project Specification
+
+- [한달음 - Google Docs](https://docs.google.com/document/d/1US57lggIKGL0CG4JkgxOzRyGLcLDPqiVBlbb1MafzIs/edit?usp=sharing)
+- [한달음 - Page Configuration](https://jamboard.google.com/d/1oTOr-Hq79dz_WfDCB2bpPPcNucm-LPVugLqNfSbqENk/edit?usp=sharing)
+- [한달음 - Front 일정](https://jamboard.google.com/d/1Lw_6KPWb2pZOgRV8OHlK6zgUdp-2ejF4nUS2aaxNWSU/edit?usp=sharing)
+
 ## 프로젝트 실행 법
 
 1. 가상 환경 생성 및 실행
@@ -27,7 +33,6 @@
 
 - `python manage.py makemigrations`
 - `python manage.py migrate`
-
 
 4. Superuser 생성하기
 

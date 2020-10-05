@@ -12,11 +12,12 @@ class PaymentproductAdmin(admin.ModelAdmin):
     fieldsets = (
         (
             'Information',
-            {"fields": ("user","engineer","amount","address" , "visit_date")},
+            {"fields": ("product","user","engineer","amount","address" , "visit_date")},
         ),
     )
 
     list_display = (
+        'product',
         'user',
         'engineer',
         'amount',

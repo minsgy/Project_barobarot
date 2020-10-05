@@ -1,6 +1,5 @@
 from django.urls import path
 from . import views
 urlpatterns = [
-    # path('', views.<>, name="<>"),
-
+    path('reservation/', views.PaymentproductList.as_view(), name="reservation"),
 ]

@@ -22,10 +22,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('products.urls')), # main 화면 연결, 제품 관련 기능
     path('engineers/', include('engineers.urls')), # 설치 기사 관련 기능
-    # path('', include('payments.urls')),
+    path('payments/', include('payments.urls')),    #예약확인
     # path('', include('products.urls')),
     # path('', include('users.urls')),
-    # path('', include('comments.urls')),
+    path('', include('comments.urls')), # comment url 연결
 ]
 
 if settings.DEBUG:

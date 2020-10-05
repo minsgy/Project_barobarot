@@ -18,7 +18,7 @@
             <!-- Header 양 쪽 margin 주기 위해 box 따로 만듦 -->
             <div class="header-box">
                 <a href="#">
-                    <img src="base/img/logo.gif" alt="logo">
+                    <img src="../base/img/logo.gif" alt="logo">
                 </a>
                 <div class="search">
                     <input type="text">
@@ -51,19 +51,38 @@
                         <!-- 클릭했을 때 상품 상세설명으로 이동 -->
                         <!-- 상품 사진 크기 200x200으로 고정.  -->
                         <a href="#">
-                            <img src="base/img/example.jpg" alt="logo" width="200px" height="200px">
+                            <img src="../base/img/example1.jpg" alt="logo" width="200px" height="200px">
                         </a>
                     </div>
 
                     <div id="product-detail">
                         <p id="product-title">
-                            <!-- 모델에서 상품명 부분. 하이마트몰 보니까 상품명이 다 두 줄 정도로 길어서 그 정도 길이로 설정해놨습니다. -->
-                            상품명상품명상품명상품명상품명상품명상품명상품명상품명상품명
+                            <a id="product-title-hover" href="#">
+                                <!-- 모델에서 상품명 부분. 하이마트몰 보니까 상품명이 다 두 줄 정도로 길어서 그 정도 길이로 설정해놨습니다. -->
+                               *블랙에디션* 클라윈드 양문형냉장고 CRF-SN570BDC [570L]
+                            </a>
                         </p>
-                        <p id="product-price">
+                        <!-- 가격부분 -->
+                        <p id="original-product-price">
                             <!-- 모델에서 숫자만 가격으로 적으면 돼요. 예) 500,000 일케 치면 500,000 원 이런 식으로 화면에 뜹니다.  -->
                             <!-- '1억' 부분이 모델에서 가격.  -->
-                            1억 원
+                            500,000 원
+                        </p>
+                        <p>
+                        <!-- 여기에 할인가 -->
+                            <span id="product-price">450,000 원</span>
+                            <span id="product-price2">최대혜택가</span>
+                        </p>
+                        <!-- 별 img, 평점 부분 -->
+                        <p>
+                            <br>
+                            <img src="../base/img/star.png" alt="star" width="20px" height="20px">
+                        <!-- 평점 부분 -->
+                            <span id="grade">4.5</span>
+                        </p>
+                        <p>
+                            <button id="delivery">무료배송</button>
+                            <button id="delivery">오늘배송</button>
                         </p>
                     </div>
                 </div>
@@ -71,92 +90,205 @@
                 <div class="product">
                     <div class="pictures">
                         <a href="#">
-                            <img src="base/img/example.jpg" alt="logo" width="200px" height="200px">
+                            <img src="../base/img/example2.jpg" alt="logo" width="200px" height="200px">
                         </a>
                     </div>
                     <div id="product-detail">
                         <p id="product-title">
-                            어쩌고 저쩌고 블라블라 상품명 어쩌고 저쩌고 라라랄라성능 좋은 밥솥
+                            <a id="product-title-hover" href="#">
+                                <!-- 모델에서 상품명 부분. 하이마트몰 보니까 상품명이 다 두 줄 정도로 길어서 그 정도 길이로 설정해놨습니다. -->
+                                스탠드 에어컨 (매립배관형) FQ20S9CWA1M (65.9㎡) [전국기본설치무료]
+                            </a>
                         </p>
-                        <p id="product-price">
+                        <p id="original-product-price">
                             500,000 원
                         </p>
-                    </div>
-                </div>
-                <div class="product">
-                    <div class="pictures">
-                        <a href="#">
-                            <img src="base/img/example.jpg" alt="logo" width="200px" height="200px">
-                        </a>
-                    </div>
-                    <div id="product-detail">
-                        <p id="product-title">
-                            상품명이 전부 두 줄 정도네요 모델에서 상품명 쓸 때도 그 정도 쓰면 될듯
+                        <p>
+                            <span id="product-price">450,000 원</span>
+                            <span id="product-price2">최대혜택가</span>
+                            <!-- 별 img, 평점 부분 -->
                         </p>
-                        <p id="product-price">
-                            270,000 원
+                        <p>
+                            <br>
+                            <img src="../base/img/star.png" alt="star" width="20px" height="20px">
+                        <!-- 평점 부분 -->
+                            <span id="grade">4.5</span>
                         </p>
-                    </div>
-                </div>
-                <div class="product">
-                    <div class="pictures">
-                        <a href="#">
-                            <img src="base/img/example.jpg" alt="logo" width="200px" height="200px">
-                        </a>
-                    </div>
-                    <div id="product-detail">
-                        <p id="product-title">
-                            상품명이 전부 두 줄 정도네요 모델에서 상품명 쓸 때도 그 정도 쓰면 될듯
-                        </p>
-                        <p id="product-price">
-                            270,000 원
+                        <p>
+                            <button id="delivery">무료배송</button>
+                            <button id="delivery">오늘배송</button>
                         </p>
                     </div>
                 </div>
                 <div class="product">
                     <div class="pictures">
                         <a href="#">
-                            <img src="base/img/example.jpg" alt="logo" width="200px" height="200px">
+                            <img src="../base/img/example3.jpg" alt="logo" width="200px" height="200px">
                         </a>
                     </div>
                     <div id="product-detail">
                         <p id="product-title">
-                            상품명이 전부 두 줄 정도네요 모델에서 상품명 쓸 때도 그 정도 쓰면 될듯
+                            <a id="product-title-hover" href="#">
+                                <!-- 모델에서 상품명 부분. 하이마트몰 보니까 상품명이 다 두 줄 정도로 길어서 그 정도 길이로 설정해놨습니다. -->
+                                스탠드 에어컨 (매립배관형) FQ22L9DRA1M (74.5㎡) 럭셔리
+                            </a>
                         </p>
-                        <p id="product-price">
-                            270,000 원
+                        <p id="original-product-price">
+                            500,000 원
+                        </p>
+                        <p>
+                            <span id="product-price">450,000 원</span>
+                            <span id="product-price2">최대혜택가</span>
+                            <!-- 별 img, 평점 부분 -->
+                        </p>
+                        <p>
+                            <br>
+                            <img src="../base/img/star.png" alt="star" width="20px" height="20px">
+                        <!-- 평점 부분 -->
+                            <span id="grade">4.5</span>
+                        </p>
+                        <p>
+                            <button id="delivery">무료배송</button>
                         </p>
                     </div>
                 </div>
                 <div class="product">
                     <div class="pictures">
                         <a href="#">
-                            <img src="base/img/example.jpg" alt="logo" width="200px" height="200px">
+                            <img src="../base/img/example4.jpg" alt="logo" width="200px" height="200px">
                         </a>
                     </div>
                     <div id="product-detail">
                         <p id="product-title">
-                            상품명이 전부 두 줄 정도네요 모델에서 상품명 쓸 때도 그 정도 쓰면 될듯
+                            <a id="product-title-hover" href="#">
+                                <!-- 모델에서 상품명 부분. 하이마트몰 보니까 상품명이 다 두 줄 정도로 길어서 그 정도 길이로 설정해놨습니다. -->
+                                스탠드 무풍 에어컨 (매립배관형) AF18RX975CAK (58.5㎡) 공기청정
+                            </a>
                         </p>
-                        <p id="product-price">
-                            270,000 원
+                        <p id="original-product-price">
+                            500,000 원
+                        </p>
+                        <p>
+                            <span id="product-price">450,000 원</span>
+                            <span id="product-price2">최대혜택가</span>
+                            <!-- 별 img, 평점 부분 -->
+                        </p>
+                        <p>
+                            <br>
+                            <img src="../base/img/star.png" alt="star" width="20px" height="20px">
+                        <!-- 평점 부분 -->
+                            <span id="grade">4.5</span>
+                        </p>
+                        <p>
+                            <button id="delivery">무료배송</button>
                         </p>
                     </div>
                 </div>
                 <div class="product">
                     <div class="pictures">
                         <a href="#">
-                            <img src="base/img/example.jpg" alt="logo" width="200px" height="200px">
+                            <img src="../base/img/example5.jpg" alt="logo" width="200px" height="200px">
                         </a>
                     </div>
                     <div id="product-detail">
                         <p id="product-title">
-                            상품명이 전부 두 줄 정도네요 모델에서 상품명 쓸 때도 그 정도 쓰면 될듯
+                            <a id="product-title-hover" href="#">
+                                <!-- 모델에서 상품명 부분. 하이마트몰 보니까 상품명이 다 두 줄 정도로 길어서 그 정도 길이로 설정해놨습니다. -->
+                                스탠드 에어컨 둘레바람 WPVS17CDPG (56.2㎡) [기본설치비 무료]
+                            </a>
                         </p>
-                        <p id="product-price">
-                            270,000 원
+                        <p id="original-product-price">
+                            500,000 원
+                        </p>
+                        <p>
+                            <span id="product-price">450,000 원</span>
+                            <span id="product-price2">최대혜택가</span>
+                            <!-- 별 img, 평점 부분 -->
+                        </p>
+                        <p>
+                            <br>
+                            <img src="../base/img/star.png" alt="star" width="20px" height="20px">
+                        <!-- 평점 부분 -->
+                            <span id="grade">4.5</span>
+                        </p>
+                        <p>
+                            <button id="delivery">무료배송</button>
+                            <button id="delivery">오늘배송</button>
                         </p>
                     </div>
+                </div>
+                <div class="product">
+                    <div class="pictures">
+                        <a href="#">
+                            <img src="../base/img/example6.jpg" alt="logo" width="200px" height="200px">
+                        </a>
+                    </div>
+                    <div id="product-detail">
+                        <p id="product-title">
+                            <a id="product-title-hover" href="#">
+                                <!-- 모델에서 상품명 부분. 하이마트몰 보니까 상품명이 다 두 줄 정도로 길어서 그 정도 길이로 설정해놨습니다. -->
+                                스탠드 에어컨 둘레바람 WPVS17CDPG (56.2㎡) [기본설치비 무료]
+                            </a>
+                        </p>
+                        <p id="original-product-price">
+                            500,000 원
+                        </p>
+                        <p>
+                            <span id="product-price">450,000 원</span>
+                            <span id="product-price2">최대혜택가</span>
+                            <!-- 별 img, 평점 부분 -->
+                        </p>
+                        <p>
+                            <br>
+                            <img src="../base/img/star.png" alt="star" width="20px" height="20px">
+                        <!-- 평점 부분 -->
+                            <span id="grade">4.5</span>
+                        </p>
+                        <p>
+                            <button id="delivery">무료배송</button>
+                        </p>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="pictures">
+                        <a href="#">
+                            <img src="../base/img/example2.jpg" alt="logo" width="200px" height="200px">
+                        </a>
+                    </div>
+                    <div id="product-detail">
+                        <p href="" id="product-title">
+                            <a id="product-title-hover" href="#">
+                                <!-- 모델에서 상품명 부분. 하이마트몰 보니까 상품명이 다 두 줄 정도로 길어서 그 정도 길이로 설정해놨습니다. -->
+                                스탠드 에어컨 둘레바람 WPVS17CDPG (56.2㎡) [기본설치비 무료]
+                            </a>
+                        </p>
+                        <p id="original-product-price">
+                            500,000 원
+                        </p>
+                        <p>
+                            <span id="product-price">450,000 원</span>
+                            <span id="product-price2">최대혜택가</span>
+                            <!-- 별 img, 평점 부분 -->
+                        </p>
+                        <p>
+                            <br>
+                            <img src="../base/img/star.png" alt="star" width="20px" height="20px">
+                        <!-- 평점 부분 -->
+                            <span id="grade">4.5</span>
+                        </p>
+                        <p>
+                            <button id="delivery">무료배송</button>
+                            <button id="delivery">오늘배송</button>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <ul id="page-num-group">
+                        <li id="page-num-list"><a id="page-num" href="#">1</a></li>
+                        <li id="page-num-list"><a id="page-num" href="#">2</a></li>
+                        <li id="page-num-list"><a id="page-num" href="#">3</a></li>
+                        <li id="page-num-list"><a id="page-num" href="#">4</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -166,7 +298,7 @@
         <div class="footer">
             <!-- Footer 양쪽 margin 주기 위해 가운데 box 생성 -->
             <div class="box">
-                <img src="base/img/footLogo.png" alt="footLogo">
+                <img src="../base/img/footLogo.png" alt="footLogo">
                 <div class="description">
                     <ul>
                         <li><strong>롯데하이마트 주식회사</strong></li>
@@ -197,7 +329,7 @@
             </div>
         </div>
 
-        <script src="base/base.js"></script>
+        <script src="../base/base.js"></script>
 </body>
 
 </html>

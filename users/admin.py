@@ -9,10 +9,11 @@ class CustomUserAdmin(admin.ModelAdmin):
     ''' User admin Custom '''
 
     fieldsets =  (
-        (None, {"fields" : ("name", "number", "email")},),
+        (None, {"fields" : ("username","password","name", "number", "email")},),
     )
     
     list_display = (
+        "username",
         "name",
         "email",
         "number",
