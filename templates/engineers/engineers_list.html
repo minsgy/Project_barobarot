@@ -2,7 +2,8 @@
 <!-- prettier-ignore -->
 {% block content %}
 <h1>엔지니어 리스트 확인</h1><br>
-<!-- prettier-ignore -->{% for engineer in engineers %}
+<!-- prettier-ignore -->
+{% for engineer in engineers %}
 <span>
             <a href="{% url 'engineers:detail' engineer.pk %}">
             {{engineer.name}} / {{engineer.number}}

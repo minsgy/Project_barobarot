@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% block link %}{% endblock %}">
 </head>
+
 <body>
     <div class="container">
 
@@ -16,7 +18,7 @@
             <!-- Header 양 쪽 margin 주기 위해 box 따로 만듦 -->
             <div class="header-box">
                 <a href="#">
-                <img src="{% static 'img/logo.gif' %}" alt="logo">
+                    <img src="{% static 'img/logo.gif' %}" alt="logo">
                 </a>
                 <div class="search">
                     <input type="text">
@@ -34,7 +36,19 @@
 
         <!-- Content -->
         <div class="content">
+
+            {% if user.is_authenticated %}
+            <p>{{user.username}} 님 어서오세요!</p>
+            <a href="{% url 'users:logout' %}"><button>로그아웃</button></a>
+            <!-- prettier-ignore -->
+            {% else %}
+            <a href="{% url 'users:login' %}"><button>로그인</button></a>
+            <a href="{% url 'users:signup' %}"><button>회원 가입</button></a>
+            <!-- prettier-ignore -->
+            {% endif %}
+            <!-- prettier-ignore -->
             {% block content %}
+            <!-- prettier-ignore -->
             {% endblock %}
         </div>
 
@@ -76,4 +90,5 @@
     </div>
     <script src="{% static 'js/base.js' %}"></script>
 </body>
+
 </html>

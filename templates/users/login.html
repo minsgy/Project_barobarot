@@ -1,0 +1,14 @@
+{% extends '../base.html' %}
+<!-- prettier-ignore -->
+{% block content %}
+<h1>로그인 화면</h1><br>
+
+<form action="{% url 'users:login' %}" method="POST">
+    {% csrf_token %}
+    <div>
+        <input type="text" name="username" placeholder='아이디'>
+        <input type="password" name="password" placeholder="비번">
+        <button type="submit" value="제출"></button>
+    </div>
+</form>
+{% endblock %}
