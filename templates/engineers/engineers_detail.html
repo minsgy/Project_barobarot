@@ -5,7 +5,11 @@
 <br />
 <br /> {% for comment in engineers.comments.all %}
 <div>
-    <p>{{comment.user}} - {{ comment.title }} : {{ comment.content }} </p>
+    <span>{{comment.user}} - {{ comment.title }} : {{ comment.content }} </span> {% if user == comment.user %}
+    <a href="{% url 'comments:delete_comment' engineers.id comment.id %}">
+        <button>삭제</button>
+    </a>
+    {% endif %}
 </div>
 {% endfor %}
 <div>
