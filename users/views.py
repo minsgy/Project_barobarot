@@ -1,3 +1,38 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect
+from .models import User
+from django.contrib import auth
 # Create your views here.
+
+def userLogin(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = auth.authenticate(request, username=username, password=password) 
+        # 찾아서 id, paasword 일치하는 지 확인
+
+        if user is not None:  # 값이 있을 시
+            auth.login(request, user)
+            return redirect('engineers:engineer')
+        else:
+            print('로그인 실패')
+            return redirect('users:login')
+
+    else: # 처음 접속
+        return render(request, 'users/login.html')
+
+def userLogout(request):
+    auth.logout(request)
+    return redirect('engineers:engineer')
+
+def userSignup(request):
+    if request.method == 'POST':
+        if request.POST.get('password1') == request.POST.get('password2'):
+            user = User.objects.create_user(
+                username=request.POST.get('username'), password=request.POST.get('password1')
+            )
+            auth.login(request, user)
+            return redirect('engineers:engineer')
+        print("생성안됌.")
+        return redirect('users:signup')
+    else:
+        return render(request, 'users/signup.html')
