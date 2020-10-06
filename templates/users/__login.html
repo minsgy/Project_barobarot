@@ -1,0 +1,58 @@
+{% extends '../base.html' %}
+<!-- prettier-ignore -->
+{% load static %}
+<!-- prettier-ignore -->
+{% block title %} 로그인 {% endblock %}
+<!-- prettier-ignore -->
+{% block link %} {% static 'css/__login.css' %} {% endblock %}
+<!-- prettier-ignore -->
+{% block content %}
+<div class='login_wrap'>
+    <!--  Login 자체를 감싸는 Wrap -->
+    <div class='login_account'>
+        <h3>로그인</h3>
+        <div class='login_guide'>
+            <p> 롯데 하이마트몰은 롯데 계정으로 이용 할 수 있습니다. </p>
+            <p> 새로이 추가 된 기사 서비스 매칭을 이용해보세요!</p>
+        </div>
+
+
+        <div class="login_input">
+            <!-- 로그인/로그아웃 INPUT 창 -->
+            <form action="{% url 'users:login' %}" method="POST">
+                {% csrf_token %}
+                <ul>
+                    <li>
+                        <input type="text" id='username' name="username" placeholder="아이디를 입력해주세요.">
+                    </li>
+                    <li>
+                        <input type="password" id='password' name="password" placeholder="비밀번호를 입력해주세요.">
+                    </li>
+                    <li>
+                        <div class='btn_login'>
+                            <button type='submit'>로그인</button>
+                        </div>
+                    </li>
+                </ul>
+            </form>
+        </div>
+
+        <div class='signup_guide'>
+            <div class='signup_txt'>
+                <p class="sign_txt">아직 <strong class='color_point'>롯데 통합 회원</strong>이 아니신가요?</p>
+                <br>
+                <p>롯데 통합 회원에 가입하시면 <br>롯데 전 계열사를 접속 할 수 있습니다.</p>
+            </div>
+            <div class='btn_signup'>
+                <a href="{% url 'users:signup' %}">
+                    <!-- url:signup -->
+                    <button>회원가입</button>
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+{% endblock %}
