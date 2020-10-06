@@ -22,6 +22,7 @@
         <div class="login_input">
             <!-- 로그인/로그아웃 INPUT 창 -->
             <form action="{% url 'users:signup' %}" method="POST">
+                {% csrf_token %}
                 <ul>
                     <li>
                         <input type="text" name="username" placeholder="아이디(5~11자)">
