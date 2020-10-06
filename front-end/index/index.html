@@ -15,6 +15,11 @@
 
         <!-- Header -->
         <div class="header">
+            <div class="welcome">
+                <span class="welcome-margin">
+                    안녕하세요 User 님! 
+                </span>
+            </div>
             <!-- Header 양 쪽 margin 주기 위해 box 따로 만듦 -->
             <div class="header-box">
                 <a href="#">
@@ -25,12 +30,20 @@
                     <a href="#" class="zoom"></a>
                 </div>
                 <div class="reservation">
-                    <span>
-                        <!-- 클릭했을 때 예약 확인 페이지로 이동 -->
-                        <a href="#" id="reservation">
-                            예약 확인
-                        </a>
-                    </span>
+                    <ul id="sign-log-group">
+                        <li class="sign-log">
+                            <a class="signin" href="#">회원가입 </a>
+                        </li>
+                        <li class="sign-log">
+                            <a class="signin" href="#">로그인 </a>
+                        </li>
+                        <li class="sign-log">
+                            <a class="signin" href="#">로그아웃 </a>
+                        </li>
+                        <li class="sign-log">
+                            <a id="reservation" href="#">예약확인 </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -41,8 +54,8 @@
             <div class="first-info-box">
                 <!-- 하이마트몰에서는 총 몇 개의 상품이 있는지 알려주는 문구가 있길래 넣어봤습니다..  -->
                 <!-- 상품 모델의 총 개수를 n 에 넣으면 될 것 같은데 구현 불가능 하면 빼면 될 것 같아요 . -->
-                <a id="first-info-bold">총 n개</a>
-                <a id="first-info-normal">의 상품이 있습니다. </a>
+                <span id="first-info-bold">총 n개</span> 
+                <span id="first-info-normal">의 상품이 있습니다. </span>
             </div>
             <!-- 메인 페이지 상품 사진, 설명 시작 -->
             <div class="list">
