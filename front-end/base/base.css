@@ -88,10 +88,50 @@ body {
     font-size: 17px;
 }
 
-.reservation a {
+/* 예약확인도 로그인 .. 이랑 묶어서 해서 필요 없어졌어요  */
+/* .reservation a {
     color: var(--red);
     text-decoration: none;
     cursor: pointer;
+} */
+
+/* welcome 문구 */
+.welcome{
+    display: flex;
+    height: 20px;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.welcome-margin{
+    margin-top: 15px;
+    margin-right: 100px;
+}
+
+#sign-log-group .sign-log {
+    display:inline-block;
+}
+
+/* 로그인 회원가입 로그아웃 예약확인 */
+
+.signin {
+    color: #585858;
+    border-right: 1px solid grey;
+    padding-right: 5px;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+
+.signin:hover{
+    cursor: pointer;
+    color: #f5232a;   
+}
+
+#reservation {
+    color: #f5232a;   
+    font-size: 12px;
+    text-decoration: none;
 }
 
 
