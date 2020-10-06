@@ -1,0 +1,67 @@
+<!-- 
+    User의 로그인 창입니다.
+    base.html 적용 예정
+    작성일: 2020년 10월 6일(화)
+    작성자: 최민석
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="__signup.css" />
+</head>
+
+<body>
+    <div class='login_wrap'>
+        <!--  회원 가입 자체를 감싸는 Wrap -->
+        <div class='login_account'>
+            <h3>회원 가입</h3>
+            <div class='login_guide'>
+                <p> 롯데 하이마트몰은 롯데 전 계열사 계정으로 이용 할 수 있습니다. </p>
+            </div>
+
+
+            <div class="login_input">
+                <!-- 회원 가입 INPUT 창 -->
+                <form action="#" method="POST">
+                    <ul>
+                        <li>
+                            <label class="account" for="username">아이디</label>
+                            <input type="text" id='username' name="username" placeholder="아이디를 입력해주세요.">
+                        </li>
+                        <li>
+                            <label class="account" for="password1">비밀번호</label>
+                            <input type="password" name="password1" placeholder="비밀번호를 입력해주세요.">
+                        </li>
+                        <li>
+                            <label class="account" for="password2">비밀번호 확인</label>
+                            <input type="password" name="password1" placeholder="비밀번호 한번 더 입력해주세요.">
+                        </li>
+                        <li>
+                            <label class="account" for="name">이름</label>
+                            <input type="text" name="name" placeholder="이름 입력을 해주세요.">
+                        </li>
+                        <li>
+                            <label class="account" for="email">Email</label>
+                            <input type="email" name="email" placeholder="Email 입력을 해주세요.">
+                        </li>
+                        <li>
+                            <label class="account" for="">전화번호</label>
+                            <input type="text" name="number" placeholder="전화번호 입력을 해주세요.">
+                        </li>
+                    </ul>
+                    <div class='btn_login'>
+                        <button type='submit'>회원가입</button>
+                    </div>
+                </form>
+            </div>
+            <div class='signup_guide'>
+            </div>
+        </div>
+</body>
+
+</html>
