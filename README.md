@@ -4,7 +4,7 @@
 
 ## 👨‍👨‍👨‍👧‍👧Team member
 
-- [최민석](https://github.com/minsgy) : Back-end(Minseok), Readme write, 설치 기사 모듈 구현,
+- [최민석](https://github.com/minsgy) : Back-end(Minseok), Readme write, Engineer 및 review(commment) 구현, User CRUD 구현
 - [이승준](https://github.com/g0709-19) : Front-end(LeeJun)
 - [장하얀](https://github.com/white-jang) : Front-end(White)
 - [박형민](https://github.com/thalals/) : Back-end(Hmin)
