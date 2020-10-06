@@ -18,7 +18,7 @@ def userLogin(request):
             return redirect('users:login')
 
     else: # 처음 접속
-        return render(request, 'users/login.html')
+        return render(request, 'users/__login.html')
 
 def userLogout(request):
     auth.logout(request)
@@ -28,11 +28,11 @@ def userSignup(request):
     if request.method == 'POST':
         if request.POST.get('password1') == request.POST.get('password2'):
             user = User.objects.create_user(
-                username=request.POST.get('username'), password=request.POST.get('password1')
+                username=request.POST.get('username'), password=request.POST.get('password1'), name=request.POST.get('name'),email=request.POST.get('email'), number=request.POST.get('number')
             )
             auth.login(request, user)
             return redirect('engineers:engineer')
         print("생성안됌.")
         return redirect('users:signup')
     else:
-        return render(request, 'users/signup.html')
+        return render(request, 'users/__signup.html')

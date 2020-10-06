@@ -1,0 +1,177 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* 자주 쓰는 색 */
+
+:root {
+    --red: #f5232a;
+    --footer-gray: #6A747C;
+}
+
+body {
+    font-family: 'Roboto', 'Noto Sans KR', '맑은고딕', Malgun Gothic, dotum, '돋음', arial, sans-serif;
+    /* 가로 스크롤 바 없애기 */
+    overflow-x: hidden;
+}
+
+
+/* 버튼 초기화 */
+
+button {
+    background: inherit;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    overflow: visible;
+    cursor: pointer;
+}
+
+
+/* Login_Wrap  */
+
+.login_wrap {
+    width: 100%;
+    text-align: left;
+    margin: 0 auto;
+}
+
+
+/* 로그인 글씨 */
+
+.login_wrap .login_account h3 {
+    text-align: center;
+    margin: 50px 0px 0px;
+    font-weight: normal;
+    font-size: 36px;
+    letter-spacing: -3px;
+    color: #232a32;
+}
+
+
+/* login_account - guide, input 안에있음*/
+
+
+/* login_guide */
+
+
+/* login 설명문 */
+
+.login_guide {
+    padding: 20px 30px;
+    background: #f3f3f3;
+    font-size: 13px;
+    color: #6a747d;
+    line-height: 1.7em;
+    margin: 50px 0px 20px;
+    text-align: center;
+}
+
+.login_account {
+    width: 400px;
+    text-align: left;
+    margin: 0 auto;
+}
+
+
+/* Login_input */
+
+
+/* 로그인 로그아웃 label 설정 */
+
+.login_input {
+    margin-bottom: 40px;
+}
+
+.login_account .login_input li,
+ul {
+    text-align: left;
+    display: inline-block;
+    width: 400px;
+}
+
+.login_input li:first-child {
+    margin-bottom: 10px;
+}
+
+
+/* 로그인 로그아웃 input 설정 */
+
+.login_input li input {
+    height: 38px;
+    width: 380px;
+    line-height: 38px;
+    border: 1px solid #d3d3d5;
+    background-color: #fff;
+    font-size: 15px;
+    letter-spacing: 0em;
+    padding-left: 16px;
+}
+
+.login_input .btn_login {
+    /* 버튼 폼에서 오른쪽 붙히기 */
+    /* float: right; */
+    width: 400px;
+    height: 58px;
+    line-height: 58px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(213, 39, 39);
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.login_input .btn_login button {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 18px;
+}
+
+
+/* .signup_guide */
+
+
+/* 회원가입 안내문 */
+
+.signup_guide {
+    width: 400px;
+    padding-top: 40px;
+    border-top: 1px solid #d3d3d5;
+    color: #3c4652;
+    display: inline-block;
+    /* width: 100%; */
+}
+
+.signup_guide .signup_txt {
+    display: inline-block;
+}
+
+.signup_guide .sign_txt {
+    margin-bottom: 17px;
+    color: #3c4652;
+    font-size: 17px;
+}
+
+
+/* 포인트 값 */
+
+.signup_guide .sign_txt .color_point {
+    color: #009bd7;
+}
+
+.signup_guide .btn_signup {
+    float: right;
+    width: 130px;
+    height: 89px;
+    line-height: 89px;
+    background-color: #6a747d;
+    text-align: center;
+}
+
+.signup_guide .btn_signup a button {
+    color: #fff;
+    font-size: 18px;
+    width: 130px;
+    height: 89px;
+}
