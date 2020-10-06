@@ -1,0 +1,68 @@
+<!-- 
+    User의 로그인 창입니다.
+    base.html 적용 예정
+    작성일: 2020년 10월 6일(화)
+    작성자: 최민석
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../base/base.css" />
+    <link rel="stylesheet" href="__signup2.css" />
+</head>
+
+<body>
+    <div class='login_wrap'>
+        <!--  Login 자체를 감싸는 Wrap -->
+        <div class='login_account'>
+            <h3>회원가입</h3>
+            <div class='login_guide'>
+                <p> 롯데 하이마트몰은 롯데 계정으로 이용 할 수 있습니다. </p>
+                <p> 새로이 추가 된 기사 서비스 매칭을 이용해보세요!</p>
+            </div>
+
+
+            <div class="login_input">
+                <!-- 로그인/로그아웃 INPUT 창 -->
+                <form action="#" method="POST">
+                    <ul>
+                        <li>
+                            <input type="text" name="username" placeholder="아이디(5~11자)">
+                        </li>
+                        <li>
+                            <input type="password" name="password1" placeholder="비밀번호(최소 8자)">
+                        </li>
+                        <li>
+                            <input type="password" name="password2" placeholder="비밀번호 확인">
+                        </li>
+                        <li>
+                            <input type="email" name="email" placeholder="이메일">
+                        </li>
+                        <li>
+                            <input type="text" name="number" placeholder="전화번호">
+                        </li>
+                        <li>
+                            <div class='btn_login'>
+                                <button type='submit'>회원가입</button>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+
+            <div class='signup_guide'>
+                <div class='signup_txt'>
+                    <p class="sign_txt"> 회원 가입을 하게 되면 다양한 혜택이 쏟아진다!</p>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
