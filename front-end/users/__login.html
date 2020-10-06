@@ -1,0 +1,66 @@
+<!-- 
+    User의 로그인 창입니다.
+    base.html 적용 예정
+    작성일: 2020년 10월 6일(화)
+    작성자: 최민석
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="__login.css" />
+</head>
+
+<body>
+    <div class='login_wrap'>
+        <!--  Login 자체를 감싸는 Wrap -->
+        <div class='login_account'>
+            <h3>로그인</h3>
+            <div class='login_guide'>
+                <p> 롯데 하이마트몰은 롯데 전 계열사 계정으로 이용 할 수 있습니다. </p>
+            </div>
+
+
+            <div class="login_input">
+                <!-- 로그인/로그아웃 INPUT 창 -->
+                <form action="#" method="POST">
+                    <ul>
+                        <li>
+                            <label class="account" for="username">아이디</label>
+                            <input type="text" id='username' name="username" placeholder="아이디를 입력해주세요.">
+                        </li>
+                        <li>
+                            <label class="account" for="password">비밀번호</label>
+                            <input type="password" id='password' name="password" placeholder="비밀번호를 입력해주세요.">
+                        </li>
+                    </ul>
+                    <div class='btn_login'>
+                        <button type='submit'>로그인</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class='signup_guide'>
+                <div class='signup_txt'>
+                    <p class="sign_txt">아직 <strong class='color_point'>롯데 통합 회원</strong>이 아니신가요?</p>
+                    <br>
+                    <p>롯데 통합 회원에 가입하시면 롯데 전 계열사를 접속 할 수 있습니다.</p>
+                </div>
+                <div class='btn_signup'>
+                    <a href="#">
+                        <!-- url:signup -->
+                        <button>통합회원 가입</button>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
