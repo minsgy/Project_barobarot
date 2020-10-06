@@ -234,6 +234,7 @@ a {
 
 .md-announcement {
     margin-top: 30px;
+    margin-bottom: 150px;
 }
 
 .md-image {
@@ -260,11 +261,13 @@ a {
 
 .other-images {
     margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 .emplacement {
     border: 1px solid #d7d7d9;
     padding: 29px 49px 39px;
+    margin-bottom: 150px;
 }
 
 .emplacement label {
@@ -274,12 +277,11 @@ a {
     margin-bottom: 18px;
 }
 
-
 .ship-information {
     width: 100%;
 }
 
-.ship-information label {
+.ship-information>label {
     display: block;
     font-size: 23px;
     margin-bottom: 30px;
@@ -289,9 +291,61 @@ a {
     padding: 0 30px;
 }
 
-.ship-menu li {
+.ship-menu-item {
     font-size: 17px;
     padding: 40px 0 15px;
     border-bottom: 1px solid #232a32;
     cursor: pointer;
+    position: relative;
+}
+
+.ship-menu-item img {
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+}
+
+.item-in-menu {
+    border: 1px solid #d2d3d5;
+    display: none;
+}
+
+.item-in-menu.show {
+    display: block;
+}
+
+.item-in-menu>li {
+    font-size: 13px;
+    display: flex;
+}
+
+.item-in-menu>li:not(:first-child) {
+    border-top: 1px solid #d2d3d5;
+}
+
+.item-in-menu li label, .item-in-menu li ul {
+    padding: 15px 0;
+}
+
+.item-in-menu li label {
+    font-weight: bold;
+    color: #333333;
+    width: 150px;
+    text-align: center;
+    background-color: #fbfbfb;
+    border-right: 1px solid #d2d3d5;
+}
+
+.item-in-menu li ul {
+    color: #666666;
+    width: 798px;
+    padding-left: 50px;
+    list-style-type: disc;
+    line-height: 17px;
+}
+
+.item-in-menu li ul>li:not(:first-child) {
+    margin-top: 20px;
 }
