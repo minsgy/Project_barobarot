@@ -8,6 +8,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 /* 자주 쓰는 색 */
+
 :root {
     --red: #f5232a;
     --footer-gray: #6A747C;
@@ -22,12 +23,13 @@ body {
 
 /* ************************************************************ */
 
+
 /* Header */
 
 .header {
     border-bottom: 1px solid var(--red);
     padding: 0 10vw;
-    justify-content: flex-end; 
+    justify-content: flex-end;
 }
 
 .header-box {
@@ -88,29 +90,35 @@ body {
     font-size: 17px;
 }
 
+
 /* 예약확인도 로그인 .. 이랑 묶어서 해서 필요 없어졌어요  */
+
+
 /* .reservation a {
     color: var(--red);
     text-decoration: none;
     cursor: pointer;
 } */
 
+
 /* welcome 문구 */
-.welcome{
+
+.welcome {
     display: flex;
     height: 20px;
     justify-content: flex-end;
     text-align: right;
 }
 
-.welcome-margin{
+.welcome-margin {
     margin-top: 15px;
     margin-right: 100px;
 }
 
 #sign-log-group .sign-log {
-    display:inline-block;
+    display: inline-block;
 }
+
 
 /* 로그인 회원가입 로그아웃 예약확인 */
 
@@ -122,20 +130,20 @@ body {
     text-decoration: none;
 }
 
-
-.signin:hover{
+.signin:hover {
     cursor: pointer;
-    color: #f5232a;   
+    color: #f5232a;
 }
 
 #reservation {
-    color: #f5232a;   
+    color: #f5232a;
     font-size: 12px;
     text-decoration: none;
 }
 
 
 /* ************************************************************ */
+
 
 /* Footer */
 
@@ -158,12 +166,7 @@ body {
 
 .description {
     width: 1080px;
-    font-family: '맑은고딕',
-        Malgun Gothic,
-        dotum,
-        '돋음',
-        arial,
-        sans-serif;
+    font-family: '맑은고딕', Malgun Gothic, dotum, '돋음', arial, sans-serif;
     font-size: 11px;
     color: var(--footer-gray);
 }
@@ -197,9 +200,12 @@ body {
     color: var(--red);
 }
 
+
 /* ************************************************************ */
 
+
 /* Content */
+
 
 /* 상품 개수 알려주는 div  */
 
@@ -217,54 +223,70 @@ body {
     font-weight: bold;
 }
 
+
 /* 상품 img class */
+
 .pictures {
     /* text-align: center; */
     overflow: hidden;
     margin: 20px;
 }
 
+
 /* 사진 통째로 (div) class  */
 
 .product {
     /* 상품들 가로 정렬  */
     display: inline-block;
-
 }
 
+
 /* 제품에 마우스 올렸을 때 커서  */
-.product:hover { 
+
+.product:hover {
     cursor: pointer;
 }
 
+
 /* div id */
+
 #product-detail {
     margin-left: 20px;
     margin-bottom: 10px;
 }
 
+
 /* 상품의 이름 id  */
+
 #product-title {
     /* 상품 사진하고 같은 너비로 제품 이름 너비설정 */
     width: 200px;
 }
 
+
 /* 상품명 스타일 */
+
 #product-title-hover {
     text-decoration: none;
     color: black;
     font-size: 13px;
 }
 
+
 /* 상품명에 커서 올릴 때 */
+
 #product-title-hover:hover {
     color: black;
     text-decoration: underline;
 }
 
+
 /* 상품의 가격 id  */
+
+
 /* 원가 id */
-#product-original-price{
+
+#product-original-price {
     /* 패딩 주기 위해 블록으로 설정 */
     display: inline-block;
     width: 62px;
@@ -276,22 +298,26 @@ body {
     padding-bottom: 10px;
 }
 
-#product-original-price2{
+#product-original-price2 {
     color: black;
     font-size: 12px;
     font-weight: normal;
 }
 
+
 /* 할인가 id */
+
 .product-price {
     display: inline-block;
     width: 62px;
     font-weight: bold;
     color: #f5232a;
     font-size: 18px;
-
 }
+
+
 /* 최대 할인가 문구 스타일 */
+
 .product-price2 {
     color: #f5232a;
     font-size: 12px;
@@ -303,17 +329,22 @@ body {
     /* 위쪽 선 */
     border-top: 1px solid black;
     /* 5개씩 띄우려고 너비 값 줬습니다  */
-    width: 1300px;
+    width: 1215px;
     margin: 0 auto;
 }
 
+
 /* 평점 */
+
 #grade {
     font-size: 13px;
     font-weight: bold;
 }
 
+
 /* 페이지 넘버 */
+
+
 /* a태그 아이디 */
 
 .page-num {
@@ -324,7 +355,9 @@ body {
     padding-right: 10px;
 }
 
+
 /* li 아이디 */
+
 .page-num-list {
     display: inline-block;
 }
@@ -334,13 +367,17 @@ body {
     text-decoration: underline;
 }
 
+
 /* ul 아이디  */
+
 #page-num-group {
     text-align: center;
     margin-bottom: 20px;
 }
 
+
 /* 무료배송, 오늘배송 버튼 스타일 */
+
 #delivery {
     margin-top: 10px;
     background-color: white;
@@ -351,7 +388,9 @@ body {
     font-family: 'Roboto', 'Noto Sans KR', '맑은고딕', Malgun Gothic, dotum, '돋음', arial, sans-serif;
 }
 
+
 /* 무료배송, 오늘배송 버튼 호버 스타일 */
+
 #delivery:hover {
     cursor: pointer;
 }
@@ -359,6 +398,7 @@ body {
 #grade-group {
     margin-top: 7px;
 }
+
 #test {
     color: #f5232a;
     font-size: 15px;
