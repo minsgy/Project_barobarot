@@ -283,7 +283,7 @@ body {
 }
 
 /* 할인가 id */
-#product-price {
+.product-price {
     display: inline-block;
     width: 62px;
     font-weight: bold;
@@ -292,7 +292,7 @@ body {
 
 }
 /* 최대 할인가 문구 스타일 */
-#product-price2 {
+.product-price2 {
     color: #f5232a;
     font-size: 12px;
     font-weight: normal;
@@ -316,7 +316,7 @@ body {
 /* 페이지 넘버 */
 /* a태그 아이디 */
 
-#page-num {
+.page-num {
     color: black;
     text-align: none;
     text-decoration: none;
@@ -325,7 +325,7 @@ body {
 }
 
 /* li 아이디 */
-#page-num-list {
+.page-num-list {
     display: inline-block;
 }
 
