@@ -14,7 +14,7 @@ class HomeView(ListView):
     paginate_orphans = 5                #한 페이지 5개이하는 전 페이지로
 
     context_object_name = 'products'      #넘겨지는 변수 이름
-    template_name = 'products/home.html' # Default 연결 값 변경
+    template_name = 'products/__home.html' # Default 연결 값 변경
 
 # [형민] product detail view
 class ProductDetail(DetailView):
