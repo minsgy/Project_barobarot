@@ -24,4 +24,5 @@ class PaymentproductAdmin(admin.ModelAdmin):
         'address',
         'created_time',
         'visit_date',
+        'order_number',
     )
