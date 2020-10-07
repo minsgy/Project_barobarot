@@ -310,7 +310,7 @@ body {
 
 .product-price {
     display: inline-block;
-    width: 62px;
+    /* width: 62px; */
     font-weight: bold;
     color: #f5232a;
     font-size: 18px;
