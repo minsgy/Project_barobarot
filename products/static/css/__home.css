@@ -221,6 +221,7 @@ body {
 }
 
 #product-original-price2 {
+    display: inline-block;
     color: black;
     font-size: 12px;
     font-weight: normal;
@@ -231,7 +232,6 @@ body {
 
 .product-price {
     display: inline-block;
-    width: 62px;
     font-weight: bold;
     color: #f5232a;
     font-size: 18px;
