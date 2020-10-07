@@ -286,10 +286,10 @@ body {
 
 /* 원가 id */
 
-#product-original-price {
+.product-original-price {
     /* 패딩 주기 위해 블록으로 설정 */
     display: inline-block;
-    width: 62px;
+    /* width: 62px; */
     font-weight: bold;
     color: black;
     font-size: 18px;
@@ -298,7 +298,8 @@ body {
     padding-bottom: 10px;
 }
 
-#product-original-price2 {
+.product-original-price2 {
+    display: inline-block;
     color: black;
     font-size: 12px;
     font-weight: normal;
