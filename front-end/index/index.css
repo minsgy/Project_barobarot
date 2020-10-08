@@ -270,6 +270,14 @@ body {
     text-decoration: none;
     color: black;
     font-size: 13px;
+    
+    /* 말줄임 효과*/
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    
 }
 
 
