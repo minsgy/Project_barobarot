@@ -58,8 +58,7 @@ def PaymentproductCreate(request, product_pk, user_pk):
 
     print("엔지니어 pk : ",request.POST.get('engineer'))
 
-    paymentproducts = get_object_or_404(Paymentproduct)
-
+    paymentproducts = Paymentproduct() # 객체 클래스 적용
     if request.method == 'POST':
 
         paymentproducts.product = products_data
@@ -67,7 +66,7 @@ def PaymentproductCreate(request, product_pk, user_pk):
         paymentproducts.engineer = engineer_data
 
         paymentproducts.amount = request.POST.get('amount')
-        paymentproducts.address = request.POST.get('adress')
+        paymentproducts.address = request.POST.get('address')
 
         # paymentproducts.created_time = core_models.TimeStampedModel.created
         paymentproducts.visit_date = request.POST.get('visit')
