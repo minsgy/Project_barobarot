@@ -4,7 +4,7 @@
 <h1>결제 진행중 확인</h1><br>
 
 <!-- 엔지니어 데이터 값 불러와서 저장해야됨 -->
-<form action="{% url 'paymentproduct_create' products.id user.id %}" method="post">
+<form action="{% url 'paymentproduct_create' products.id user.id  %}" method="post">
     {% csrf_token %}
     <!-- product 데이터, products 안에 값 -->
     <span>
@@ -19,18 +19,29 @@
     <span>
         상품 번호
         {{ products.pk }} <br>
-    
+
         개수
         <input type="text" class="form-control" name="amount" value="{{ paymentproducts.amount }}"><br>
-    
+
         주소
         <input type="text" class="form-control" name="adress" value="{{ paymentproducts.adress }}"><br>
-    
-        작성일
-        {{ products.created_time | date:"Y-m-d H:i" }}<br>
 
-        
+        작성일
+        <!-- {{ products.created_time | date:"y-m-d H:i" }}<br> -->
+
+        배송날짜
+        <input type="datetime-local" Placeholder="mm-dd-yyyy" name="visit" value="{{ paymentproducts.visit_date }}" float="right">
     </span>
+
+    <select name="engineer">
+
+        {% for a in engineers %}
+
+        <option value="{{ a.pk }}"> {{a.name}} </option>
+        {% endfor %}
+
+    </select>
+
     </table>
 
     <button class="btn btn-primary" type="submit">게시글 저장</button>
