@@ -6,6 +6,8 @@
     
 
     {% for paymentproduct in payment_products %}
+        {% if user.username == paymentproduct.user.userame %} 
+        {% comment %} 아이디 같을 경우만 보여줌. {% endcomment %}
         <span>
             {{paymentproduct.user.name}}<br>
             <img src="{{ paymentproduct.product.product_image.url }}" alt="{{paymentproduct.product_name}}" width="100px" height="100px">
@@ -14,6 +16,7 @@
             
             {{paymentproduct.engineer.name}} <br>
         </span>
+        {% endif %}
     {% endfor %}
 
 {% endblock %} 
