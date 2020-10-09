@@ -11,6 +11,7 @@
 :root {
     --red: #f5232a;
     --footer-gray: #6A747C;
+    --header-gray: #e2e2e2;
 }
 
 body {
@@ -25,7 +26,7 @@ body {
 /* Header */
 
 .header {
-    width: 100%;
+    width: 80vw;
     border-bottom: 1px solid var(--red);
     padding: 0 10vw;
 }
@@ -35,14 +36,19 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin-top: 5vh;
+    height: 86px;
     position: relative;
 }
 
+.header-img {
+    width: 241px;
+    height: 83px;
+}
+
 .search {
-    width: 508px;
-    margin-right: 3vw;
-    height: 50px;
+    min-width: 507px;
+    margin-right: auto;
+    height: 47px;
     display: flex;
     align-items: center;
     position: relative;
@@ -69,19 +75,11 @@ body {
 .zoom {
     width: 26px;
     height: 26px;
-    background: url('base/img/zoom.png') no-repeat 0 0;
+    background: url('img/zoom.png') no-repeat 0 0;
     position: absolute;
     top: 10px;
     right: 16px;
     line-height: 16px;
-}
-
-.reservation {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    min-width: 74px;
-    justify-content: flex-end;
 }
 
 .header span {
@@ -98,14 +96,11 @@ body {
 } */
 
 /* welcome 문구 */
-.welcome{
-    /* display: flex;
-    height: 20px;
-    justify-content: flex-end;
-    text-align: right; */
-    position: absolute;
-    right: 0;
-    top: 0;
+.welcome {
+    justify-self: flex-end;
+    min-width: 133px;
+    text-align: right;
+    padding-left: 1vw;
 }
 
 /* .welcome-margin{
@@ -113,32 +108,48 @@ body {
     margin-right: 100px;
 } */
 
-#sign-log-group .sign-log {
-    display:inline-block;
+.user-box {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    height: 47px;
+}
+
+.user-box:after {
+    content: '';
+    width: 100vw;
+    border-bottom: 1px solid var(--header-gray);
+    position: absolute;
+    bottom: 0;
+    left: -10vw;
+}
+
+.sign-log-group {
+    display: flex;
+    align-items: center;
 }
 
 /* 로그인 회원가입 로그아웃 예약확인 */
 
-.signin {
+.sign-log a {
     color: #585858;
-    border-right: 1px solid grey;
-    padding-right: 5px;
+    padding: 0 9px;
     font-size: 12px;
     text-decoration: none;
 }
 
+.sign-log:not(:last-child) a {
+    border-right: 1px solid grey;
+}
+
+.sign-log a.reservation {
+    color: #f5232a;
+}
 
 .signin:hover{
     cursor: pointer;
     color: #f5232a;   
 }
-
-#reservation {
-    color: #f5232a;   
-    font-size: 12px;
-    text-decoration: none;
-}
-
 
 /* ************************************************************ */
 
