@@ -40,7 +40,6 @@ body {
     position: relative;
 }
 
-
 .header-img {
     width: 241px;
     height: 83px;
@@ -224,6 +223,7 @@ body {
     font-weight: bold;
     border-bottom: 2px solid black;
 }
+
 
 /* 예약정보 글씨에 패딩 */
 .reservation-info{
