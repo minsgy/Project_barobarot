@@ -20,3 +20,17 @@ ship_menu_item.forEach(ship_menu => ship_menu.addEventListener('click', (event) 
             item_in_menu.classList.add('show');
     }
 }));
+
+// 수량 버튼 js
+function form_btn(n) {
+
+    var amount = document.getElementById("amount"); // 폼 선택
+    amount_val = parseInt(amount.value); // 폼 값을 숫자열로 변환
+    amount_val += n; // 계산
+    amount.value = amount_val; // 계산된 값을 바꾼다
+    if (amount_val <= 0) {
+        amount.value = 1; // 만약 값이 0 이하면 1로 되돌려준다, 1보다 작은 수는 나타나지 않게하기 위해   
+    } else if (amount_val > 5) {
+        amount.value = 5; // 만약 값이 5 이상이면 5로 되돌려준다.
+    }
+}
