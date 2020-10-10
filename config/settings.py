@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 
 THIRD_PARTY_APPS = [
     'django.contrib.humanize', # 금액 표시 ',' 표시용
+    'django_seed',# seed 
 ]  # 패키지 기능 app
 
 PROJECT_APPS = [  # ADMIN이 만든 APP
