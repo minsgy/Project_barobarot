@@ -28,7 +28,7 @@ class ScheduleAdmin(admin.ModelAdmin) :
 
     model = Schedule
 
-    list_display = ['get_engineer_name', 'available_date', ]
+    list_display = ['get_engineer_name', 'scheduled_date', 'scheduled_time', ]
     
     def get_engineer_name(self, obj):
         return obj.engineer.name

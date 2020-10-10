@@ -18,7 +18,8 @@ class Engineer(models.Model):
 
 class Schedule(models.Model) :
 
-    available_date = models.DateTimeField()
+    scheduled_date = models.DateField()     # 예약된 날짜
+    scheduled_time = models.TimeField()     # 예약된 시간
     engineer = models.ForeignKey("engineers.Engineer",related_name="schedule", on_delete=models.CASCADE)
     
 

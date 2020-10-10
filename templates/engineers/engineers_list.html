@@ -12,7 +12,7 @@
 
     </a>
     {% for a in engineer.schedule.all %}
-        <br> 예약가능 날짜 : {{a.available_date}}
+        <br> 예약된 날짜 : {{a.scheduled_date | date:"m월-d일"}} , 시간 :  {{a.scheduled_time | date:"A f 시"}}
     {% endfor %}
 <!-- prettier-ignore -->
 {% endfor %}

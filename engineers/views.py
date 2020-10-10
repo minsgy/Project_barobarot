@@ -14,6 +14,7 @@ class ListEngineer(ListView): # ListView를 이용한 기사 나열
     #     context = super().get_context_data(**kwargs)      
     #     context['schedule'] = Engineer.objects.sch
     #     return context
+    
 class DetailEngineer(DetailView): # DetailView 리스트 값을 전부 반환함.
 
     model = models.Engineer

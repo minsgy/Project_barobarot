@@ -1,3 +1,4 @@
+from engineers.models import Schedule
 from django.http import request
 from django.views.generic.base import TemplateView
 import engineers
@@ -57,6 +58,7 @@ def PaymentproductCreate(request, product_pk, user_pk):
         user_data = user_model.User.objects.get(pk=user_pk)
         engineer_data = engineer_model.Engineer.objects.get(pk=(request.POST.get('engineer')))   #엔지니어 연결
 
+        
         print("엔지니어 pk : ",request.POST.get('engineer'))
         paymentproducts.product = products_data
         paymentproducts.user = user_data
@@ -65,9 +67,24 @@ def PaymentproductCreate(request, product_pk, user_pk):
         paymentproducts.amount = request.POST.get('amount') # 수량값 저장되게
         paymentproducts.address = request.POST.get('address')
 
-            # paymentproducts.created_time = core_models.TimeStampedModel.created
-        paymentproducts.visit_date = request.POST.get('visit')
-    
+        # paymentproducts.created_time = core_models.TimeStampedModel.created
+        paymentproducts.visit_date = request.POST.get('visit_date')
+        paymentproducts.visit_time = request.POST.get('visit_time')
+
+        schedule = Schedule()
+        schedule.engineer = engineer_data
+        schedule.scheduled_date = request.POST.get('visit_date')
+        schedule.scheduled_time = request.POST.get('visit_time')
+        
+        schedule.save()
+        # engineer_name = engineer_model.Engineer.objects.get(engineer_data)
+
+        # date = engineer_model.Schedule.objects.filter(engineer= engineer_name) #역참조
+
+        # date = engineer_name.schedule.all()
+
+        # date.scheduled_date = request.POST.get('visit')
+
         paymentproducts.save()
         return redirect('payments:order_success', user_pk, paymentproducts.pk )
         # 생성 된 주문 아이템 pk, 로그인한 user_pk 가지고 가기
