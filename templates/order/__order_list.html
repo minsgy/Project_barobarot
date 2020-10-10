@@ -1,0 +1,55 @@
+<!-- 2020. 10.10 하유민 주문 리스트 페이지 -->
+{% extends '../base.html' %}
+<!-- prettier-ignore -->
+{% load static %}
+<!-- prettier-ignore -->
+{% load humanize %}
+<!-- prettier-ignore -->
+{% block link %}{% static 'css/__order_list.css' %}{% endblock %}
+<!-- prettier-ignore -->
+{% block content %}
+
+<div class="reservation-content">
+    <div class="reservation-check">
+        <span class="reservation-info">예약정보</span>
+    </div>
+
+    <div class="reservation-bar">
+        <span class="reservation-product-info">상품정보</span>
+        <span class="reservation-product-info">주문일자</span>
+        <span class="reservation-product-info">주문번호</span>
+        <span class="reservation-product-info">주문금액(수량)</span>
+        <span class="reservation-product-info">주문상태</span>
+    </div>
+
+    {% for paymentproduct in payment_products %}
+        {% if user.pk == paymentproduct.user.pk %} 
+        <div class="reservation-bar-detail">
+            <!-- 상품 사진 -->
+            <!-- 사진 누르면 상세페이지로 이동 -->
+            <span class="reservation-product-pic">
+                            <a href="#">
+                                <img class="reservation-product-image" src="{{paymentproduct.product.product_image.url}}" alt="{{paymentproduct.product_name}}">
+                            </a>
+                        </span>
+            <!-- 상품명 누르면 상세페이지로 이동 -->
+            <span class="reservation-product-name">
+                            <a class="reservation-product-name-a-tag" href="#">
+                                {{paymentproduct.product.product_name}}    
+                            </a>
+                        </span>
+            <span class="reservation-product-detail">{{paymentproduct.created_time | date:"Y-m-d"}}</span>
+            <span class="reservation-product-detail">{{paymentproduct.order_number}}</span>
+            <span class="reservation-product-detail">{{paymentproduct.product.set_saleprice | intcomma}}원( {{paymentproduct.amount}} )</span>
+            <span class="reservation-product-detail">배송 준비 중 <br><br>
+                            <!-- 누르면 예약 스케줄 페이지로 이동 -->
+                            <a href="#">
+                                <button class="reservation-check-button">예약 확인</button>
+                            </a>
+                        </span>
+        </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{% endblock %}
