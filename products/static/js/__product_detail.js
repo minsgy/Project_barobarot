@@ -1,8 +1,8 @@
 const ship_menu_item = document.querySelectorAll('.ship-menu-item');
 
 // 수정 - [minseok] : 검사해보니까 url 그대로 입력해서 그냥 static 형식 그대로 대입함.
-const UPMENU_BUTTON = "{% static 'img/upmenu-button.png' %}";
-const DOWNMENU_BUTTON = "{% static '/img/downmenu-button.png'%}";
+const UPMENU_BUTTON = "/static/img/upmenu-button.png";
+const DOWNMENU_BUTTON = "/static/img/downmenu-button.png";
 
 ship_menu_item.forEach(ship_menu => ship_menu.addEventListener('click', (event) => {
 
