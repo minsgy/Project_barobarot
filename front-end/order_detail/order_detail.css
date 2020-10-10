@@ -36,10 +36,13 @@ hr {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr 3fr;
     grid-template-rows: repeat(auto-fill, minmax(20%, auto));
+    grid-template-areas:
+        "bold1 content1 bold2 content2"
+        "bold1 content1 bold2 content2";
     align-items: center;
-    gap: 20px;
+    gap: 30px 20px;
     width: 70vw;
-    padding: 15px 16px 15px 20px;
+    padding: 20px;
     background-color: #F6F6F6;
 }
 
@@ -64,7 +67,7 @@ hr {
 
 .span {
     display: block;
-    padding: 15px 30px;
+    padding: 13px 10px;
     background: #fff;
     z-index: 100;
     position: relative;
@@ -80,7 +83,6 @@ hr {
     position: relative;
     overflow: hidden;
     transition: all .35s ease-in-out .35s;
-    margin: 0 auto;
     width: 150px;
     text-align: center;
     font-family: 'Noto Sans KR';
