@@ -23,10 +23,16 @@ class ProductDetail(DetailView):
 
     model = models.Product  # Detailview를 사용하면 자동적으로 pk를 찾음
     context_object_name = 'products'                #넘겨지는 변수 이름
-    template_name = 'products/product_detail.html' # Default 연결 값 변경
+    template_name = 'products/__product_detail.html' # 전달 연결 값 변경
 
-
-
+    def get_context_data(self, **kwargs):
+        template_name = 'payments/payments_doing.html' # 전달 연결 값 변경
+        context = super().get_context_data(**kwargs)
+        context.update({
+            'amount': self.request.GET.get('amount')
+        })
+        return context
+    
 
 # def getHome(request):
 #     return render(request, 'products/home.html')

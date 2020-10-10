@@ -20,12 +20,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('products.urls')), # main 화면 연결, 제품 관련 기능
+    path('', include('products.urls', namespace='products')), # main 화면 연결, 제품 관련 기능
     path('engineers/', include('engineers.urls', namespace="engineers")), # 설치 기사 관련 기능
-    path('payments/', include('payments.urls')),    #예약확인
-    # path('', include('products.urls')),
-    path('', include('users.urls', namespace="users")),
-    path('', include('comments.urls', namespace="comments")), # comment url 연결
+    path('payments/', include('payments.urls', namespace='payments')),    # 예약 확인 및 주문 기능
+    path('users/', include('users.urls', namespace="users")), # user login/logout 기능
+    path('comments/', include('comments.urls', namespace="comments")), # comment url 연결
 ]
 
 if settings.DEBUG:

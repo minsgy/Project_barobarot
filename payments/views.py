@@ -33,7 +33,6 @@ class payment_do(DetailView):
 
     model = product_model.Product   
     context_object_name = 'products'      #넘겨지는 변수 이름
-    
     template_name = 'payments/payment_doing.html' # Default 연결 값 변경 
     
     # 넘겨지는 변수 추가(복수개의 객체 전송)
