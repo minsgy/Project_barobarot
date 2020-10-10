@@ -114,9 +114,10 @@
                             <label>주문수량</label>
                             <form action="{% url 'payments:payment_do' products.pk %}">
                                 <div class="amount-controller">
-                                    <button>-</button>
-                                    <input type="text" name="amounts" value="5" readonly />
-                                    <button>+</button>
+                                    <!-- 타입 button 인 이유, 기본값이 submit이라 자꾸 제출됨; -->
+                                    <button type=button onclick="form_btn(-1)">-</button>
+                                    <input type="text" id='amount' name="amounts" value="1" />
+                                    <button type=button onclick="form_btn(1)">+</button>
                                 </div>
                         </li>
                     </ul>
