@@ -10,13 +10,14 @@ class EngineerAdmin(admin.ModelAdmin):
     fieldsets = (
         (
             'Information',
-            {"fields": ("name","number", "image")},
+            {"fields": ("name","number", "image","affiliation")},
         ),
     )
 
     list_display = (
         'name',
         'number',
+        "affiliation",
         # 'days',
         # 'times',
     )
