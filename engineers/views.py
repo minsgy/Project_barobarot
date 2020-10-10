@@ -1,3 +1,4 @@
+from engineers.models import Engineer
 from django.shortcuts import render, redirect
 from . import models
 from django.views.generic import ListView, DetailView
@@ -9,6 +10,10 @@ class ListEngineer(ListView): # ListView를 이용한 기사 나열
     context_object_name = 'engineers' # 객체를 부르는 이름
     template_name = 'engineers/engineers_list.html' # Default 연결 값 변경
 
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)      
+    #     context['schedule'] = Engineer.objects.sch
+    #     return context
 class DetailEngineer(DetailView): # DetailView 리스트 값을 전부 반환함.
 
     model = models.Engineer
