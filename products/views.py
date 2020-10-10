@@ -1,5 +1,6 @@
 from django.views.generic.detail import DetailView
 from products.models import Product
+# from payments.models import Payments?
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from . import models
@@ -25,13 +26,7 @@ class ProductDetail(DetailView):
     context_object_name = 'products'                #넘겨지는 변수 이름
     template_name = 'products/__product_detail.html' # 전달 연결 값 변경
 
-    def get_context_data(self, **kwargs):
-        template_name = 'payments/payments_doing.html' # 전달 연결 값 변경
-        context = super().get_context_data(**kwargs)
-        context.update({
-            'amount': self.request.GET.get('amount')
-        })
-        return context
+        
     
 
 # def getHome(request):
