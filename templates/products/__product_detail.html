@@ -112,7 +112,7 @@
                     <ul class="information-item">
                         <li>
                             <label>주문수량</label>
-                            <form action="{% url 'products:product_detail' products.pk %}" method="GET">
+                            <form action="{% url 'payments:payment_do' products.pk %}">
                                 <div class="amount-controller">
                                     <button>-</button>
                                     <input type="text" name="amount" value="1" readonly />
@@ -124,7 +124,6 @@
 
             </ul>
             <div class="buy">
-
                 <button type='submit' class="buy-button">바로구매</button>
             </div>
             </form>
