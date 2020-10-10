@@ -1,0 +1,326 @@
+/*
+    base css 입니다. content 클래스 안에 내용을 추가하시면 됩니다.
+    meyer reset css, Noto Sans KR, Roboto 폰트를 import 했습니다.
+*/
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* 자주 쓰는 색 */
+:root {
+    --red: #f5232a;
+    --footer-gray: #6A747C;
+    --header-gray: #e2e2e2;
+}
+
+body {
+    font-family: 'Roboto', 'Noto Sans KR', '맑은고딕', Malgun Gothic, dotum, '돋음', arial, sans-serif;
+    /* 가로 스크롤 바 없애기 */
+    overflow-x: hidden;
+}
+
+
+/* ************************************************************ */
+
+/* Header */
+
+.header {
+    width: 80vw;
+    border-bottom: 1px solid var(--red);
+    padding: 0 10vw;
+}
+
+.header-box {
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 86px;
+    position: relative;
+}
+
+.header-img {
+    width: 241px;
+    height: 83px;
+}
+
+.search {
+    min-width: 507px;
+    margin-right: auto;
+    height: 47px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-radius: 70px;
+    padding: 0 20px;
+    background-color: #f9fcff;
+    color: #505050;
+    border: 1px solid #d8e4f1;
+}
+
+.search input {
+    width: 95%;
+    outline: 0;
+    border: 0;
+    background: 0;
+    font-size: 16px;
+}
+
+.search.focused {
+    border: 1px solid var(--red);
+    background-color: #fff;
+}
+
+.zoom {
+    width: 26px;
+    height: 26px;
+    background: url('img/zoom.png') no-repeat 0 0;
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    line-height: 16px;
+}
+
+.header span {
+    text-align: right;
+    width: 100%;
+    font-size: 17px;
+}
+
+/* 예약확인도 로그인 .. 이랑 묶어서 해서 필요 없어졌어요  */
+/* .reservation a {
+    color: var(--red);
+    text-decoration: none;
+    cursor: pointer;
+} */
+
+/* welcome 문구 */
+.welcome {
+    justify-self: flex-end;
+    min-width: 133px;
+    text-align: right;
+    padding-left: 1vw;
+}
+
+/* .welcome-margin{
+    margin-top: 15px;
+    margin-right: 100px;
+} */
+
+.user-box {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    height: 47px;
+}
+
+.user-box:after {
+    content: '';
+    width: 100vw;
+    border-bottom: 1px solid var(--header-gray);
+    position: absolute;
+    bottom: 0;
+    left: -10vw;
+}
+
+.sign-log-group {
+    display: flex;
+    align-items: center;
+}
+
+/* 로그인 회원가입 로그아웃 예약확인 */
+
+.sign-log a {
+    color: #585858;
+    padding: 0 9px;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.sign-log:not(:last-child) a {
+    border-right: 1px solid grey;
+}
+
+.sign-log a.reservation {
+    color: #f5232a;
+}
+
+.signin:hover{
+    cursor: pointer;
+    color: #f5232a;   
+}
+
+/* ************************************************************ */
+
+/* Footer */
+
+.footer {
+    height: 200px;
+    background-color: #232a32;
+    padding: 0 20vw;
+    display: flex;
+    align-items: center;
+}
+
+.footer .box {
+    display: flex;
+    align-items: center;
+}
+
+.box img {
+    margin-right: 30px;
+}
+
+.description {
+    width: 1080px;
+    font-family: '맑은고딕',
+        Malgun Gothic,
+        dotum,
+        '돋음',
+        arial,
+        sans-serif;
+    font-size: 11px;
+    color: var(--footer-gray);
+}
+
+.description strong {
+    font-size: 14px;
+}
+
+.description a {
+    color: var(--footer-gray);
+}
+
+.description ul {
+    display: flex;
+}
+
+.description ul:first-child,
+.description ul:nth-last-child(2) {
+    margin-bottom: 10px;
+}
+
+.description li {
+    margin: 3px;
+}
+
+.light-gray-text {
+    color: #aeb3bb;
+}
+
+.red-text {
+    color: var(--red);
+}
+
+/* ************************************************************ */
+
+/* Content */
+
+/* 예약정보 div */
+.reservation-check {
+    display: flex;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+}
+
+
+/* 예약정보 글씨에 패딩 */
+.reservation-info{
+    padding: 20px;
+}
+
+/* 상품정보, 주문일자 .. 스타일들 */
+.reservation-product-info{
+    font-weight: bold;
+    /* 세로 정렬 */
+    align-self: center;
+    /* 가로정렬 */
+    justify-self: center;
+}
+
+/* 실제 날짜, 상품 정보들 정렬 */
+.reservation-product-detail{
+    align-self: center;
+    justify-self: center;
+}
+
+/* 상품정보, 주문일자 ..grid */
+.reservation-bar {
+    display: grid;
+    grid-template-columns: 500px 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px;
+    border-bottom: 1.5px solid #C6C6C6;
+}
+
+/* 실제 날짜, 상품 정보들 grid */
+.reservation-bar-detail {
+    border-bottom: 1px solid #D8D8D8;
+    display: grid;
+    grid-template-columns: 180px 320px 1fr 1fr 1fr 1fr;
+    grid-template-rows: 120px;
+}
+
+/* 상품 div hover 효과 */
+.reservation-bar-detail:hover {
+    background-color: #F6F6F6;
+}
+
+/* 상품 사진 정렬 */
+.reservation-product-pic {
+    align-self: center;
+    justify-self: start;
+}
+
+/* 상품 이름 정렬 */
+.reservation-product-name{
+    font-weight: bold;
+    align-self: center;
+    justify-self: start;
+
+    /* 말줄임 */
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+}
+
+/* 상품 이름 a 태그 속성 설정 */
+.reservation-product-name-a-tag{
+    text-decoration: none;
+    color: black;
+}
+
+/* 상품 이름 hover  */
+.reservation-product-name:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+/* 예약확인 버튼 */
+.reservation-check-button{
+    background-color: white;
+    border-style: none;
+    width: 81px;
+    border-radius: 3px;
+}
+
+/* 예약확인 버튼 hover 효과 */
+.reservation-check-button:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px 7px #ddd;
+    border: 0;
+    outline: 0;
+}
+
+/* 상품 사진 크기, 마진 */
+.reservation-product-image {
+    width: 80px;
+    height: 96px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.reservation-bar-detail:nth-last-child(1){
+    margin-bottom: 50px;
+}
