@@ -5,10 +5,15 @@
 <!-- prettier-ignore -->
 {% for engineer in engineers %}
 <span>
-            <a href="{% url 'engineers:detail' engineer.pk %}">
-            {{engineer.name}} / {{engineer.number}}
-        </span>
-<img src="{{ engineer.image.url }}" alt="{{engineer.name}}" width="100px" height="100px">
+    <a href="{% url 'engineers:detail' engineer.pk %}">
+        {{engineer.name}} / {{engineer.number}}
+</span>
+    <img src="{{ engineer.image.url }}" alt="{{engineer.name}}" width="100px" height="100px">
+
+    </a>
+    {% for a in engineer.schedule.all %}
+        <br> 예약가능 날짜 : {{a.available_date}}
+    {% endfor %}
 <!-- prettier-ignore -->
 {% endfor %}
 <!-- prettier-ignore -->
