@@ -1,0 +1,130 @@
+/* Content */
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0 80px 0;
+}
+
+.mg-top {
+    margin-top: 80px;
+}
+
+.mg-bottom {
+    margin-bottom: 15px;
+}
+
+.category {
+    width: 70%;
+}
+
+.category>.bold-text {
+    font-size: 15pt;
+}
+
+hr {
+    width: 72vw;
+    margin: 8px 0 30px 0;
+}
+
+/* OrderBox 고객, 배송 정보 */
+
+.order-box {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 3fr;
+    grid-template-rows: repeat(auto-fill, minmax(20%, auto));
+    grid-template-areas:
+        "bold1 content1 bold2 content2"
+        "bold1 content1 bold2 content2";
+    align-items: center;
+    gap: 30px 20px;
+    width: 70vw;
+    padding: 20px;
+    background-color: #F6F6F6;
+}
+
+.bold-text {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.engineer-img {
+    width: 150px;
+    height: 200px;
+    grid-row: 1 / 4;
+}
+
+.engineer-box {
+    grid-template-columns: 1fr 1fr 2fr 1fr 2fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0 20px;
+}
+
+/* 리뷰 버튼 css */
+
+.span {
+    display: block;
+    padding: 13px 10px;
+    background: #fff;
+    z-index: 100;
+    position: relative;
+    transition: all .35s ease-in-out .35s;
+}
+
+.button {
+    background: #fff;
+    border: none;
+    padding: 2px;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    transition: all .35s ease-in-out .35s;
+    width: 150px;
+    text-align: center;
+    font-family: 'Noto Sans KR';
+    font-size: 10pt;
+}
+
+.button:hover span {
+    background: var(--red);
+    color: #fff;
+    transition: all .35s ease-in-out .35s;
+}
+
+.button:after {
+    bottom: -100%;
+    right: -100%;
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: var(--red);
+    transition: all .35s ease-in-out .5s;
+}
+
+.button:hover:after {
+    right: 0;
+    bottom: 0;
+    transition: all ease-in-out .35s;
+}
+
+.button:before {
+    top: -100%;
+    left: -100%;
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: var(--red);
+    transition: all .35s ease-in-out .5s;
+}
+
+.button:hover:before {
+    left: 0;
+    top: 0;
+    transition: all ease-in-out .35s;
+}

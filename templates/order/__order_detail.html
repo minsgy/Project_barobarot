@@ -1,0 +1,45 @@
+<!-- 2020. 10.10 하유민 주문 리스트 페이지 -->
+{% extends '../base.html' %}
+<!-- prettier-ignore -->
+{% load static %}
+<!-- prettier-ignore -->
+{% load humanize %}
+<!-- prettier-ignore -->
+{% block link %}{% static 'css/__order_detail.css' %}{% endblock %}
+<!-- prettier-ignore -->
+{% block content %}
+<!-- 2020. 10.4 장하얀 예약 확인 페이지 -->
+            <!-- 고객 정보 -->
+            <div class="category mg-bottom"><span class="bold-text">고객 정보</span></div>
+            <hr>
+            <div class="order-box">
+                <span class="bold-text">주문 번호</span><span id="ordererNum">{{payments.order_number}}</span>
+                <span class="bold-text">주문하신 분</span><span id="ordererName">{{payments.user.name}}</span>
+                <span class="bold-text">이메일 주소</span><span id="ordererEmail">{{payments.user.email}}</span>
+                <span class="bold-text">휴대폰 번호</span><span id="ordererPhoenNum">{{payments.user.number}}</span>
+            </div>
+            <!-- 배송 정보 -->
+            <div class="category mg-top mg-bottom"><span class="bold-text">배송 정보</span></div>
+            <hr>
+            <div class="order-box">
+                <span class="bold-text">받는 분</span><span id="receiverName">{{payments.receiver.receiver_name}}</span>
+                <span class="bold-text">연락처</span><span id="receiverPhoneNum">{{payments.receiver.receiver_number}}</span>
+                <span class="bold-text">추가 연락처</span><span id="receiverPhoneNum2">{{payments.receiver.receiver_plus_number}}</span>
+                <span class="bold-text">우편번호</span><span id="receiverZipcode">{{payments.receiver.zip_code}}</span>
+                <span class="bold-text">주소</span><span id="receiverAddress">{{payments.receiver.address}}</span>
+                <span class="bold-text ">배송 메시지</span><span id="receiverMsg">{{payments.receiver.delivery_message}}</span>
+
+            </div>
+            <!-- 설치 기사 정보 -->
+            <div class="category mg-top mg-bottom"><span class="bold-text">기사 정보</span></div>
+            <hr>
+            <div class="order-box engineer-box">
+                <img class="engineer-img" src="{{payments.engineer.image.url}}" alt="engineer image">
+                <span class="bold-text">설치 기사</span><span id="engineerName">{{payments.engineer.name}}</span>
+                <span class="bold-text">연락처</span><span id="engineerPhoneNum">{{payments.engineer.number}}</span>
+                <span class="bold-text">엔지니어 소속</span><span id="engineerInform">{{payments.engineer.affiliation}}</span>
+                <span class="bold-text">방문 예약 날짜</span><span id="engineerReservationDate">{{payments.visit_date}}</span>
+                <span class="bold-text ">방문 예약 시간</span><span id="engineerReservationTime">{{payments.visit_time}}</span>
+                <span class="bold-text ">리뷰</span><button class="button"><span class="span">리뷰쓰러가기</span></button>
+            </div>
+{% endblock %}

@@ -90,6 +90,8 @@ def PaymentproductCreate(request, product_pk, user_pk):
         # 생성 된 주문 아이템 pk, 로그인한 user_pk 가지고 가기
     return render(request, 'payments/payment_doing.html')
 
+
+''' 주문 성공 함수 '''
 def order_success(request, user_pk, payment_pk):
     
     payment = Paymentproduct.objects.get(pk=payment_pk)
@@ -107,3 +109,11 @@ def order_success(request, user_pk, payment_pk):
 
     return render(request, 'payments/__order_success.html', context)
     
+
+''' 주문 detail 함수 '''
+
+def order_detail(request, pk):
+    payment = Paymentproduct.objects.get(pk=pk)
+    return render(request, 'order/__order_detail.html', {'payments':payment})
+
+
