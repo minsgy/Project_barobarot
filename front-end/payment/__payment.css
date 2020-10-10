@@ -1,0 +1,261 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #232a32;
+}
+
+body {
+    font-family: '맑은고딕', Malgun Gothic, dotum, '돋음', arial, sans-serif;
+    font-size: 12px;
+    color: var(--black);
+}
+
+.container {
+    width: 1008px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 18px;
+    margin: 12px 0 0;
+    padding: 14px 0 7px 0;
+}
+
+.order-list {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 주문 상품 리스트 첫번째 행 */
+.order-list>ul:first-child {
+    display: flex;
+    align-items: center;
+    height: 43px;
+    font-size: 13px;
+    font-weight: bold;
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #d3d3d5;
+}
+
+.order-list>ul:first-child>li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.order-list>ul:first-child>li:first-child,
+.order-list>ul:nth-child(2)>li:first-child {
+    flex-basis: 593px;
+}
+
+.order-list>ul:first-child>li:nth-child(2),
+.order-list>ul:nth-child(2)>li:nth-child(2) {
+    flex-basis: 80px;
+}
+    
+.order-list>ul:first-child>li:nth-child(3),
+.order-list>ul:nth-child(2)>li:nth-child(3) {
+    flex-basis: 150px;
+}
+        
+.order-list>ul:first-child>li:nth-child(4),
+.order-list>ul:nth-child(2)>li:nth-child(4) {
+    flex-basis: 185px;
+}
+
+/* 주문 상품 리스트 두번째 행 */
+.order-list>ul:nth-child(2) {
+    height: 107px;
+    display: flex;
+    border-bottom: 1px solid #d3d3d5;
+}
+
+.image-cover {
+    flex-basis: 104px;
+    height: 107px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-cover img {
+    width: 84px;
+    height: 84px;
+}
+
+.item-name {
+    height: 100%;
+    flex-basis: 489px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.manufacturer {
+    color: #6a747c;
+}
+
+.item-id {
+    color: #aeb3bb;
+}
+
+.item-title {
+    font-size: 14px;
+}
+
+.order-list>ul:nth-child(2)>li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+.order-list>ul:nth-child(2)>li:not(:last-child),
+.second-row-seperate li:first-child {
+    border-right: 1px solid #ecedee;
+}
+
+.order-list>ul:nth-child(2)>li:nth-child(2) {
+    font-family: 'tahoma';
+}
+
+.order-list>ul:nth-child(2)>li:nth-child(2),
+.order-list>ul:nth-child(2)>li:nth-child(3) {
+    display: flex;
+    justify-content: center;
+}
+
+.second-row-seperate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.second-row-seperate li {
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flagicon {
+    color: #6a747c;
+    border: 1px solid #6a747c;
+    cursor: default;
+}
+
+.second-row-price {
+    font-size: 13px;
+    font-weight: bold;
+    font-family: 'tahoma';
+    color: #232a32;
+}
+
+/* 주문 상품 리스트 세번째 행 */
+.order-list-third-row {
+    height: 54px;
+    background: #f3f3f3;
+    border-bottom: 1px solid #515151;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.order-list-third-row p {
+    color: #6a747c;
+}
+
+.red {
+    color: #ed1c24;
+}
+
+.third-row-price {
+    font-size: 23px;
+    font-weight: bold;
+    font-family: 'tahoma';
+}
+
+.customer-information {
+    width: 100%;
+    height: 104px;
+}
+
+/* 고객 정보 첫번째 행*/
+.customer-information .title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.customer-information .title>span {
+    padding: 14px 0 7px;
+}
+
+/* 고객 정보 두번째 행 */
+.customer-info {
+    display: flex;
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #d3d3d5;
+    height: 37px;
+    display: flex;
+}
+
+.customer-info li {
+    display: flex;
+    align-items: center;
+    color: #232a32;
+}
+
+.customer-info li:nth-child(odd) {
+    flex-basis: 120px;
+    background-color: #f3f3f3;
+    padding-left: 19px;
+}
+
+.customer-info li:nth-child(even) {
+    flex-basis: 200px;
+    padding: 0 15px;
+}
+
+.customer-info li:nth-child(6) {
+    flex-basis: 248px;
+}
+
+.customer-information>p {
+    color: #9aa1A7;
+    height: 26px;
+    display: flex;
+    align-items: center;
+}
+
+.customer-information>p>a {
+    color: #000;
+}
+
+.star-to-left,
+.star-to-right {
+    font-size: 12px;
+}
+
+.star-to-left:before,
+.star-to-right:after {
+    content: '*';
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+.circle-to-left:before {
+    content: '·';
+    font-weight: bold;
+    margin-right: 3px;
+}

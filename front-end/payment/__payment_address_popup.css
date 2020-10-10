@@ -1,0 +1,182 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --border-color: #aeb3bb;
+    --text-background-color: #f3f3f3;
+    --light-colored-text: #6a747d;
+}
+
+body {
+    font-family: '맑은고딕', Malgun Gothic, dotum, '돋음', arial, sans-serif;
+    font-size: 12px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: #093250;
+    color: #fff;
+    font-size: 19px;
+    font-weight: bold;
+    height: 57px;
+    display: flex;
+    align-items: center;
+    padding-left: 28px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 40px 15px 30px;
+}
+
+.postcodify_search_form.postcode_search_form {
+    margin: 0;
+}
+
+.postcodify_search_form.postcode_search_form>div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.postcodify_search_form.postcode_search_form>div:nth-child(2) {
+    background-color: var(--text-background-color);
+}
+
+.keyword {
+    border: 1px solid var(--border-color);
+    outline: 0;
+    color: var(--light-colored-text);
+    height: 32px;
+    padding: 0 30px 0 10px;
+    flex-grow: 1;
+    margin-right: 5vw;
+    background-color: var(--text-background-color);
+    font-weight: bold;
+}
+
+.search_button {
+    border: 1px solid var(--border-color);
+    outline: 0;
+    color: #fff;
+    background-color: #6a747d;
+    width: 78px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.postcodify_search_result.postcode_search_result {
+    padding: 4px 0;
+    margin: 0 0 0 0;
+}
+
+.result {
+    padding: 30px 0 20px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.result-help {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result-help .help {
+    background-color: var(--text-background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+    border-top: 1px solid #555;
+    margin: 20px 0;
+}
+
+.no-show {
+    display: none;
+}
+
+.help {
+    font-size: 12px;
+    text-align: left;
+}
+
+.example {
+    color: var(--light-colored-text);
+}
+
+.help p {
+    margin-bottom: 3px;
+}
+
+.search-types li {
+    margin-bottom: 6px;
+}
+
+.address-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.address-info li:first-child {
+    margin-bottom: 5px;
+}
+
+.result p {
+    margin-bottom: 10px;
+}
+
+.address-info li {
+    flex-grow: 1;
+}
+
+.address-info li input {
+    width: 100%;
+    border: 1px solid var(--border-color);
+    color: var(--light-colored-text);
+    height: 32px;
+    padding: 0 30px 0 10px;
+    flex-grow: 1;
+    margin-right: 5vw;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+}
+
+.submit-btn,
+.cancel-btn {
+    outline: 0;
+    border: 0;
+    color: #fff;
+    font-weight: bold;
+    width: 128px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.submit-btn {
+    background-color: #ed1c24;
+    margin-right: 10px;
+}
+
+.cancel-btn {
+    background-color: #232a32;
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="__payment.css">
+</head>
+<body>
+    <div class="container">
+        <img src="img/step02_payment.gif" alt="step02_payment">
+        <div class="order-item-list">
+            <h2>주문 상품 리스트</h2>
+            <div class="order-list">
+                <ul>
+                    <li>상품정보</li>
+                    <li>수량</li>
+                    <li>주문금액</li>
+                    <li>배송정보</li>
+                </ul>
+                <ul>
+                    <li>
+                        <div class="image-cover">
+                            <img src="img/product_profile.jpg" alt="product_profile">
+                        </div>
+                        <ul class="item-name">
+                            <li class="manufacturer">캐리어(주)</li>
+                            <li class="item-title">에어로Z 18단 2in1 에어컨</li>
+                            <li class="item-id">AMC16VZ4GHGH</li>
+                        </ul>
+                    </li>
+                    <li>1</li>
+                    <li>
+                        <span class="second-row-price">1,350,000</span>원
+                    </li>
+                    <li>
+                        <ul class="second-row-seperate">
+                            <li>무료배송</li>
+                            <li>
+                                <span class="flagicon">직접배송</span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="order-list-third-row">
+                    <p>상품수량 및 옵션 변경은 장바구니에서만 가능합니다.</p>
+                    <p>총 주문금액
+                        <br>
+                        <span class="red">
+                            <span class="third-row-price">1,350,000</span>원
+                        </span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="customer-information">
+                <div class="title">
+                    <h2>고객 정보</h2>
+                    <span class="star-to-left">필수입력</span>
+                </div>
+
+                <ul class="customer-info">
+                    <li>
+                        <span class="star-to-right">주문하시는 분</span>
+                    </li>
+                    <li>이승준</li>
+                    <li>
+                        <span class="star-to-right">이메일주소</span>
+                    </li>
+                    <li>sch030518@gmail.com</li>
+                    <li>
+                        <span class="star-to-right">휴대폰 번호</span>
+                    </li>
+                    <li>010-2531-9858</li>
+                </ul>
+
+                <p class="circle-to-left">위 정보로 주문과 관련된 SMS와 E-MAIL이 발송됩니다. 맞는 정보가 아닌 경우 <a href="#">회원정보</a>에서 수정해주세요.</p>
+            </div>
+
+            <div class="ship-information">
+                <h2>1. 배송정보</h2>
+                <ul class="ship-info">
+                    <li>
+                        <ul class="ship-info-field">
+                            <li>
+                                <span class="star-to-right">받는분</span>
+                            </li>
+                            <li>
+                                <input class="customer-name" type="text">
+                            </li>
+                            <li>
+                                <span class="star-to-right">연락처</span>
+                            </li>
+                            <li>
+                                <div class="phone-number">
+                                    <input type="text">-<input type="text">-<input type="text">
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="ship-info-field">
+                            <li>
+                                <span class="star-to-right">주소</span>
+                            </li>
+                            <li>
+                                <input type="text" id="address" readonly>
+                                <button class="address-button" onclick="javascript:void(window.open('__payment_address_popup.html', 'hi', 'width=500, height=543'))">검색</button>
+                            </li>
+                        </ul>
+                        <ul class="ship-info-field">
+                            <li>희망배송일</li>
+                            <li>날짜 정하는 공간</li>
+                        </ul>
+                        <ul class="ship-info-field">
+                            <li>배송 메세지</li>
+                            <li>
+                                <select name="ship-message">
+                                    <option value="none">메세지를 선택해 주세요.</option>
+                                    <option value="front-of-door">부재 시 문 앞에 놓아주세요.</option>
+                                </select>
+                                <p class="star-to-left">하이마트 배송기사 또는 해당 상품을 배송하는 업체의 배송기사가 설치를 진행하는 상품인 경우, 배송 당일 오전 시간 약속을 위해 별도 연락을 드릴 예정입니다.</p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <label>주소</label>
+    </div>
+</body>
+</html>
