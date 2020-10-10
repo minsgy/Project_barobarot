@@ -1,10 +1,8 @@
-{% extends '../base.html' %}
-
-{% block content %}
+{% extends '../base.html' %} {% block content %}
 <h1>결제 진행중 확인</h1><br>
 
 <!-- 엔지니어 데이터 값 불러와서 저장해야됨 -->
-<form action="{% url 'paymentproduct_create' products.id user.id  %}" method="post">
+<form action="{% url 'payments:paymentproduct_create' products.id user.id  %}" method="post">
     {% csrf_token %}
     <!-- product 데이터, products 안에 값 -->
     <span>
@@ -21,7 +19,7 @@
         {{ products.pk }} <br>
 
         개수
-        <input type="text" class="form-control" name="amount" value="{{ paymentproducts.amount }}"><br>
+        <input type="text" class="form-control" name="amount" value="{{ amount }}"><br>
 
         주소
         <input type="text" class="form-control" name="adress" value="{{ paymentproducts.adress }}"><br>

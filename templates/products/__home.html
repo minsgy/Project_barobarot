@@ -22,7 +22,7 @@
             <div class="pictures">
                 <!-- 클릭했을 때 상품 상세설명으로 이동 -->
                 <!-- 상품 사진 크기 200x200으로 고정.  -->
-                <a href="{% url 'product_detail' product.pk %}">
+                <a href="{% url 'products:product_detail' product.pk %}">
                     <img src="{{ product.product_image.url }}" alt="{{product.product_name}}" width="200px" height="200px">
                 </a>
             </div>

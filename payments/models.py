@@ -27,3 +27,16 @@ class Paymentproduct(core_models.TimeStampedModel):
    def __str__(self):
       return f"{self.user} - {self.engineer}"
           
+class Receiver(models.Model):
+
+   ''' 주문 아이템 - 받는 사람 정보'''
+
+   paymentproduct = models.OneToOneField('Paymentproduct', on_delete=models.CASCADE) 
+   # 주문 아이템과 1:1 관계, 주문 아이템과 연결 된 배달 정보
+   receiver = models.CharField(max_length=10) # 받는 사람 이름
+   receiver_number = models.CharField(max_length=15) # 받는 사람 연락처
+   receiver_plus_number = models.CharField(max_length=15) # 받는 사람 추가 연락처
+   zip_code = models.PositiveIntegerField(default=0) # 우편 번호
+   address = models.CharField(max_length=30) # 주소
+   delivery_message = models.CharField(max_length=50) # 배송 메세지
+

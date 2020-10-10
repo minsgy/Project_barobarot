@@ -14,5 +14,6 @@ class ProductAdmin(admin.ModelAdmin):
         "price",
         "set_saleprice",
         "manufacture",
+        "product_image",
         "rating",
     ) 
