@@ -1,9 +1,6 @@
 from django.urls import path
 from . import views
 
-
-app_name='payments'
-
 urlpatterns = [
     path('reservation/', views.PaymentproductList.as_view(), name="reservation"),
     #<int:engineer_pk> 연결 필요

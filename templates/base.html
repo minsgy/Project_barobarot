@@ -18,7 +18,7 @@
         <div class="header">
             <!-- Header 양 쪽 margin 주기 위해 box 따로 만듦 -->
             <div class="header-box">
-                <a href="{% url 'products:home' %}">
+                <a href="{% url 'home' %}">
                     <img src="{% static 'img/logo.gif' %}" alt="logo">
                 </a>
                 <div class="search">
@@ -27,7 +27,7 @@
                 </div>
                 <div class="reservation">
                     <span>
-                        <a href="{% url 'payments:reservation' %}" id="reservation">
+                        <a href="{% url 'reservation' %}" id="reservation">
                             예약 확인
                         </a>
                     </span>
@@ -89,7 +89,6 @@
             </div>
         </div>
     </div>
-    <script src="{% block js %}{% endblock %}"></script>
     <script src="{% static 'js/base.js' %}"></script>
 </body>
 
