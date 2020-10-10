@@ -1,0 +1,58 @@
+/* Content */
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 30px 80px 30px;
+}
+
+/* TextBox 주문 완료, 안내 텍스트 */
+
+.text-box {
+    margin: 5vh 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-box>* {
+    color: var(--footer-gray);
+}
+
+.text-box span:first-child {
+    margin: 0 0 15px 0;
+    color: black;
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+#point {
+    color: black;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.text-box span:nth-child(4) {
+    margin: 30px 0 40px 0;
+    color: #aeb3bb;
+    font-size: 10pt;
+}
+
+/* OrderBox 주문 번호 안내 박스 */
+
+.order-box {
+    padding: 15px 40px 15px 40px;
+    background-color: #EAEAEA;
+}
+
+.order-box>* {
+    float: left;
+}
+
+.order-box span:last-child {
+    margin: 0 0 0 10px;
+    font-weight: bold;
+}
