@@ -28,7 +28,11 @@
         <!-- {{ products.created_time | date:"y-m-d H:i" }}<br> -->
 
         배송날짜
-        <input type="datetime-local" Placeholder="mm-dd-yyyy" name="visit" value="{{ paymentproducts.visit_date }}" float="right">
+        <input type="date" Placeholder="mm-dd-yyyy" name="visit_date" value="{{ paymentproducts.visit_date }}" float="right"><br>
+
+        배송시간
+        <input type="time" Placeholder="time" name="visit_time" value="{{ paymentproducts.visit_time }}" float="right"><br>
+
     </span>
 
     <select name="engineer">

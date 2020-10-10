@@ -17,7 +17,8 @@ class Paymentproduct(core_models.TimeStampedModel):
    address = models.CharField(max_length=30, null=True) # 주소 검색 API 구현
    
    created_time = core_models.TimeStampedModel.created # 주문 시간 - 객체 생성 시간
-   visit_date = models.DateTimeField() # 방문 날짜 및 시간
+   visit_date = models.DateField() # 방문 날짜 및 시간
+   visit_time = models.TimeField()
 
    # def create_time_string(self):
    #    return self.str(created_time) + random_string

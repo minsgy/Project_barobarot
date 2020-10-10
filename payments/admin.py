@@ -12,7 +12,7 @@ class PaymentproductAdmin(admin.ModelAdmin):
     fieldsets = (
         (
             'Information',
-            {"fields": ("product","user","engineer","amount","address" , "visit_date")},
+            {"fields": ("product","user","engineer","amount","address" , "visit_date","visit_time",)},
         ),
     )
 
@@ -24,5 +24,6 @@ class PaymentproductAdmin(admin.ModelAdmin):
         'address',
         'created_time',
         'visit_date',
+        'visit_time',
         'order_number',
     )
