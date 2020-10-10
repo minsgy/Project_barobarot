@@ -23,7 +23,7 @@ class PaymentproductList(ListView) :
 
     model = models.Paymentproduct
     context_object_name = 'payment_products'      #넘겨지는 변수 이름
-    template_name = 'reservation/check_reservation.html' # Default 연결 값 변경   
+    template_name = 'order/__order_list.html' # Default 연결 값 변경   
 
     
 # 결제 상품의 상품 불러옴

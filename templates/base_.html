@@ -1,4 +1,5 @@
 {% load static %}
+<!-- prettier-ignore -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,45 +16,38 @@
 
         <!-- Header -->
         <div class="header">
-            <div class="user-box">
-                <ul class="sign-log-group">
-                    {% if not user.is_authenticated %}
-                    <li class="sign-log">
-                        <a class="signin" href="{% url 'users:signup' %}">회원가입</a>
-                    </li>
-                    <li class="sign-log">
-                        <a class="signin" href="{% url 'users:login' %}">로그인</a>
-                    </li>
-                    {% else %}
-                    <li class="sign-log">
-                        <a class="signin" href="{% url 'users:logout' %}">로그아웃</a>
-                    </li>
-                    <li class="sign-log">
-                        <a class="reservation" href="{% url 'payments:order_list' %}">예약확인</a>
-                    </li>
-                    {% endif %}
-                </ul>
-            </div>
             <!-- Header 양 쪽 margin 주기 위해 box 따로 만듦 -->
             <div class="header-box">
                 <a href="{% url 'products:home' %}">
-                    <img class="header-img" src="{% static 'img/logo.gif' %}" alt="logo">
+                    <img src="{% static 'img/logo.gif' %}" alt="logo">
                 </a>
                 <div class="search">
                     <input type="text">
                     <a href="#" class="zoom"></a>
                 </div>
-                <div class="welcome">
-                    <p>
-                        {{user.name}}
-                    </p>
+                <div class="reservation">
+                    <span>
+                        <a href="{% url 'payments:order_list' %}" id="reservation">
+                            예약 확인
+                        </a>
+                    </span>
                 </div>
             </div>
         </div>
 
-        
         <!-- Content -->
         <div class="content">
+
+            {% if user.is_authenticated %}
+            <p>{{user.username}} 님 어서오세요!</p>
+            <a href="{% url 'users:logout' %}"><button>로그아웃</button></a>
+            <!-- prettier-ignore -->
+            {% else %}
+            <a href="{% url 'users:login' %}"><button>로그인</button></a>
+            <a href="{% url 'users:signup' %}"><button>회원 가입</button></a>
+            <!-- prettier-ignore -->
+            {% endif %}
+            <!-- prettier-ignore -->
             {% block content %}
             <!-- prettier-ignore -->
             {% endblock %}
@@ -90,8 +84,7 @@
                     <li>호스팅 서비스사업자 : 롯데하이마트 주식회사</li>
                 </ul>
                 <ul>
-                    <li>COPYRIGHTⓒ 2003-2020 <span class="red-text">LOTTEHIMART</span> CO., LTD. ALL RIGHT RESERVED.
-                    </li>
+                    <li>COPYRIGHTⓒ 2003-2020 <span class="red-text">LOTTEHIMART</span> CO., LTD. ALL RIGHT RESERVED.</li>
                 </ul>
             </div>
         </div>
