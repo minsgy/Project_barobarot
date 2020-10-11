@@ -1,5 +1,9 @@
 /* Content */
 
+span {
+    padding: 0;
+}
+
 .content {
     width: 100%;
     display: flex;
@@ -14,7 +18,7 @@
 }
 
 .mg-bottom {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .category {
@@ -27,7 +31,8 @@
 
 hr {
     width: 72vw;
-    margin: 8px 0 30px 0;
+    margin: 8px 0 20px 0;
+    border: solid 1px black;
 }
 
 /* OrderBox 고객, 배송 정보 */
@@ -36,14 +41,12 @@ hr {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr 3fr;
     grid-template-rows: repeat(auto-fill, minmax(20%, auto));
-    grid-template-areas:
-        "bold1 content1 bold2 content2"
-        "bold1 content1 bold2 content2";
     align-items: center;
     gap: 30px 20px;
     width: 70vw;
-    padding: 20px;
-    background-color: #F6F6F6;
+    padding: 10px 0 10px 0;
+    margin-bottom: 15px;
+    /* background-color: #F6F6F6; */
 }
 
 .bold-text {
@@ -60,7 +63,7 @@ hr {
 .engineer-box {
     grid-template-columns: 1fr 1fr 2fr 1fr 2fr;
     grid-template-rows: repeat(3, 1fr);
-    gap: 0 20px;
+    gap: 0 40px;
 }
 
 /* 리뷰 버튼 css */
@@ -76,17 +79,17 @@ hr {
 
 .button {
     background: #fff;
-    border: none;
-    padding: 2px;
+    border: solid lightgray 1px;
+    padding: 1px;
     cursor: pointer;
     display: block;
     position: relative;
     overflow: hidden;
     transition: all .35s ease-in-out .35s;
-    width: 150px;
+    width: 140px;
     text-align: center;
     font-family: 'Noto Sans KR';
-    font-size: 10pt;
+    font-size: 11pt;
 }
 
 .button:hover span {
