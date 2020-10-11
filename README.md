@@ -24,10 +24,11 @@
 - Windows `. <가상환경 이름>/scripts/activate`
 - Mac `. <가상환경 이름>/bin/activate`
 
-2. Django, Pillow 설치
+2. Django, Pillow, django-mathfilters 설치
 
 - `pip install django==2.1.1`
 - `pip install pillow`
+- `pip install django-mathfilters`
 
 3. 모델 등록하기
 
