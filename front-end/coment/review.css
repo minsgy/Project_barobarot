@@ -20,7 +20,7 @@ body {
 /* 여기부터 시작 */
 /* 전체 div */
 
-body{
+body {
     height: 100%;
 }
 
@@ -30,13 +30,13 @@ body{
 }
 
 /* 가로 정렬하기 위해 내부 div 블록 설정 */
-.review-person-box{
+.review-engineer-box {
     display: inline-block;
     position: fixed;
-    
+
 }
 
-.review-user-box{
+.review-user-box {
     display: inline-block;
     text-align: left;
     margin-left: 120px;
@@ -44,22 +44,23 @@ body{
 
 /* 기사님 스타일 */
 /* 이미지 클래스 */
-.person-box {
+.engineer-box {
     width: 100px;
     height: 100px;
     border-radius: 50%;
 }
 
-.person-name {
+.engineer-name {
     font-weight: bold;
     font-size: 22px;
     padding: 25px;
 }
-.person-job{
+
+.engineer-job {
     color: #aaaaaa;
     font-size: 13px;
     padding: 25px;
- }
+}
 
 
 /* 리뷰 쓰는 사람 스타일 */
@@ -71,7 +72,7 @@ body{
 }
 
 .review-date {
-    color:#cacaca;
+    color: #cacaca;
     font-size: 15px;
     float: right;
     padding-right: 10px;
@@ -79,48 +80,101 @@ body{
 
 .review-review-box {
     width: 700px;
-    margin-top: 10px;
-    margin-left: 20px;
+    margin: 20px 0 5px 20px;
     /* padding-bottom: 50px; */
 
     /* 말줄임 (5줄로 설정)*/
     overflow: hidden;
-    text-overflow:ellipsis;
-    display:-webkit-box;
-    -webkit-line-clamp:4;
-    -webkit-box-orient:vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 
     /* border-bottom: 1px solid grey; */
 }
 
-.p-border{
+.p-border {
     padding-bottom: 20px;
     border-bottom: 1px solid #D8D8D8;
 }
 
 /* 삭제버튼 */
-.review-delete-button{
+.review-delete-button {
     position: absolute;
     border: 0;
     outline: 0;
-    background-color: rgba( 255, 255, 255, 1 );
+    background-color: rgba(255, 255, 255, 1);
     color: #cacaca;
 }
 
-.review-delete-button:hover{
-   cursor: pointer;
+.review-delete-button:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 
 /* input 박스 */
-.review-input{
-    width: 700px;
-    height: 150px;
+.review-input {
+    float: left;
+    width: 595px;
+    height: 100px;
     margin-left: 150px;
-    margin-top: 10px;
-    
+    margin-top: 30px;
+    font-family: 'Noto Sans KR';
+    font-size: 11pt;
+    resize: none;
+}
+
+/* 리뷰 textarea 스크롤바 커스텀 */
+.review-input::-webkit-scrollbar {
+    width: 10px;
+}
+
+.review-input::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+.review-input::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+}
+
+.review-input::-webkit-scrollbar-track {
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
 }
 
 /* input 안에 넣어야할 버튼,, */
-.write-button{
+.write-button {
+    float: left;
+    margin: 30px 0 0 5px;
+    width: 100px;
+    height: 106px;
+    text-align: center;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-user-select: none;
+    cursor: default;
+    font-family: 'Noto Sans KR';
+    font-size: 12pt;
+}
+
+.write-button:hover {
+    cursor: pointer;
+}
+
+.btn-style {
+    color: #000;
+    border: #000 solid 1px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.btn-style:hover {
+    color: #fff;
+    background-color: #000;
 }
