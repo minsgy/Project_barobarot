@@ -35,6 +35,8 @@ a {
     flex-direction: column;
     margin: 0 auto;
     width: 1000px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .title {
