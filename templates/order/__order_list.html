@@ -40,7 +40,7 @@
                                 </span>
                                 <span class="reservation-product-detail">{{paymentproduct.created_time | date:"Y-m-d"}}</span>
                                 <span class="reservation-product-detail">{{paymentproduct.order_number}}</span>
-                                <span class="reservation-product-detail">{{paymentproduct.product.set_saleprice | intcomma}}원({{paymentproduct.amount}})</span>
+                                <span class="reservation-product-detail">{{paymentproduct.total_price | intcomma}}원({{paymentproduct.amount}})</span>
                                 <span class="reservation-product-detail">배송 준비 중 <br><br>
                             <!-- 누르면 예약 스케줄 페이지로 이동 -->
                             <a href="{% url 'payments:order_detail' paymentproduct.pk %}">

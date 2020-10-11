@@ -27,6 +27,7 @@ class PaymentproductAdmin(admin.ModelAdmin):
         'visit_date',
         'visit_time',
         'order_number',
+        'total_price',
     )
 
 @admin.register(Receiver)

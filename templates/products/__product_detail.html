@@ -44,7 +44,7 @@
                     <ul class="information-item">
                         <li>
                             <label>모델명</label>
-                            <span class="model-name">AMC16VZ4GHGH</span>
+                            <span class="model-name">{{products.model_code}}</span>
                         </li>
                     </ul>
                 </li>
@@ -52,11 +52,11 @@
                     <ul class="information-item">
                         <li>
                             <label>판매가</label>
-                            <span class="price-text">{{products.price| intcomma}}원</span>
+                            <span class="price-text">{{products.price | intcomma}}원</span>
                         </li>
                         <li>
                             <label>최대혜택가</label>
-                            <span class="price-text">{{products.set_saleprice| intcomma}}원</span>
+                            <span class="price-text">{{products.set_saleprice | intcomma}}원</span>
                         </li>
                     </ul>
                 </li>
