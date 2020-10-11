@@ -1,8 +1,20 @@
+{% extends '../base.html' %}
+{% load static %}
+{% load mathfilters %}
 
-    <link rel="stylesheet" href="__payment.css">
+
+{% block link %}{% static 'css/__payment.css' %}{% endblock %}
+{% block content %}
+<!--  <link rel="stylesheet" href="__payment.css"> -->
+
+<!-- 엔지니어 데이터 값 불러와서 저장해야됨 -->
+<form action="{% url 'payments:paymentproduct_create' products.id user.id  %}" method="post">
+    {% csrf_token %}
+    <!-- product 데이터, products 안에 값 -->
 
     <div class="container">
-        <img src="img/step02_payment.gif" alt="step02_payment">
+        <img src="{% static 'img/step02_payment.gif' %}" alt="step02_payment">
+
         <div class="order-item-list">
             <h2>주문 상품 리스트</h2>
             <div class="order-list">
@@ -13,19 +25,19 @@
                     <li>배송정보</li>
                 </ul>
                 <ul>
-                    <li>
+                    <li>        
                         <div class="image-cover">
-                            <img src="img/product_profile.jpg" alt="product_profile">
+                            <img src="{{ products.product_image.url }}" alt="product_profile" width="100px" height="100px">
                         </div>
                         <ul class="item-name">
-                            <li class="manufacturer">캐리어(주)</li>
-                            <li class="item-title">에어로Z 18단 2in1 에어컨</li>
-                            <li class="item-id">AMC16VZ4GHGH</li>
+                            <li class="manufacturer">{{products.manufacture}}</li>
+                            <li class="item-title">{{products.product_name}}</li>
+                            <li class="item-id">{{products.model_code}}</li>
                         </ul>
                     </li>
-                    <li>1</li>
+                    <li>{{ amount }}</li>       <!--수량-->
                     <li>
-                        <span class="second-row-price">1,350,000</span>원
+                        <span class="second-row-price">{{products.set_saleprice}}</span>원
                     </li>
                     <li>
                         <ul class="second-row-seperate">
@@ -41,12 +53,12 @@
                     <p>총 주문금액
                         <br>
                         <span class="red">
-                            <span class="third-row-price">1,350,000</span>원
+                            <span class="third-row-price">{{products.set_saleprice | mul:amount}}</span>원
                         </span>
                     </p>
                 </div>
             </div>
-            
+
             <div class="customer-information">
                 <div class="title">
                     <h2>고객 정보</h2>
@@ -57,21 +69,21 @@
                     <li>
                         <span class="star-to-right">주문하시는 분</span>
                     </li>
-                    <li>이승준</li>
+                    <li>{{user.name}}</li>
                     <li>
                         <span class="star-to-right">이메일주소</span>
                     </li>
-                    <li>sch030518@gmail.com</li>
+                    <li>{{user.email}}</li>
                     <li>
                         <span class="star-to-right">휴대폰 번호</span>
                     </li>
-                    <li>010-2531-9858</li>
+                    <li>{{user.number}}</li>
                 </ul>
 
                 <p class="circle-to-left">위 정보로 주문과 관련된 SMS와 E-MAIL이 발송됩니다. 맞는 정보가 아닌 경우&nbsp;<a href="#">회원정보</a>에서
                     수정해주세요.</p>
             </div>
-
+            <!--     배송정보 입력       -->
             <div class="ship-information">
                 <h2>1. 배송정보</h2>
                 <ul class="ship-info">
@@ -80,15 +92,15 @@
                             <li>
                                 <span class="star-to-right">받는분</span>
                             </li>
-                            <li>
-                                <input class="customer-name" type="text">
+                            <li>    <!-- 받는분 -->
+                                <input type="text" name='receiver_name'>    
                             </li>
                             <li>
                                 <span class="star-to-right">연락처</span>
                             </li>
                             <li>
-                                <div class="phone-number">
-                                    <input type="text">-<input type="text">-<input type="text">
+                                <div class="">  <!-- 연락처 -->
+                                    <input type="text" name='receiver_number'>
                                 </div>
                             </li>
                         </ul>
@@ -97,8 +109,11 @@
                                 <span class="star-to-right">주소</span>
                             </li>
                             <li>
-                                <input type="text" id="address" disabled>
-                                <button class="address-button" onclick="javascript:void(window.open('__payment_address_popup.html', 'hi', 'width=500, height=543'))">검색</button>
+                                <!-- 배송지 주소 -->
+                                <input type="text" name='address'id="address" disabled >
+                                <button type= "button" class="address-button"
+                                    onclick="javascript:void(window.open({% url 'payments:popup' %}, 'hi', 'width=500, height=543'))">검색
+                                </button>
                             </li>
                         </ul>
                         <ul class="ship-info-field ship-info-calendar">
@@ -157,15 +172,16 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li>
+                            <li>        <!-- 스케쥴 시간 -->
                                 <ul class="schedule" id="js-schedule">
-                                    <li>오전 10:20</li>
-                                    <li>오전 10:40</li>
-                                    <li>오전 11:00</li>
-                                    <li>오전 11:20</li>
-                                    <li>오전 11:40</li>
-                                    <li>오전 12:00</li>
-                                    <li>오전 12:20</li>
+
+                                {% for choice in form.choice_set.all %}
+
+                                    <li> choice </li>
+                                
+                                
+                                {% endfor %}
+
                                 </ul>
                             </li>
                         </ul>
@@ -181,7 +197,8 @@
                                     <option value="phone-call">부재 시 휴대폰으로 연락주세요.</option>
                                     <option value="post-box">부재 시 택배함에 넣어주세요.</option>
                                 </select>
-                                <p class="star-to-left">하이마트 배송기사 또는 해당 상품을 배송하는 업체의 배송기사가&nbsp;<span class="blue-text">설치를
+                                <p class="star-to-left">하이마트 배송기사 또는 해당 상품을 배송하는 업체의 배송기사가&nbsp;<span
+                                        class="blue-text">설치를
                                         진행하는 상품인 경우,</span>&nbsp;배송 당일 오전 시간 약속을 위해 별도 연락을 드릴 예정입니다.</p>
                             </li>
                         </ul>
@@ -302,5 +319,6 @@
             </div>
         </div>
     </div>
-
-    {% block js %}{% static 'js/__payment.js' %}{% endblock %}
+</form>
+{% endblock %}
+{% block js %}{% static 'js/__payment.js' %}{% endblock %}

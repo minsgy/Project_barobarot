@@ -35,7 +35,7 @@ class payment_do(DetailView):
 
     model = product_model.Product   
     context_object_name = 'products'      #넘겨지는 변수 이름
-    template_name = 'payments/payment_doing.html' # Default 연결 값 변경 
+    template_name = 'payments/__payment.html' # Default 연결 값 변경 
     # 넘겨지는 변수 추가(복수개의 객체 전송)
 
     # total_price = self.object.price
@@ -113,7 +113,7 @@ def PaymentproductCreate(request, product_pk, user_pk):
         else :
             print("form none valided")
 
-    return render(request, 'payments/payment_doing.html')
+    return render(request, 'payments/__payment.html')
 
 
 ''' 주문 성공 함수 '''
@@ -142,3 +142,8 @@ def order_detail(request, pk):
     return render(request, 'order/__order_detail.html', {'payments':payment})
 
 
+
+''' 주소 popup '''
+
+def popup(request) :
+    return render(request, 'payments/__payment_address_popup.html')
