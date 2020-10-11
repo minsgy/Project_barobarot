@@ -1,4 +1,6 @@
 from django.db import models
+import datetime as dt
+
 # 설치 기사 모델
 # creater - minseok
 class Engineer(models.Model):
@@ -19,7 +21,7 @@ class Engineer(models.Model):
 class Schedule(models.Model) :
 
     scheduled_date = models.DateField()     # 예약된 날짜
-    scheduled_time = models.TimeField()     # 예약된 시간
+    scheduled_time = models.TimeField(default=dt.time(00, 00))     # 예약된 시간
     engineer = models.ForeignKey("engineers.Engineer",related_name="schedule", on_delete=models.CASCADE)
     
 
