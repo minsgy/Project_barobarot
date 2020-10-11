@@ -29,7 +29,7 @@
 
             <div id="product-detail">
                 <p id="product-title">
-                    <a id="product-title-hover" href="#">
+                    <a id="product-title-hover" href="{% url 'products:product_detail' product.pk %}">
                         <!-- 모델에서 상품명 부분. 하이마트몰 보니까 상품명이 다 두 줄 정도로 길어서 그 정도 길이로 설정해놨습니다. -->
                         {{product.product_name}}
                     </a>

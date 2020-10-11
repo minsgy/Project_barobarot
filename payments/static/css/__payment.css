@@ -1,0 +1,693 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #232a32;
+}
+
+body {
+    font-family: '맑은고딕', Malgun Gothic, dotum, '돋음', arial, sans-serif;
+    font-size: 12px;
+    color: var(--black);
+}
+
+.container {
+    width: 1008px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 18px;
+    margin: 12px 0 0;
+    padding: 14px 0 7px 0;
+}
+
+.order-list {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 주문 상품 리스트 첫번째 행 */
+.order-list>ul:first-child {
+    display: flex;
+    align-items: center;
+    height: 43px;
+    font-size: 13px;
+    font-weight: bold;
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #d3d3d5;
+}
+
+.order-list>ul:first-child>li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.order-list>ul:first-child>li:first-child,
+.order-list>ul:nth-child(2)>li:first-child {
+    flex-basis: 593px;
+}
+
+.order-list>ul:first-child>li:nth-child(2),
+.order-list>ul:nth-child(2)>li:nth-child(2) {
+    flex-basis: 80px;
+}
+    
+.order-list>ul:first-child>li:nth-child(3),
+.order-list>ul:nth-child(2)>li:nth-child(3) {
+    flex-basis: 150px;
+}
+        
+.order-list>ul:first-child>li:nth-child(4),
+.order-list>ul:nth-child(2)>li:nth-child(4) {
+    flex-basis: 185px;
+}
+
+/* 주문 상품 리스트 두번째 행 */
+.order-list>ul:nth-child(2) {
+    height: 107px;
+    display: flex;
+    border-bottom: 1px solid #d3d3d5;
+}
+
+.image-cover {
+    flex-basis: 104px;
+    height: 107px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-cover img {
+    width: 84px;
+    height: 84px;
+}
+
+.item-name {
+    height: 100%;
+    flex-basis: 489px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.manufacturer {
+    color: #6a747c;
+}
+
+.item-id {
+    color: #aeb3bb;
+}
+
+.item-title {
+    font-size: 14px;
+}
+
+.order-list>ul:nth-child(2)>li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+.order-list>ul:nth-child(2)>li:not(:last-child),
+.second-row-seperate li:first-child {
+    border-right: 1px solid #ecedee;
+}
+
+.order-list>ul:nth-child(2)>li:nth-child(2) {
+    font-family: 'tahoma';
+}
+
+.order-list>ul:nth-child(2)>li:nth-child(2),
+.order-list>ul:nth-child(2)>li:nth-child(3) {
+    display: flex;
+    justify-content: center;
+}
+
+.second-row-seperate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.second-row-seperate li {
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flagicon {
+    color: #6a747c;
+    border: 1px solid #6a747c;
+    cursor: default;
+}
+
+.second-row-price {
+    font-size: 13px;
+    font-weight: bold;
+    font-family: 'tahoma';
+    color: #232a32;
+}
+
+/* 주문 상품 리스트 세번째 행 */
+.order-list-third-row {
+    height: 54px;
+    background: #f3f3f3;
+    border-bottom: 1px solid #515151;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.order-list-third-row p {
+    color: #6a747c;
+}
+
+.red {
+    color: #ed1c24;
+}
+
+.third-row-price {
+    font-size: 23px;
+    font-weight: bold;
+    font-family: 'tahoma';
+}
+
+.customer-information {
+    width: 100%;
+    height: 104px;
+}
+
+/* 고객 정보 첫번째 행*/
+.customer-information .title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.customer-information .title>span {
+    padding: 14px 0 7px;
+}
+
+/* 고객 정보 두번째 행 */
+.customer-info {
+    display: flex;
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #d3d3d5;
+    height: 37px;
+    display: flex;
+}
+
+.customer-info li {
+    display: flex;
+    align-items: center;
+    color: #232a32;
+}
+
+.customer-info li:nth-child(odd) {
+    flex-basis: 120px;
+    background-color: #f3f3f3;
+    padding-left: 19px;
+}
+
+.customer-info li:nth-child(even) {
+    flex-basis: 200px;
+    padding: 0 15px;
+}
+
+.customer-info li:nth-child(6) {
+    flex-basis: 248px;
+}
+
+/* 고객 정보 세번째 행 */
+.customer-information>p {
+    color: #9aa1a7;
+    height: 26px;
+    display: flex;
+    align-items: center;
+}
+
+.customer-information>p>a {
+    color: #000;
+}
+
+.star-to-left,
+.star-to-right {
+    font-size: 12px;
+}
+
+.star-to-left:before,
+.star-to-right:after {
+    content: '*';
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+.circle-to-left:before {
+    content: '·';
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+/* 배송정보 */
+.ship-info {
+    border-top: 1px solid #555;
+}
+
+.ship-info-field {
+    height: 35px;
+    border-bottom: 1px solid #d3d3d5;
+    display: flex;
+    align-items: center;
+}
+
+.ship-info-field>li {
+    display: flex;
+    align-items: center;
+}
+
+.ship-info-field>li:nth-child(odd) {
+    width: 120px;
+    height: 100%;
+    padding-left: 19px;
+}
+
+.ship-info-field>li:first-child,
+.ship-info-field:not(:nth-child(3))>li:nth-child(odd) {
+    background-color: #f3f3f3;
+}
+
+.ship-info-field>li:nth-child(even) {
+    padding-left: 15px;
+    min-width: 358px;
+}
+
+/* 배송정보 주소 */
+#address {
+    width: 662px;
+}
+
+#address, .customer-name {
+    padding-left: 10px;
+}
+
+select {
+    padding-left: 6px;
+}
+
+/* 배송정보 마지막 행 */
+.ship-info-field:last-child {
+    height: 62px;
+}
+
+.ship-info-field:last-child>li:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ship-info-field:last-child select {
+    width: 487px;
+}
+
+.ship-info-field:last-child p {
+    height: 24px;
+    color: #6a747c;
+    display: flex;
+    align-items: center;
+}
+
+.ship-info-field .blue-text {
+    color: #0000ff;
+}
+
+.phone-number {
+    color: #6a747c;
+}
+
+input[type="text"], select {
+    color: #6a747c;
+    border: 1px solid #aeb3bb;
+    height: 27px;
+}
+
+
+.phone-number input {
+    width: 42px;
+    text-align: center;
+}
+
+.address-button {
+    width: 48px;
+    height: 27px;
+    background-color: #6a747d;
+    color: #fff;
+    margin-left: 8px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+/* 달력 */
+.ship-info-calendar {
+    height: 311px;
+}
+
+/* .calendar {
+    border-top: #000 solid 1px;
+    border-bottom: #ccc solid 1px;
+} */
+
+.sun-to-sat {
+    border-bottom: #ccc solid 1px;
+    display: flex;
+    height: 42px;
+}
+
+.sun-to-sat li {
+    width: 47px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sun {
+    color: #a50034;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 47px);
+    grid-template-rows: repeat(5, 52px);
+}
+
+.days li {
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ddd;
+    cursor: default;
+}
+
+.days li.enable {
+    color: #000;
+}
+
+.days li.active,
+.days li.enable:hover {
+    background-color: #c0f7ff;
+    cursor: pointer;
+}
+
+.ship-info-calendar li {
+    background-color: #fff;
+}
+
+.ship-info-calendar>li:nth-child(2) {
+    width: 444px;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.ship-info-calendar>li:nth-child(3) {
+    width: 444px;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    border-left: #ccc solid 1px;
+    border-right: #ccc solid 1px;
+    padding: 0;
+}
+
+.schedule {
+    height: 100%;
+    margin-top: 15px;
+}
+
+.schedule li {
+    font-size: 15px;
+    color: #222;
+    font-weight: bold;
+    padding: 10px 25px;
+    border: 1px solid #ddd;
+    width: 207px;
+    height: 40px;
+    margin-bottom: 15px;
+}
+
+.schedule>li:hover {
+    background: #c0f7ff;
+    border: 1px solid #aae4ed;
+    cursor: pointer;
+}
+
+/* 결제수단, 최종 결제 포함한 하단 박스들 */
+
+.bottom-view {
+    width: 1008px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pay-way {
+    width: 686px;
+}
+
+.right-view {
+    width: 304px;
+    height: 674px;
+    margin-top: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.last-check {
+    border: 1px solid #000;
+}
+
+/* 최종 결제 금액 확인 */
+.last-check li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.last-check li:first-child {
+    font-size: 18px;
+    height: 58px;
+    border-bottom: 1px solid #d2d3d5;
+}
+
+ /* 최종 결제 두번째 행 */
+.last-check li:nth-child(2) {
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    color: #6a747c;
+}
+
+.last-check li:nth-child(2) label {
+    font-size: 14px;
+}
+
+.last-check li:nth-child(2) div>p {
+    display: flex;
+    justify-content: space-between;
+    width: 242px;
+}
+
+.last-check li:nth-child(2) div>p:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.last-check li:nth-child(2) .price {
+    font-size: 20px;
+}
+
+/* 최종 결제 세번째 행 */
+.last-check li:nth-child(3) {
+    height: 85px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f3f3f3;
+}
+
+.last-check li:nth-child(3) div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.last-check li:nth-child(3) div>p {
+    width: 242px;
+    font-size: 13px;
+}
+
+.last-check li:nth-child(3) div>p:nth-child(2) {
+    text-align: right;
+    color: #ed1c24;
+}
+
+.last-check li:nth-child(3) .price {
+    font-weight: bold;
+    font-family: 'tahoma';
+    font-size: 24px;
+}
+
+/* 최종 결제 네번째 행 */
+.last-check li:nth-child(4) {
+    height: 43px;
+    color: #6a747d;
+}
+
+.last-check li:nth-child(4)>p {
+    border-bottom: 1px solid #d2d3d5;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.last-check li:nth-child(4)>p,
+.last-check li:nth-child(5)>div {
+    width: 242px;
+}
+
+/* 최종 결제 다섯번째 행 */
+.last-check li:nth-child(5) {
+    height: 66px;
+}
+
+.last-check li:nth-child(5) .price {
+    font-weight: bold;
+    font-family: 'tahoma';
+}
+
+.last-check li:nth-child(5) div {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 구매동의 */
+.agree {
+    padding: 24px;
+    border: 1px solid #d3d3d3;
+    color: #6a747d;
+}
+
+.agree strong {
+    font-weight: bold;
+}
+
+.agree p:first-child {
+    color: #000;
+    font-size: 15px;
+}
+
+.agree p:nth-child(2) {
+    padding-top: 15px;
+    font-size: 13px;
+}
+
+.pay-button button {
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    background-color: #ed1c24;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* 결제수단 선택 */
+.pay-way img {
+    width: 100%;
+}
+
+.pay-table {
+    border-left: 1px solid #d3d3d5;
+    border-right: 1px solid #d3d3d5;
+}
+
+.pay-table>li {
+    display: flex;
+    min-height: 46px;
+    align-items: center;
+    color: #6a747c;
+    border-bottom: 1px solid #d3d3d5;
+}
+
+.pay-table>li.gray {
+    background-color: #f3f3f3;
+}
+
+.pay-table>li.blue {
+    background-color: #ebf5fa;
+}
+
+.pay-table>li .price {
+    font-size: 16px;
+    font-family: 'tahoma';
+    font-weight: bold;
+    margin-left: 100px;
+    color: #232a3c;
+}
+
+.pay-table-title {
+    min-width: 140px;
+    text-align: center;
+    color: #232a32;
+}
+
+.pay-table-field {
+    padding: 15px;
+}
+
+.table-field-list {
+    list-style-type: disc;
+    padding-left: 15px;
+}
+
+.table-field-list li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+/* 결제수단 radio */
+.pay-table li.radio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #555;
+    margin-top: 3px;
+}
+
+.pay-way-radio {
+    display: grid;
+    grid-template-columns: repeat(5, 125px);
+}
+
+.pay-way-radio>li {
+    display: flex;
+    align-items: center;
+    color: #232a32;
+}
+
+.pay-way-radio>li input {
+    margin-right: 5px;
+}

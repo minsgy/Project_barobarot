@@ -1,0 +1,306 @@
+
+    <link rel="stylesheet" href="__payment.css">
+
+    <div class="container">
+        <img src="img/step02_payment.gif" alt="step02_payment">
+        <div class="order-item-list">
+            <h2>주문 상품 리스트</h2>
+            <div class="order-list">
+                <ul>
+                    <li>상품정보</li>
+                    <li>수량</li>
+                    <li>주문금액</li>
+                    <li>배송정보</li>
+                </ul>
+                <ul>
+                    <li>
+                        <div class="image-cover">
+                            <img src="img/product_profile.jpg" alt="product_profile">
+                        </div>
+                        <ul class="item-name">
+                            <li class="manufacturer">캐리어(주)</li>
+                            <li class="item-title">에어로Z 18단 2in1 에어컨</li>
+                            <li class="item-id">AMC16VZ4GHGH</li>
+                        </ul>
+                    </li>
+                    <li>1</li>
+                    <li>
+                        <span class="second-row-price">1,350,000</span>원
+                    </li>
+                    <li>
+                        <ul class="second-row-seperate">
+                            <li>무료배송</li>
+                            <li>
+                                <span class="flagicon">직접배송</span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="order-list-third-row">
+                    <p>상품수량 및 옵션 변경은 장바구니에서만 가능합니다.</p>
+                    <p>총 주문금액
+                        <br>
+                        <span class="red">
+                            <span class="third-row-price">1,350,000</span>원
+                        </span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="customer-information">
+                <div class="title">
+                    <h2>고객 정보</h2>
+                    <span class="star-to-left">필수입력</span>
+                </div>
+
+                <ul class="customer-info">
+                    <li>
+                        <span class="star-to-right">주문하시는 분</span>
+                    </li>
+                    <li>이승준</li>
+                    <li>
+                        <span class="star-to-right">이메일주소</span>
+                    </li>
+                    <li>sch030518@gmail.com</li>
+                    <li>
+                        <span class="star-to-right">휴대폰 번호</span>
+                    </li>
+                    <li>010-2531-9858</li>
+                </ul>
+
+                <p class="circle-to-left">위 정보로 주문과 관련된 SMS와 E-MAIL이 발송됩니다. 맞는 정보가 아닌 경우&nbsp;<a href="#">회원정보</a>에서
+                    수정해주세요.</p>
+            </div>
+
+            <div class="ship-information">
+                <h2>1. 배송정보</h2>
+                <ul class="ship-info">
+                    <li>
+                        <ul class="ship-info-field">
+                            <li>
+                                <span class="star-to-right">받는분</span>
+                            </li>
+                            <li>
+                                <input class="customer-name" type="text">
+                            </li>
+                            <li>
+                                <span class="star-to-right">연락처</span>
+                            </li>
+                            <li>
+                                <div class="phone-number">
+                                    <input type="text">-<input type="text">-<input type="text">
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="ship-info-field">
+                            <li>
+                                <span class="star-to-right">주소</span>
+                            </li>
+                            <li>
+                                <input type="text" id="address" disabled>
+                                <button class="address-button" onclick="javascript:void(window.open('__payment_address_popup.html', 'hi', 'width=500, height=543'))">검색</button>
+                            </li>
+                        </ul>
+                        <ul class="ship-info-field ship-info-calendar">
+                            <li>희망배송일</li>
+                            <li>
+                                <div class="calendar">
+                                    <!-- 첫번째 행 -->
+                                    <ul class="sun-to-sat">
+                                        <li>
+                                            <span class="sun">일</span>
+                                        </li>
+                                        <li>월</li>
+                                        <li>화</li>
+                                        <li>수</li>
+                                        <li>목</li>
+                                        <li>금</li>
+                                        <li>토</li>
+                                    </ul>
+                                    <!-- 날짜 -->
+                                    <ul class="days">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li class="enable">1</li>
+                                        <li class="enable">2</li>
+                                        <li class="enable">3</li>
+                                        <li>4</li>
+                                        <li>5</li>
+                                        <li>6</li>
+                                        <li>7</li>
+                                        <li>8</li>
+                                        <li>9</li>
+                                        <li>10</li>
+                                        <li>11</li>
+                                        <li>12</li>
+                                        <li>13</li>
+                                        <li>14</li>
+                                        <li>15</li>
+                                        <li>16</li>
+                                        <li>17</li>
+                                        <li>18</li>
+                                        <li>19</li>
+                                        <li>20</li>
+                                        <li>21</li>
+                                        <li>22</li>
+                                        <li>23</li>
+                                        <li>24</li>
+                                        <li>25</li>
+                                        <li>26</li>
+                                        <li>27</li>
+                                        <li>28</li>
+                                        <li>29</li>
+                                        <li>30</li>
+                                        <li>31</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <ul class="schedule" id="js-schedule">
+                                    <li>오전 10:20</li>
+                                    <li>오전 10:40</li>
+                                    <li>오전 11:00</li>
+                                    <li>오전 11:20</li>
+                                    <li>오전 11:40</li>
+                                    <li>오전 12:00</li>
+                                    <li>오전 12:20</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="ship-info-field">
+                            <li>배송 메세지</li>
+                            <li>
+                                <select name="ship-message">
+                                    <option value="none">메세지를 선택해 주세요.</option>
+                                    <option value="to-office">부재 시 경비(관리)실에 맡겨주세요.</option>
+                                    <option value="front-of-door">부재 시 문 앞에 놓아주세요.</option>
+                                    <option value="before-call">배송 전에 연락주세요.</option>
+                                    <option value="careful">파손 위험이 있으니 조심히 보내주세요.</option>
+                                    <option value="phone-call">부재 시 휴대폰으로 연락주세요.</option>
+                                    <option value="post-box">부재 시 택배함에 넣어주세요.</option>
+                                </select>
+                                <p class="star-to-left">하이마트 배송기사 또는 해당 상품을 배송하는 업체의 배송기사가&nbsp;<span class="blue-text">설치를
+                                        진행하는 상품인 경우,</span>&nbsp;배송 당일 오전 시간 약속을 위해 별도 연락을 드릴 예정입니다.</p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-view">
+                <!-- 결제수단 선택 -->
+                <div class="pay-way">
+                    <h2>2. 결제수단 선택</h2>
+                    <img src="img/pay_way_ad.jpg" alt="advertisement">
+                    <ul class="pay-table">
+                        <li class="blue radio">
+                            <ul class="pay-way-radio">
+                                <li>
+                                    <input type="radio" name="pay-way" checked="checked">
+                                    <label>
+                                        <img src="img/kakao-pay.png" alt="kakao-pay">
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="pay-way">
+                                    <label>신용카드</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="pay-way">
+                                    <label>무통장입금</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="pay-way">
+                                    <label>실시간계좌이체</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="pay-way">
+                                    <label>휴대폰 소액결제</label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="gray">
+                            <div class="pay-table-title">
+                                <label>카카오페이</label>
+                            </div>
+                            <div class="pay-table-field">
+                                <p><span class="price">1,300,000</span>원</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pay-table-title">
+                                <label>결제안내</label>
+                            </div>
+                            <div class="pay-table-field">
+                                <ul class="table-field-list">
+                                    <li>카카오페이는 카카오톡/카카오페이 앱에서 신용/체크카드(스마트폰과 카드 명의자가 동일해야 함) 또는 카카오머니를 이용하여 결제할 수 있는 간편결제
+                                        서비스입니다.</li>
+                                    <li>
+                                        <span class="red">결제 시 하이마트 쇼핑몰의 무이자 할부 / 청구할인, 캐시백 등의 카드 혜택 / 제휴카드 혜택은 적용되지
+                                            않습니다.</span>
+                                    </li>
+                                    <li>카카오페이의 자체 혜택 사항은 카카오페이 내 혜택 메뉴를 통해 확인해주시기 바랍니다.</li>
+                                    <li>카카오페이로 결제하신 상세 내역은 카카오페이 서비스에서 직접 확인하실 수 있습니다.</li>
+                                    <li>카카오머니로 결제 시, 현금영수증 발급은 카카오페이에서 발급 가능합니다.</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="right-view">
+                    <!-- 최종 결제 금액 확인 -->
+                    <ul class="last-check">
+                        <li>최종 결제 금액 확인</li>
+                        <li>
+                            <div>
+                                <p>
+                                    <label>총 상품금액</label>
+                                    <span><span class="price">1,350,000</span>&nbsp;원</span>
+                                </p>
+                                <p>
+                                    <label>할인쿠폰</label>
+                                    <span>-50,000 원</span>
+                                </p>
+                                <p>
+                                    <label>배송비</label>
+                                    <span>0원</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p>최종결제금액</p>
+                                <p><span class="price">1,300,000</span>원</p>
+                            </div>
+                        </li>
+                        <li>
+                            <p>등급별 0.05% ~ 0.25% LPOINT 지급</p>
+                        </li>
+                        <li>
+                            <div>
+                                <p>신용카드</p>
+                                <p>
+                                    <span class="price">1,300,000</span>원</span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="agree">
+                        <p><input type="checkbox" name="agree"> 구매동의</p>
+                        <p><strong>상품 또는 서비스의 특성(가구, 인테리어 등), 지역(제주, 도서산간 등) 기타 사정에 따라 추가 배송비 기타 비용이 발생할 수
+                                있습니다.</strong> 주문하실 상품 또는 서비스의
+                            종류, 내용, 기간, 가격, 할인, 배송, 설치, 환불, 교환, 유의사항 기타 정보를 확인하고, 구매에 동의하시겠습니까? (전자상거래법 제 8조 2항)</p>
+                    </div>
+                    <div class="pay-button">
+                        <a href="#">
+                            <button>결제하기</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% block js %}{% static 'js/__payment.js' %}{% endblock %}

@@ -16,6 +16,7 @@ class Paymentproduct(core_models.TimeStampedModel):
 
       amount = models.PositiveIntegerField(default=0) # 물건 수량 , product의 price와 사칙연산 예정(*)
       address = models.CharField(max_length=30, null=True) # 주소 검색 API 구현
+      total_price = models.PositiveIntegerField(default=0, blank=True) # 총 가격
 
       created_time = core_models.TimeStampedModel.created # 주문 시간 - 객체 생성 시간
       visit_date = models.DateField() # 방문 날짜 및 시간
@@ -24,6 +25,8 @@ class Paymentproduct(core_models.TimeStampedModel):
       order_number = models.CharField(max_length=30, default=random_string) # 주문번호 - 생성날짜 + random_string 합쳐서 문자열 생성      
       def __str__(self):
          return f"{self.user} - {self.engineer}"
+      
+
 
 class Receiver(models.Model):  
       ''' 주문 아이템 - 받는 사람 정보''' 
