@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리뷰팝업페이지</title>
+    <link rel="stylesheet" href="{% static 'css/__review.css' %}">
+</head>
+
+<body>
+    <div class="review-content-box">
+        <div class="review-engineer-box">
+            <!-- 설치기사 사진 -->
+            <img class="engineer-box" src="{{engineers.image.url}}"><br>
+            <!-- 설치기사 이름 -->
+            <span class="engineer-name">{{engineers.name}}</span><br>
+            <span class="engineer-job">설치기사 
+
+                {% for comment in engineers.comments.all %}
+            </span>
+        </div>
+    </div>
+
+    <div class="review-content-box">
+        <div class="review-user-box">
+            <div>
+                <!-- user 아이디 나오게 -->
+                <span class="review-user-name">{{comment.user.username}}</span>
+                <!-- 삭제 버튼 -->
+                {% if user == comment.user %}
+                <a href="{% url 'comments:delete_comment' engineers.id comment.id %}">
+                    <button class="review-delete-button">삭제</button>
+                </a>
+                {% endif %}
+                <!-- 올린 날짜 -->
+                <span class="review-date">{{comment.created_time | date:"Y.m.d"}}</span>
+            </div>
+            <div class="p-border">
+                <div class="review-review-box">
+                    {{comment.content}}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <form action="{% url 'comments:create_comment' engineers.id %}" method='POST'>
+        {% csrf_token %}
+        <div class="review-input-box">
+            <textarea class="review-input" name="reviewText" id="revieText" cols="30" rows="10" placeholder="리뷰를 작성해주세요."></textarea>
+            <button class="write-button btn-style">리뷰 작성</button>
+        </div>
+    </form>
+    <script src="{% static 'js/__review.js' %}"></script>
+
+</body>
+</html>
