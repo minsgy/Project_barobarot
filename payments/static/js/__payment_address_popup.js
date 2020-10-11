@@ -39,7 +39,7 @@ const DETAILS_ID = '#details';
 function attachAddress() {
     const address = document.querySelector(ADDRESS_ID);
     const details = document.querySelector(DETAILS_ID);
-
+    
     const opener_address = opener.document.querySelector(ADDRESS_ID);
 
     opener_address.value = address.value + " " + details.value;

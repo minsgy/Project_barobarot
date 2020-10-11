@@ -43,6 +43,7 @@ class payment_do(DetailView):
         # url은 `path('<pk>/', PhotoView.as_view())으로 구현되어있어서 해당 pk 부분을 받아와야함
         context['amount'] = self.request.GET.get('amounts') # 전 페이지에서 수량 값 받아옴.
         context['paymentproducts'] = models.Paymentproduct
+        context['total_price'] = self.request.GET.get('amounts') * self.request.product_model.price # 넘겨진 물건의 가격 * amount 값을 total_price 변수로 지정
         context['engineers'] = engineer_model.Engineer.objects.all()        #모든 엔지니어 데이터 넘기기
         return context
 
@@ -70,6 +71,9 @@ def PaymentproductCreate(request, product_pk, user_pk):
         # paymentproducts.created_time = core_models.TimeStampedModel.created
         paymentproducts.visit_date = request.POST.get('visit_date')
         paymentproducts.visit_time = request.POST.get('visit_time')
+
+        # amount 값과 물건 가격의 값을 곱해 합 가격을 구합니다.
+        paymentproducts.total_price = paymentproducts.amount * paymentproducts.product.price 
 
         schedule = Schedule()
         schedule.engineer = engineer_data

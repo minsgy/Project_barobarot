@@ -1,0 +1,100 @@
+<!-- 
+    상품 결제 페이지입니다.
+    희망배송일 칸에서 달력을 통해 시간을 설정하고
+    배송 기사를 선택할 수 있습니다.
+    
+    작성자: 이승준
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="__payment_address_popup.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>주소 찾기</h1>
+        </div>
+        <div class="content">
+            <div id="postcodify"></div>
+            <div class="result no-show" id="result">
+                <p>선택하신 주소의 도로명 주소입니다. 상세주소를 입력하신 후 확인버튼을 눌러주세요.</p>
+                <ul class="address-info">
+                    <li>
+                        <input type="text" name="" id="address" readonly>
+                    </li>
+                    <li>
+                        <input type="text" name="" id="details">
+                    </li>
+                </ul>
+                <ul class="btns">
+                    <li>
+                        <button class="submit-btn" id="submit-btn">확인</button>
+                    </li>
+                    <li>
+                        <button class="cancel-btn" id="cancel-btn">취소</button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="result-help" id="result-help">
+                <div class="help">
+                    <p>건물번호.번지/건물명을 붙여 검색하면 주소 찾기가 쉽습니다.</p>
+                    <ul class="search-types">
+                        <li>- 도로명+건물번호 <span class="example">(예: 삼성로 156)</span></li>
+                        <li>- 동/읍/면/리+번지 <span class="example">(예: 대치동 509)</span></li>
+                        <li>- 건물명, 아파트명 <span class="example">(예: 하이마트사옥)</span></li>
+                    </ul>
+                </div>
+                <button class="cancel-btn" id="cancel-btn">취소</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 검색 기능을 표시할 <div>를 생성한다 -->
+
+    <!-- 주소와 우편번호를 입력할 <input>들을 생성하고 적당한 name과 id를 부여한다 -->
+    <!-- <input type="text" name="" id="postcode" value="" /><br />
+    <input type="text" name="" id="address" value="" /><br />
+    <input type="text" name="" id="details" value="" /><br />
+    <input type="text" name="" id="extra_info" value="" /><br /> -->
+
+    <!-- jQuery와 Postcodify를 로딩한다 -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
+
+    <!-- 나의 Script -->
+    <script src="__payment_address_popup.js"></script>
+    <script>
+        document.querySelectorAll('#cancel-btn').forEach(item => item.addEventListener('click', () => self.close()));
+        document.querySelector('#submit-btn').addEventListener('click', () => {
+            attachAddress();
+            self.close();
+        });
+    </script>
+
+    <!-- 위에서 생성한 <div>에 검색 기능을 표시하고, 결과를 입력할 <input>들과 연동한다 -->
+    <script>
+        $(function () {
+            $("#postcodify").postcodify({
+                hideSummary: true,
+                hideOldAddresses: false,
+                afterSearch: handleAfterSearch,
+                beforeSearch: handleBeforeSearch,
+                onComplete: handleComplete,
+                afterSelect: handleAfterSelect,
+                onReady: handleReady
+            });
+        });
+    </script>
+
+</body>
+
+</html>
