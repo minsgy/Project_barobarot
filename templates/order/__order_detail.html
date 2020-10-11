@@ -42,6 +42,6 @@
     <span class="bold-text">엔지니어 소속</span><span id="engineerInform">{{payments.engineer.affiliation}}</span>
     <span class="bold-text">방문 예약 날짜</span><span id="engineerReservationDate">{{payments.visit_date | date:"Y/m/d"}}</span>
     <span class="bold-text ">방문 예약 시간</span><span id="engineerReservationTime">{{payments.visit_time | time:"A g시"}}</span>
-    <span class="bold-text ">리뷰</span><button class="button"><span class="span">리뷰 쓰러가기</span></button>
+    <span class="bold-text ">리뷰</span><a href="{% url 'engineers:detail' payments.engineer.pk %}"><button class="button"><span class="span">리뷰 쓰러가기</span></button></a>
 </div>
 <hr> {% endblock %}

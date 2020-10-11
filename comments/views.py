@@ -11,8 +11,7 @@ def createComment(request, eg_pk):
         comment = Comment()
         comment.engineer = engineer
         comment.user = request.user
-        comment.title = request.POST.get('title')
-        comment.content = request.POST.get('content')
+        comment.content = request.POST.get('reviewText')
         comment.save()
         return redirect('engineers:detail', eg_pk) 
 
