@@ -24,6 +24,11 @@ body {
 
 /* ************************************************************ */
 
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
 /* Header */
 
@@ -224,3 +229,7 @@ body {
 
 
 /* Content */
+
+.content {
+    flex-grow: 1;
+}
