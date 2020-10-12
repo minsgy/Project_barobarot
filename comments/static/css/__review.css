@@ -28,9 +28,46 @@ body {
     height: 100%;
 }
 
+.review-nav-bar {
+    height: 50px;
+    background: #f5232a;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* padding: 50px; */
+}
+
+.review-nav-center {
+    /* padding: 0 auto; */
+    height: 50px;
+    text-align: center;
+}
+
+.review-nav-bar .review-nav-center .review-bar {
+    line-height: 50px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.review-content-box:nth-child(2) {
+    margin-left: 20px;
+    margin-top: 70px;
+}
+
 .review-content-box {
     margin-left: 20px;
     margin-top: 20px;
+}
+
+.page-close-button {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    padding: 16.6px 30px;
+    font-size: 17px;
+    color: #fff;
 }
 
 
@@ -39,6 +76,7 @@ body {
 .review-engineer-box {
     display: inline-block;
     position: fixed;
+    top: 70px;
 }
 
 .review-user-box {
@@ -68,7 +106,7 @@ body {
 .engineer-job {
     color: #aaaaaa;
     font-size: 13px;
-    padding: 25px;
+    padding: 31px;
 }
 
 
@@ -127,13 +165,16 @@ body {
 
 .review-input {
     float: left;
+    padding: 10px;
     width: 595px;
     height: 100px;
     margin-left: 150px;
+    margin-bottom: 30px;
     margin-top: 30px;
     font-family: 'Noto Sans KR';
     font-size: 11pt;
     resize: none;
+    border: 1px solid #cbcbcb;
 }
 
 
@@ -166,8 +207,8 @@ body {
 .write-button {
     float: left;
     margin: 30px 0 0 5px;
-    width: 100px;
-    height: 106px;
+    width: 88px;
+    height: 122px;
     text-align: center;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -183,13 +224,13 @@ body {
 }
 
 .btn-style {
-    color: #000;
-    border: #000 solid 1px;
+    color: #999;
+    border: 1px solid #cbcbcb;
     padding: 10px;
     background-color: #fff;
 }
 
 .btn-style:hover {
     color: #fff;
-    background-color: #000;
+    background-color: #f5232a;
 }
