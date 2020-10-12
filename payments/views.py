@@ -46,7 +46,7 @@ class payment_do(DetailView):
         context['amount'] = self.request.GET.get('amounts') # 전 페이지에서 수량 값 받아옴.
         context['paymentproducts'] = models.Paymentproduct
         context['engineers'] = engineer_model.Engineer.objects.all()        #모든 엔지니어 데이터 넘기기
-        context['form'] = MyForm()        #시간단위 입력 폼
+        context['form'] = MyForm()       #시간단위 입력 폼
         
         
         return context  

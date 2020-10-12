@@ -12,7 +12,8 @@ let selected;
 const schedule = document.getElementById('js-schedule'),
     schedule_items = schedule.getElementsByTagName('li');
 const ENGINEER_SELECT_PAGE = '__payment_engineer_info.html';
-
+// {% url 'payments:popup' %}
+// __payment_engineer_info.html
 function init() {
     // 달력 선택 이벤트
     if (days_items) {

@@ -5,6 +5,7 @@
     
     작성자: 이승준
  -->
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +14,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="__payment_address_popup.css">
+    <link rel="stylesheet" href="{% static 'css/__payment_address_popup.css' %}">
 </head>
 
 <body>
@@ -71,7 +72,7 @@
     <script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
 
     <!-- 나의 Script -->
-    <script src="__payment_address_popup.js"></script>
+    <script src="{% static 'js/__payment_address_popup.js' %}"></script>
     <script>
         document.querySelectorAll('#cancel-btn').forEach(item => item.addEventListener('click', () => self.close()));
         document.querySelector('#submit-btn').addEventListener('click', () => {
