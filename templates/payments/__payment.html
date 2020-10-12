@@ -133,43 +133,7 @@
                                         <li>토</li>
                                     </ul>
                                     <!-- 날짜 -->
-                                    <ul class="days">
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                        <li class="enable">1</li>
-                                        <li class="enable">2</li>
-                                        <li class="enable">3</li>
-                                        <li>4</li>
-                                        <li>5</li>
-                                        <li>6</li>
-                                        <li>7</li>
-                                        <li>8</li>
-                                        <li>9</li>
-                                        <li>10</li>
-                                        <li>11</li>
-                                        <li>12</li>
-                                        <li>13</li>
-                                        <li>14</li>
-                                        <li>15</li>
-                                        <li>16</li>
-                                        <li>17</li>
-                                        <li>18</li>
-                                        <li>19</li>
-                                        <li>20</li>
-                                        <li>21</li>
-                                        <li>22</li>
-                                        <li>23</li>
-                                        <li>24</li>
-                                        <li>25</li>
-                                        <li>26</li>
-                                        <li>27</li>
-                                        <li>28</li>
-                                        <li>29</li>
-                                        <li>30</li>
-                                        <li>31</li>
-                                    </ul>
+                                    <ul class="days" id="js-days"></ul>
                                 </div>
                             </li>
                             <li>        <!-- 스케쥴 시간 -->
@@ -323,3 +287,11 @@
 </form>
 {% endblock %}
 {% block js %}{% static 'js/__payment.js' %}{% endblock %}
+<!-- 
+    ****백엔드 봐주세요****
+    html 에서 script 태그 안에서 변수를 지정해두면 전역 변수 느낌으로 __payment.js 에서 사용이 가능합니다
+    '__payment_engineer_info.html' 이 부분을 url 태그로 수정해주시면 됩니다. 
+<script>
+    const ENGINEER_SELECT_PAGE = '__payment_engineer_info.html';
+</script>
+ -->
