@@ -37,6 +37,8 @@ class payment_do(DetailView):
     context_object_name = 'products'      #넘겨지는 변수 이름
     template_name = 'payments/__payment.html' # Default 연결 값 변경 
     # 넘겨지는 변수 추가(복수개의 객체 전송)
+    
+    # print("폼확인1",MyForm.fields.get.__annotations__[])
 
     # total_price = self.object.price
     def get_context_data(self, **kwargs):
@@ -47,7 +49,7 @@ class payment_do(DetailView):
         context['paymentproducts'] = models.Paymentproduct
         context['engineers'] = engineer_model.Engineer.objects.all()        #모든 엔지니어 데이터 넘기기
         context['form'] = MyForm()       #시간단위 입력 폼
-        
+        print("폼확인",MyForm)
         
         return context  
 

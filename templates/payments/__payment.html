@@ -139,12 +139,13 @@
                             <li>        <!-- 스케쥴 시간 -->
                                 <ul class="schedule" id="js-schedule">
                                 
-
-                                {% for choice in form.visible_fields %}
+                                <!-- 스케쥴 시간 -->
+                                <!--<input type="text" name='scheduled_time'id="scheduled_time" disabled >-->
+                                {% for choice in form.scheduled_time %}
                                     
                                     <li> {{choice}} </li>
                                 
-                                
+
                                 {% endfor %}
 
                                 </ul>
@@ -174,14 +175,15 @@
                 <!-- 결제수단 선택 -->
                 <div class="pay-way">
                     <h2>2. 결제수단 선택</h2>
-                    <img src="img/pay_way_ad.jpg" alt="advertisement">
+
+                    <img src="{% static 'img/pay_way_ad.jpg' %}" alt="advertisement">
                     <ul class="pay-table">
                         <li class="blue radio">
                             <ul class="pay-way-radio">
                                 <li>
                                     <input type="radio" name="pay-way" checked="checked">
                                     <label>
-                                        <img src="img/kakao-pay.png" alt="kakao-pay">
+                                        <img src="{% static 'img/kakao-pay.png' %}" alt="kakao-pay">
                                     </label>
                                 </li>
                                 <li>
@@ -207,7 +209,7 @@
                                 <label>카카오페이</label>
                             </div>
                             <div class="pay-table-field">
-                                <p><span class="price">1,300,000</span>원</p>
+                                <p><span class="price">{{products.set_saleprice | mul:amount}}</span>원</p>
                             </div>
                         </li>
                         <li>
@@ -239,11 +241,11 @@
                             <div>
                                 <p>
                                     <label>총 상품금액</label>
-                                    <span><span class="price">1,350,000</span>&nbsp;원</span>
+                                    <span><span class="price">{{products.price | mul:amount}}</span>&nbsp;원</span>
                                 </p>
                                 <p>
-                                    <label>할인쿠폰</label>
-                                    <span>-50,000 원</span>
+                                    <label>할인금액</label>
+                                    <span>-{{products.price | sub:products.set_saleprice}} 원</span>
                                 </p>
                                 <p>
                                     <label>배송비</label>
@@ -254,7 +256,7 @@
                         <li>
                             <div>
                                 <p>최종결제금액</p>
-                                <p><span class="price">1,300,000</span>원</p>
+                                <p><span class="price">{{products.set_saleprice | mul:amount}}</span>원</p>
                             </div>
                         </li>
                         <li>
@@ -264,7 +266,7 @@
                             <div>
                                 <p>신용카드</p>
                                 <p>
-                                    <span class="price">1,300,000</span>원</span>
+                                    <span class="price">{{products.set_saleprice | mul:amount}}</span>원</span>
                                 </p>
                             </div>
                         </li>
