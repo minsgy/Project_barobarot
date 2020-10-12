@@ -65,6 +65,7 @@ body {
     border: 0;
     background: 0;
     font-size: 16px;
+    font-family: 'Noto Sans KR';
 }
 
 .search.focused {
@@ -99,8 +100,14 @@ body {
 .welcome {
     justify-self: flex-end;
     min-width: 133px;
-    text-align: right;
-    padding-left: 1vw;
+    height: 20px;
+    text-align: center;
+    margin-left: 1vw;
+    border: solid var(--header-gray) 1px;
+    padding: 13px 12px;
+    border-radius: 20px;
+    background-color: var(--red);
+    color: white;
 }
 
 /* .welcome-margin{
@@ -146,9 +153,9 @@ body {
     color: #f5232a;
 }
 
-.signin:hover{
+.signin:hover {
     cursor: pointer;
-    color: #f5232a;   
+    color: #f5232a;
 }
 
 /* ************************************************************ */
@@ -158,7 +165,7 @@ body {
 .footer {
     height: 200px;
     background-color: #232a32;
-    padding: 0 20vw;
+    padding: 0 17vw;
     display: flex;
     align-items: center;
 }
@@ -186,6 +193,7 @@ body {
 
 .description strong {
     font-size: 14px;
+    font-weight: bold;
 }
 
 .description a {
