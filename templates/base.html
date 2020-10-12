@@ -96,7 +96,9 @@
             </div>
         </div>
     </div>
-    <script src="{% block js %}{% endblock %}"></script>
+    <script script type="text/javascript" src="{% block js %}{% endblock %}">
+        var a = "{{someDjangoVariable}}"
+    </script>
     <script src="{% static 'js/base.js' %}"></script>
 </body>
 

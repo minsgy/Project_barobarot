@@ -8,6 +8,7 @@ class MyForm(forms.ModelForm):
     class Meta:
         model = Schedule
         fields = ['scheduled_time']
-        widgets = {'scheduled_time': forms.Select(choices=HOUR_CHOICES)}
+        widgets = {'scheduled_time': forms.Select(choices=HOUR_CHOICES) }
+        # forms.Select(choices=HOUR_CHOICES)
         
         
