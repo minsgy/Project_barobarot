@@ -1,0 +1,60 @@
+/* 글씨체 설정 */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    font-family: 'Roboto', 'Noto Sans KR', '맑은고딕', Malgun Gothic, dotum, '돋음', arial, sans-serif;
+    /* 가로 스크롤 바 없애기 */
+    overflow-x: hidden;
+}
+
+/* 전체 div 정렬, 속성값들 */
+.card-list{
+    text-align: center;
+}
+
+.card-wrap{
+    display: inline-block;
+    padding: 30px;
+}
+
+/* div hover */
+.card-wrap:hover{
+    cursor: pointer;
+    border: 1px solid #f5232a;
+}
+
+/* div 안 요소 스타일 */
+.engineer-name{
+    display: inline-block;
+    padding-top: 8px;
+    /* padding-bottom: 8px; */
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.engineer-num{
+    display: inline-block;
+    padding-top: 8px;
+    /* padding-bottom: 8px; */
+    font-size: 15px;
+    color: #6A747C;
+}
+
+.engineer-in{
+    display: inline-block;
+    padding-top: 8px;
+    /* padding-bottom: 8px; */
+    font-size: 15px;
+}
+
+
+.engineer-review-button{
+    margin-top: 8px;
+    font-family: 'Roboto', 'Noto Sans KR', '맑은고딕', Malgun Gothic, dotum, '돋음', arial, sans-serif;
+}
+
+.engineer-review-button:hover{
+    cursor: pointer;
+}
