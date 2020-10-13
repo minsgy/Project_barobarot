@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="{% block link %}{% endblock %}">
     <style>
         /* 돋보기 url 가져오기 */
-        .zoom { background: url("{% static 'img/zoom.png' %}") no-repeat 0 0; }
+        
+        .zoom {
+            background: url("{% static 'img/zoom.png' %}") no-repeat 0 0;
+        }
     </style>
 </head>
 
@@ -48,10 +51,22 @@
                     <input type="text">
                     <a href="#" class="zoom"></a>
                 </div>
-                <div class="welcome">
-                    <p>
-                        {{user.name}}
-                    </p>
+                <img src="{% static 'img/imageBanner.png'%}" alt="delivery image">
+                <div class="profile_wrap">
+                    <div class='profile_img'>
+                        <img src="{% static 'img/profile.png' %}" width="50px;" alt="">
+                    </div>
+                    <div class='profile_box'>
+                        <div class='profile_name'>
+                            <span class='name'>{{user.name}}</span>
+                        </div>
+                        <div class='profile_id'>
+                            <span class='id'>{{user.username}}</span>
+                        </div>
+                        <div class='profile_email'>
+                            <span class='email'>{{user.email}}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -101,7 +116,11 @@
     </div>
 
 
-    <script>{% block additionalJS %}{% endblock %}</script>
+    <script>
+        { % block additionalJS %
+        } { % endblock %
+        }
+    </script>
     <script type="text/javascript" src="{% block js %}{% endblock %}">
         var a = "{{someDjangoVariable}}"
     </script>

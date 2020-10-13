@@ -6,6 +6,30 @@
 {% block content %}
 
 <!-- Content -->
+<!-- 롤링배너 부분 -->
+<div class="slide">
+    <input type="radio" name="pos" id="pos1" checked>
+    <input type="radio" name="pos" id="pos2">
+    <input type="radio" name="pos" id="pos3">
+    <input type="radio" name="pos" id="pos4">
+
+    <!-- 슬라이드 이미지 -->
+    <ul>
+        <li><img src="{% static 'img/banner1.jpg' %}" alt="logo" width="920px" height="470px"></li>
+        <li><img src="{% static 'img/banner2.jpg' %}" alt="logo" width="920px" height="470px"></li>
+        <li><img src="{% static 'img/banner3.jpg' %}" alt="logo" width="920px" height="470px"></li>
+        <li><img src="{% static 'img/banner4.jpg' %}" alt="logo" width="920px" height="470px"></li>
+    </ul>
+
+    <!-- 슬라이드 단추  -->
+    <p class="bullet">
+        <label for="pos1">1</label>
+        <label for="pos2">2</label>
+        <label for="pos3">3</label>
+        <label for="pos4">4</label>
+    </p>
+</div>
+
 <div class="content">
     <!-- 총 몇 개의 상품이 있는지 알려주는 div 박스  -->
     <div class="first-info-box">
@@ -23,7 +47,7 @@
                 <!-- 클릭했을 때 상품 상세설명으로 이동 -->
                 <!-- 상품 사진 크기 200x200으로 고정.  -->
                 <a href="{% url 'products:product_detail' product.pk %}">
-                    <img src="{{ product.product_image.url }}" alt="{{product.product_name}}" width="200px" height="200px">
+                    <img src="{{ product.product_image.url }}" alt="logo" width="200px" height="200px">
                 </a>
             </div>
 
@@ -61,9 +85,8 @@
                 </p>
             </div>
         </div>
+
         {% endfor %}
-
-
         <div>
             <ul id="page-num-group">
                 <li class="page-num-list"><a class="page-num" href="#">1</a></li>
@@ -74,5 +97,4 @@
         </div>
     </div>
 </div>
-
 {% endblock %}
