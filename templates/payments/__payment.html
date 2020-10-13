@@ -25,9 +25,10 @@
                     <li>배송정보</li>
                 </ul>
                 <ul>
-                    <li>        
+                    <li>
                         <div class="image-cover">
-                            <img src="{{ products.product_image.url }}" alt="product_profile" width="100px" height="100px">
+                            <img src="{{ products.product_image.url }}" alt="product_profile" width="100px"
+                                height="100px">
                         </div>
                         <ul class="item-name">
                             <li class="manufacturer">{{products.manufacture}}</li>
@@ -35,7 +36,8 @@
                             <li class="item-id">{{products.model_code}}</li>
                         </ul>
                     </li>
-                    <li>{{ amount }}</li>       <!--수량-->
+                    <li>{{ amount }}</li>
+                    <!--수량-->
                     <li>
                         <span class="second-row-price">{{products.set_saleprice}}</span>원
                     </li>
@@ -92,14 +94,16 @@
                             <li>
                                 <span class="star-to-right">받는분</span>
                             </li>
-                            <li>    <!-- 받는분 -->
-                                <input type="text" name='receiver_name'>    
+                            <li>
+                                <!-- 받는분 -->
+                                <input type="text" name='receiver_name'>
                             </li>
                             <li>
                                 <span class="star-to-right">연락처</span>
                             </li>
                             <li>
-                                <div class="">  <!-- 연락처 -->
+                                <div class="">
+                                    <!-- 연락처 -->
                                     <input type="text" name='receiver_number'>
                                 </div>
                             </li>
@@ -110,8 +114,8 @@
                             </li>
                             <li>
                                 <!-- 배송지 주소 -->
-                                <input type="text" name='address'id="address" disabled >
-                                <button type ='button' class="address-button"
+                                <input type="text" name='address' id="address" disabled>
+                                <button type='button' class="address-button"
                                     onclick="javascript:void(window.open('{% url 'payments:popup' %}', 'hi', 'width=500, height=543'))">검색
                                 </button>
                             </li>
@@ -136,16 +140,15 @@
                                     <ul class="days" id="js-days"></ul>
                                 </div>
                             </li>
-                            <li>        <!-- 스케쥴 시간 -->
+                            <li>
+                                <!-- 스케쥴 시간 -->
                                 <ul class="schedule" id="js-schedule">
-                                
+                                    <li class="enable"> a </li>
+                                    <!-- 스케쥴 시간 -->
+                                    {% for choice in form.scheduled_time %}
+                                        <li> {{choice}} </li>
 
-                                {% for choice in form.visible_fields %}
-                                    
-                                    <li> {{choice}} </li>
-                                
-                                
-                                {% endfor %}
+                                    {% endfor %}
 
                                 </ul>
                             </li>
@@ -174,14 +177,14 @@
                 <!-- 결제수단 선택 -->
                 <div class="pay-way">
                     <h2>2. 결제수단 선택</h2>
-                    <img src="img/pay_way_ad.jpg" alt="advertisement">
+                    <img src="{% static 'img/pay_way_ad.jpg' %}" alt="advertisement">
                     <ul class="pay-table">
                         <li class="blue radio">
                             <ul class="pay-way-radio">
                                 <li>
                                     <input type="radio" name="pay-way" checked="checked">
                                     <label>
-                                        <img src="img/kakao-pay.png" alt="kakao-pay">
+                                        <img src="{% static 'img/kakao-pay.png' %}" alt="kakao-pay">
                                     </label>
                                 </li>
                                 <li>
@@ -207,7 +210,7 @@
                                 <label>카카오페이</label>
                             </div>
                             <div class="pay-table-field">
-                                <p><span class="price">1,300,000</span>원</p>
+                                <p><span class="price">{{products.set_saleprice | mul:amount}}</span>원</p>
                             </div>
                         </li>
                         <li>
@@ -239,11 +242,11 @@
                             <div>
                                 <p>
                                     <label>총 상품금액</label>
-                                    <span><span class="price">1,350,000</span>&nbsp;원</span>
+                                    <span><span class="price">{{products.price | mul:amount}}</span>&nbsp;원</span>
                                 </p>
                                 <p>
-                                    <label>할인쿠폰</label>
-                                    <span>-50,000 원</span>
+                                    <label>할인금액</label>
+                                    <span>-{{products.price | sub:products.set_saleprice | mul:amount}} 원</span>
                                 </p>
                                 <p>
                                     <label>배송비</label>
@@ -254,7 +257,7 @@
                         <li>
                             <div>
                                 <p>최종결제금액</p>
-                                <p><span class="price">1,300,000</span>원</p>
+                                <p><span class="price">{{products.set_saleprice | mul:amount}}</span>원</p>
                             </div>
                         </li>
                         <li>
@@ -264,7 +267,7 @@
                             <div>
                                 <p>신용카드</p>
                                 <p>
-                                    <span class="price">1,300,000</span>원</span>
+                                    <span class="price">{{products.set_saleprice | mul:amount}}</span>원</span>
                                 </p>
                             </div>
                         </li>
