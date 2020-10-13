@@ -12,7 +12,7 @@ def userLogin(request):
 
         if user is not None:  # 값이 있을 시
             auth.login(request, user)
-            return redirect('engineers:engineer')
+            return redirect('products:home')
         else:
             print('로그인 실패')
             return redirect('users:login')
@@ -22,7 +22,7 @@ def userLogin(request):
 
 def userLogout(request):
     auth.logout(request)
-    return redirect('engineers:engineer')
+    return redirect('products:home')
 
 def userSignup(request):
     if request.method == 'POST':
