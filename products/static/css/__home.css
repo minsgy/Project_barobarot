@@ -24,6 +24,83 @@ body {
 /* ************************************************************ */
 
 
+/* Header */
+
+.header {
+    border-bottom: 1px solid var(--red);
+    padding: 0 10vw;
+    justify-content: flex-end;
+}
+
+.header-box {
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 5vh;
+}
+
+.search {
+    width: 508px;
+    margin-right: 3vw;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-radius: 70px;
+    padding: 0 20px;
+    background-color: #f9fcff;
+    color: #505050;
+    border: 1px solid #d8e4f1;
+}
+
+.search input {
+    width: 95%;
+    outline: 0;
+    border: 0;
+    background: 0;
+    font-size: 16px;
+}
+
+.search.focused {
+    border: 1px solid var(--red);
+    background-color: #fff;
+}
+
+.zoom {
+    width: 26px;
+    height: 26px;
+    background: url('base/img/zoom.png') no-repeat 0 0;
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    line-height: 16px;
+}
+
+.reservation {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    min-width: 74px;
+}
+
+.header span {
+    text-align: right;
+    width: 100%;
+    font-size: 17px;
+}
+
+
+/* 예약확인도 로그인 .. 이랑 묶어서 해서 필요 없어졌어요  */
+
+
+/* .reservation a {
+    color: var(--red);
+    text-decoration: none;
+    cursor: pointer;
+} */
+
+
 /* welcome 문구 */
 
 .welcome {
@@ -47,7 +124,7 @@ body {
 
 .signin {
     color: #585858;
-    /* border-right: 1px solid grey; */
+    border-right: 1px solid grey;
     padding-right: 5px;
     font-size: 12px;
     text-decoration: none;
@@ -133,8 +210,8 @@ body {
 /* 상품 개수 알려주는 div  */
 
 .first-info-box {
-    margin: 20px auto;
-    width: 1100px;
+    margin: 70px auto 20px;
+    width: 1200px;
 }
 
 #first-info-normal {
@@ -193,6 +270,7 @@ body {
     text-decoration: none;
     color: black;
     font-size: 13px;
+    /* 말줄임 효과*/
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -214,9 +292,10 @@ body {
 
 /* 원가 id */
 
-#product-original-price {
+.product-original-price {
     /* 패딩 주기 위해 블록으로 설정 */
     display: inline-block;
+    /* width: 62px; */
     font-weight: bold;
     color: black;
     font-size: 18px;
@@ -225,7 +304,7 @@ body {
     padding-bottom: 10px;
 }
 
-#product-original-price2 {
+.product-original-price2 {
     display: inline-block;
     color: black;
     font-size: 12px;
@@ -237,6 +316,7 @@ body {
 
 .product-price {
     display: inline-block;
+    /* width: 62px; */
     font-weight: bold;
     color: #f5232a;
     font-size: 18px;
@@ -256,7 +336,7 @@ body {
     /* 위쪽 선 */
     border-top: 1px solid black;
     /* 5개씩 띄우려고 너비 값 줬습니다  */
-    width: 1215px;
+    width: 1200px;
     margin: 0 auto;
 }
 
@@ -330,4 +410,110 @@ body {
     color: #f5232a;
     font-size: 15px;
     text-shadow: 1px 1px 1px rgb(207, 207, 207);
+}
+
+
+/* 롤링배너 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.slide {
+    height: 470px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.slide ul {
+    width: calc(100% * 4);
+    display: flex;
+    transition: 1s;
+}
+
+.slide li {
+    width: calc(100% / 4);
+    height: 470px;
+}
+
+
+/* 각 슬라이드 배경 색깔 */
+
+.slide li:nth-child(1) {
+    background: #019BFB;
+}
+
+.slide li:nth-child(2) {
+    background: #E9113A;
+}
+
+.slide li:nth-child(3) {
+    background: #006442;
+}
+
+.slide li:nth-child(4) {
+    background: #E0EEF7;
+}
+
+.slide input {
+    display: none;
+}
+
+
+/* 슬라이드 넘기는 단추 */
+
+.slide .bullet {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.slide .bullet label {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    background: #fff;
+    font-size: 0;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+
+/* 슬라이드 조작 */
+
+#pos1:checked~ul {
+    margin-left: 0;
+}
+
+#pos2:checked~ul {
+    margin-left: -100%;
+}
+
+#pos3:checked~ul {
+    margin-left: -200%;
+}
+
+#pos4:checked~ul {
+    margin-left: -300%;
+}
+
+
+/* 단추 조작 */
+
+#pos1:checked~.bullet label:nth-child(1),
+#pos2:checked~.bullet label:nth-child(2),
+#pos3:checked~.bullet label:nth-child(3),
+#pos4:checked~.bullet label:nth-child(4) {
+    background: #f5232a;
 }

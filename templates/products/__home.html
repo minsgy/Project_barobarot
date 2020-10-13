@@ -47,7 +47,7 @@
                 <!-- 클릭했을 때 상품 상세설명으로 이동 -->
                 <!-- 상품 사진 크기 200x200으로 고정.  -->
                 <a href="{% url 'products:product_detail' product.pk %}">
-                    <img src="{{ product.product_image.url }}" alt="{{product.product_name}}" width="200px" height="200px">
+                    <img src="{{ product.product_image.url }}" alt="logo" width="200px" height="200px">
                 </a>
             </div>
 
@@ -85,9 +85,8 @@
                 </p>
             </div>
         </div>
+
         {% endfor %}
-
-
         <div>
             <ul id="page-num-group">
                 <li class="page-num-list"><a class="page-num" href="#">1</a></li>
@@ -98,5 +97,4 @@
         </div>
     </div>
 </div>
-
 {% endblock %}
