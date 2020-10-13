@@ -33,7 +33,7 @@ body {
 /* Header */
 
 .header {
-    width: 80vw;
+    /* width: 80vw; */
     border-bottom: 1px solid var(--red);
     padding: 0 10vw;
 }
@@ -54,6 +54,7 @@ body {
 
 .search {
     min-width: 507px;
+    max-width: 507px;
     margin-right: auto;
     height: 47px;
     display: flex;
@@ -82,7 +83,6 @@ body {
 .zoom {
     width: 26px;
     height: 26px;
-    background: url('img/zoom.png') no-repeat 0 0;
     position: absolute;
     top: 10px;
     right: 16px;
@@ -172,14 +172,15 @@ body {
 /* Footer */
 
 .footer {
-    height: 200px;
+    min-height: 200px;
     background-color: #232a32;
-    padding: 0 20vw;
+    /* padding: 0 20vw; */
     display: flex;
     align-items: center;
 }
 
 .footer .box {
+    margin: 0 auto;
     display: flex;
     align-items: center;
 }
@@ -189,7 +190,7 @@ body {
 }
 
 .description {
-    width: 1080px;
+    /* width: 1080px; */
     font-family: '맑은고딕', Malgun Gothic, dotum, '돋음', arial, sans-serif;
     font-size: 11px;
     color: var(--footer-gray);
@@ -231,5 +232,6 @@ body {
 /* Content */
 
 .content {
+    padding: 50px 0;
     flex-grow: 1;
 }
