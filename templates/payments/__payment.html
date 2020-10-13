@@ -13,7 +13,7 @@
     {% csrf_token %}
     <!-- product 데이터, products 안에 값 -->
 
-    <div class="container">
+    <div class="payment_container">
         <img src="{% static 'img/step02_payment.gif' %}" alt="step02_payment">
 
         <div class="order-item-list">
@@ -97,7 +97,7 @@
                             </li>
                             <li>
                                 <!-- 받는분 -->
-                                <input type="text" name='receiver_name'>
+                                <input class="ship-info-input" type="text" name='receiver_name'>
                             </li>
                             <li>
                                 <span class="star-to-right">연락처</span>
@@ -105,7 +105,7 @@
                             <li>
                                 <div class="">
                                     <!-- 연락처 -->
-                                    <input type="text" name='receiver_number'>
+                                    <input class="ship-info-input" type="text" name='receiver_number'>
                                 </div>
                             </li>
                         </ul>
@@ -115,7 +115,7 @@
                             </li>
                             <li>
                                 <!-- 배송지 주소 -->
-                                <input type="text" name='address' id="address" disabled>
+                                <input class="ship-info-input" type="text" name='address' id="address" disabled>
                                 <button type='button' class="address-button"
                                     onclick="javascript:void(window.open('{% url 'payments:popup' %}', 'hi', 'width=500, height=543'))">검색
                                 </button>
@@ -144,7 +144,6 @@
                             <li>
                                 <!-- 스케쥴 시간 -->
                                 <ul class="schedule" id="js-schedule">
-                                    <li class="enable"> a </li>
                                     <!-- 스케쥴 시간 -->
                                     {% for choice in form.scheduled_time %}
                                         <li> {{choice}} </li>
@@ -157,7 +156,7 @@
                         <ul class="ship-info-field">
                             <li>배송 메세지</li>
                             <li>
-                                <select name="ship-message">
+                                <select class="ship-info-input" name="ship-message">
                                     <option value="none">메세지를 선택해 주세요.</option>
                                     <option value="to-office">부재 시 경비(관리)실에 맡겨주세요.</option>
                                     <option value="front-of-door">부재 시 문 앞에 놓아주세요.</option>
@@ -291,6 +290,9 @@
 </form>
 {% endblock %}
 {% block js %}{% static 'js/__payment.js' %}{% endblock %}
+{% block additionalJS %}
+    const ENGINEER_SELECT_PAGE = '{% url 'payments:payment_engineer_popup' %}';
+{% endblock %}
 <!-- 
     ****백엔드 봐주세요****
     html 에서 script 태그 안에서 변수를 지정해두면 전역 변수 느낌으로 __payment.js 에서 사용이 가능합니다

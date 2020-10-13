@@ -5,17 +5,18 @@
     box-sizing: border-box;
 }
 
-:root {
-    --black: #232a32;
-}
-
 body {
     font-family: '맑은고딕', Malgun Gothic, dotum, '돋음', arial, sans-serif;
     font-size: 12px;
     color: var(--black);
 }
 
-.container {
+:root {
+    --black: #232a32;
+}
+
+
+.payment_container {
     width: 1008px;
     margin: 0 auto;
 }
@@ -296,7 +297,7 @@ h2 {
 
 /* 배송정보 주소 */
 #address {
-    width: 662px;
+    width: 653px;
 }
 
 #address, .customer-name {
@@ -337,7 +338,7 @@ select {
     color: #6a747c;
 }
 
-input[type="text"], select {
+.ship-info-input {
     color: #6a747c;
     border: 1px solid #aeb3bb;
     height: 27px;
