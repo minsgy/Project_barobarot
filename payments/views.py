@@ -150,3 +150,15 @@ def popup(request) :
 
 def payment_engineer_popup(request) :
     return render(request, 'payments/__payment_engineer_info.html')
+
+def engineer_json_test(request):
+    if (request.method == 'POST'):
+        import json
+        json_dic = json.loads(request.body)
+        # PK
+        from engineers import models as engineer_model
+        engineers = engineer_model.Engineer.objects.all()
+        json_dic['engineers'] = engineers;
+
+        # json_dic 에 담기는 정보:dict => date(날짜):str, time(시간):str
+        return render(request, 'engineers/engineers_list.html', json_dic)

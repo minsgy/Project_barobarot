@@ -13,4 +13,5 @@ urlpatterns = [
     path('order_success/<int:user_pk>/<int:payment_pk>/', views.order_success, name="order_success"), # 주문 성공 페이지 입장
     path('__payment_address_popup', views.popup, name="popup"),
     path('__payment_engineer_info', views.payment_engineer_popup, name="payment_engineer_popup"),
+    path('engineer_json_test', views.engineer_json_test, name="json_test"),
 ]

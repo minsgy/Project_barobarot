@@ -1,20 +1,43 @@
-{% extends '../base.html' %}
-<!-- prettier-ignore -->
-{% block content %}
-<h1>엔지니어 리스트 확인</h1><br>
-<!-- prettier-ignore -->
-{% for engineer in engineers %}
-<span>
-    <a href="{% url 'engineers:detail' engineer.pk %}">
-        {{engineer.name}} / {{engineer.number}}
-</span>
-    <img src="{{ engineer.image.url }}" alt="{{engineer.name}}" width="100px" height="100px">
-
-    </a>
-    {% for a in engineer.schedule.all %}
-        <br> 예약된 날짜 : {{a.scheduled_date | date:"m월-d일"}} , 시간 :  {{a.scheduled_time | date:"A f 시"}}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asdf</title>
+    <link rel="stylesheet" href="{% static 'css/engineers_list.css' %}">
+</head>
+<body>
+    <h1>
+        {{ date }} / {{ time }}
+    </h1>
+    <h1>엔지니어 리스트 확인</h1><br>
+    <!-- prettier-ignore -->
+    {% for engineer in engineers %}
+    <span>
+        <a id="engineer-info" href="{% url 'engineers:detail' engineer.pk %}">
+            <span id="pk">{{engineer.pk}}</span>
+            <span id="name">{{engineer.name}}</span>
+            <span id="number">{{engineer.number}}</span>
+            <span id="affiliation">{{engineer.affiliation}}</span>
+            <span id="image">{{ engineer.image.url }}</span>
+        </a>
+        <button id="engineer-decide">결정</button>
+    </span>
+        <img src="{{ engineer.image.url }}" alt="{{engineer.name}}" width="100px" height="100px">
+    
+        </a>
+        {% for a in engineer.schedule.all %}
+            {% if a.scheduled_date|date:"Y-m-d" == date %}
+                <h2>이 사람은 돼요</h2>
+            {% endif %}
+            <br> 예약된 날짜 : {{a.scheduled_date | date:"m월-d일"}} , 시간 :  {{a.scheduled_time | date:"A f 시"}}
+        {% endfor %}
+        <input type="text" id="engineer-pk" value="{{engineer.pk}}">
+    <!-- prettier-ignore -->
     {% endfor %}
-<!-- prettier-ignore -->
-{% endfor %}
-<!-- prettier-ignore -->
-{% endblock %}
+    <!-- prettier-ignore -->
+    
+    <script src="{% static 'js/engineers_list.js' %}"></script>
+</body>
+</html>

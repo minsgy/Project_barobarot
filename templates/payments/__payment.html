@@ -125,6 +125,7 @@
                             <li>희망배송일</li>
                             <li>
                                 <div class="calendar">
+                                    <h2>10월</h2>
                                     <!-- 첫번째 행 -->
                                     <ul class="sun-to-sat">
                                         <li>
@@ -151,6 +152,16 @@
                                     {% endfor %}
 
                                 </ul>
+                            </li>
+                            <li class="engineer-profile">
+                                <input type="text" name="engineer-pk" id="my-engineer-pk">
+                                <div class="engineer-profile-info" id="my-engineer-info">
+                                    <img id="my-engineer-image" alt="engineer_profile_image">
+                                    <p class="engineer-description" id="my-engineer-affiliation"></p>
+                                    <p class="engineer-name" id="my-engineer-name"></p>
+                                    <p class="engineer-description" id="my-engineer-number"></p>
+                                </div>
+                                <p id="please-put-time">시간을 선택해주세요.</p>
                             </li>
                         </ul>
                         <ul class="ship-info-field">
@@ -291,13 +302,7 @@
 {% endblock %}
 {% block js %}{% static 'js/__payment.js' %}{% endblock %}
 {% block additionalJS %}
-    const ENGINEER_SELECT_PAGE = '{% url 'engineers:engineer' %}';
+    <!-- const ENGINEER_SELECT_PAGE = '{% url 'engineers:engineer' %}'; -->
+    const ENGINEER_SELECT_PAGE = '{% url 'payments:json_test' %}';
+    const CSRF_TOKEN = '{{csrf_token}}';
 {% endblock %}
-<!-- 
-    ****백엔드 봐주세요****
-    html 에서 script 태그 안에서 변수를 지정해두면 전역 변수 느낌으로 __payment.js 에서 사용이 가능합니다
-    '__payment_engineer_info.html' 이 부분을 url 태그로 수정해주시면 됩니다. 
-<script>
-    const ENGINEER_SELECT_PAGE = '__payment_engineer_info.html';
-</script>
- -->

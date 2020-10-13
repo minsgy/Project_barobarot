@@ -14,6 +14,12 @@ class ListEngineer(ListView): # ListView를 이용한 기사 나열
     #     context = super().get_context_data(**kwargs)      
     #     context['schedule'] = Engineer.objects.sch
     #     return context
+
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     time = self.request.POST['time']
+    #     print('ajfeoiwfjoefwjfojeifj', time)
+    #     return context
     
 class DetailEngineer(DetailView): # DetailView 리스트 값을 전부 반환함.
 

@@ -1,0 +1,333 @@
+/*
+    base css 입니다. content 클래스 안에 내용을 추가하시면 됩니다.
+    meyer reset css, Noto Sans KR, Roboto 폰트를 import 했습니다.
+*/
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* 자주 쓰는 색 */
+
+:root {
+    --red: #f5232a;
+    --footer-gray: #6A747C;
+}
+
+body {
+    font-family: 'Roboto', 'Noto Sans KR', '맑은고딕', Malgun Gothic, dotum, '돋음', arial, sans-serif;
+    /* 가로 스크롤 바 없애기 */
+    overflow-x: hidden;
+}
+
+
+/* ************************************************************ */
+
+
+/* welcome 문구 */
+
+.welcome {
+    display: flex;
+    height: 20px;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.welcome-margin {
+    margin-top: 15px;
+    margin-right: 100px;
+}
+
+#sign-log-group .sign-log {
+    display: inline-block;
+}
+
+
+/* 로그인 회원가입 로그아웃 예약확인 */
+
+.signin {
+    color: #585858;
+    border-right: 1px solid grey;
+    padding-right: 5px;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.signin:hover {
+    cursor: pointer;
+    color: #f5232a;
+}
+
+#reservation {
+    color: #f5232a;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+
+/* ************************************************************ */
+
+
+/* Footer */
+
+.footer {
+    height: 200px;
+    background-color: #232a32;
+    padding: 0 20vw;
+    display: flex;
+    align-items: center;
+}
+
+.footer .box {
+    display: flex;
+    align-items: center;
+}
+
+.box img {
+    margin-right: 30px;
+}
+
+.description {
+    width: 1080px;
+    font-family: '맑은고딕', Malgun Gothic, dotum, '돋음', arial, sans-serif;
+    font-size: 11px;
+    color: var(--footer-gray);
+}
+
+.description strong {
+    font-size: 14px;
+}
+
+.description a {
+    color: var(--footer-gray);
+}
+
+.description ul {
+    display: flex;
+}
+
+.description ul:first-child,
+.description ul:nth-last-child(2) {
+    margin-bottom: 10px;
+}
+
+.description li {
+    margin: 3px;
+}
+
+.light-gray-text {
+    color: #aeb3bb;
+}
+
+.red-text {
+    color: var(--red);
+}
+
+
+/* ************************************************************ */
+
+
+/* Content */
+
+
+/* 상품 개수 알려주는 div  */
+
+.first-info-box {
+    margin: 20px auto;
+    width: 1100px;
+}
+
+#first-info-normal {
+    font-size: 24px;
+}
+
+#first-info-bold {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+/* 상품 img class */
+
+.pictures {
+    /* text-align: center; */
+    overflow: hidden;
+    margin: 20px;
+}
+
+
+/* 사진 통째로 (div) class  */
+
+.product {
+    /* 상품들 가로 정렬  */
+    display: inline-block;
+}
+
+
+/* 제품에 마우스 올렸을 때 커서  */
+
+.product:hover {
+    cursor: pointer;
+}
+
+
+/* div id */
+
+#product-detail {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+
+/* 상품의 이름 id  */
+
+#product-title {
+    /* 상품 사진하고 같은 너비로 제품 이름 너비설정 */
+    width: 200px;
+}
+
+
+/* 상품명 스타일 */
+
+#product-title-hover {
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+}
+
+
+/* 상품명에 커서 올릴 때 */
+
+#product-title-hover:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+
+/* 상품의 가격 id  */
+
+
+/* 원가 id */
+
+#product-original-price {
+    /* 패딩 주기 위해 블록으로 설정 */
+    display: inline-block;
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+    /* 위아래 간격 */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#product-original-price2 {
+    display: inline-block;
+    color: black;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+
+/* 할인가 id */
+
+.product-price {
+    display: inline-block;
+    font-weight: bold;
+    color: #f5232a;
+    font-size: 18px;
+}
+
+
+/* 최대 할인가 문구 스타일 */
+
+.product-price2 {
+    color: #f5232a;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.list {
+    position: relative;
+    /* 위쪽 선 */
+    border-top: 1px solid black;
+    /* 5개씩 띄우려고 너비 값 줬습니다  */
+    width: 1215px;
+    margin: 0 auto;
+}
+
+
+/* 평점 */
+
+#grade {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* 페이지 넘버 */
+
+
+/* a태그 아이디 */
+
+.page-num {
+    color: black;
+    text-align: none;
+    text-decoration: none;
+    font-size: 12px;
+    padding-right: 10px;
+}
+
+
+/* li 아이디 */
+
+.page-num-list {
+    display: inline-block;
+}
+
+#page-num:hover {
+    color: #f5232a;
+    text-decoration: underline;
+}
+
+
+/* ul 아이디  */
+
+#page-num-group {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+/* 무료배송, 오늘배송 버튼 스타일 */
+
+#delivery {
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 6px;
+    border: 1px solid gainsboro;
+    color: grey;
+    font-size: 12px;
+    font-family: 'Roboto', 'Noto Sans KR', '맑은고딕', Malgun Gothic, dotum, '돋음', arial, sans-serif;
+}
+
+
+/* 무료배송, 오늘배송 버튼 호버 스타일 */
+
+#delivery:hover {
+    cursor: pointer;
+}
+
+#grade-group {
+    margin-top: 7px;
+}
+
+#test {
+    color: #f5232a;
+    font-size: 15px;
+    text-shadow: 1px 1px 1px rgb(207, 207, 207);
+}
