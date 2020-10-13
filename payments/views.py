@@ -147,3 +147,6 @@ def order_detail(request, pk):
 
 def popup(request) :
     return render(request, 'payments/__payment_address_popup.html')
+
+def payment_engineer_popup(request) :
+    return render(request, 'payments/__payment_engineer_info.html')

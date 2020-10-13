@@ -11,5 +11,6 @@ urlpatterns = [
     path('paymentproduct/create/<int:product_pk>/<int:user_pk>/', views.PaymentproductCreate, name="paymentproduct_create"), # 주문 아이템 생성
     path('paymentproduct/<int:pk>/',views.payment_do.as_view(), name = "payment_do"), # 주문 페이지 입장
     path('order_success/<int:user_pk>/<int:payment_pk>/', views.order_success, name="order_success"), # 주문 성공 페이지 입장
-    path('__payment_address_popup', views.popup, name="popup")
+    path('__payment_address_popup', views.popup, name="popup"),
+    path('__payment_engineer_info', views.payment_engineer_popup, name="payment_engineer_popup"),
 ]
