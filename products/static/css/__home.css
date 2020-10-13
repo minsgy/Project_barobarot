@@ -210,8 +210,8 @@ body {
 /* 상품 개수 알려주는 div  */
 
 .first-info-box {
-    margin: 20px auto;
-    width: 1100px;
+    margin: 70px auto 20px;
+    width: 1200px;
 }
 
 #first-info-normal {
@@ -270,14 +270,12 @@ body {
     text-decoration: none;
     color: black;
     font-size: 13px;
-    
     /* 말줄임 효과*/
     overflow: hidden;
-    text-overflow:ellipsis;
+    text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp:2;
-    -webkit-box-orient:vertical;
-    
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 
@@ -338,7 +336,7 @@ body {
     /* 위쪽 선 */
     border-top: 1px solid black;
     /* 5개씩 띄우려고 너비 값 줬습니다  */
-    width: 1215px;
+    width: 1200px;
     margin: 0 auto;
 }
 
@@ -414,88 +412,108 @@ body {
     text-shadow: 1px 1px 1px rgb(207, 207, 207);
 }
 
+
 /* 롤링배너 */
 
-*{margin:0;padding:0;}
-
-ul,li{
-    list-style:none;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.slide{
-    height:470px;
-    overflow:hidden;
-    position:relative;
+ul,
+li {
+    list-style: none;
+}
+
+.slide {
+    height: 470px;
+    overflow: hidden;
+    position: relative;
     text-align: center;
 }
 
-.slide ul{
-    width:calc(100% * 4);
+.slide ul {
+    width: calc(100% * 4);
     display: flex;
-    transition:1s;
+    transition: 1s;
 }
 
-.slide li{
-    width:calc(100% / 4);
-    height:470px;
+.slide li {
+    width: calc(100% / 4);
+    height: 470px;
 }
+
 
 /* 각 슬라이드 배경 색깔 */
-.slide li:nth-child(1){
-    background:#019BFB;
+
+.slide li:nth-child(1) {
+    background: #019BFB;
 }
 
-.slide li:nth-child(2){
-    background:#E9113A;
-}
-.slide li:nth-child(3){
-    background:#006442;
-}
-.slide li:nth-child(4){
-    background:#E0EEF7;
+.slide li:nth-child(2) {
+    background: #E9113A;
 }
 
-.slide input{
-    display:none;
+.slide li:nth-child(3) {
+    background: #006442;
 }
+
+.slide li:nth-child(4) {
+    background: #E0EEF7;
+}
+
+.slide input {
+    display: none;
+}
+
 
 /* 슬라이드 넘기는 단추 */
-.slide .bullet{
-    position:absolute;
-    bottom:20px;
-    left:0;
-    right:0;
-    text-align:center;
-    z-index:10;
+
+.slide .bullet {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
 }
 
-.slide .bullet label{
-    width:10px;
-    height:10px;
-    border-radius:10px;
-    display:inline-block;
-    background:#fff;
-    font-size:0;
-    transition:0.5s;
-    cursor:pointer;
+.slide .bullet label {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    background: #fff;
+    font-size: 0;
+    transition: 0.5s;
+    cursor: pointer;
 }
+
 
 /* 슬라이드 조작 */
-#pos1:checked ~ ul{
-    margin-left:0;
-}
-#pos2:checked ~ ul{
-    margin-left:-100%;
-}
-#pos3:checked ~ ul{
-    margin-left:-200%;
-}
-#pos4:checked ~ ul{
-    margin-left:-300%;
+
+#pos1:checked~ul {
+    margin-left: 0;
 }
 
-    /* 단추 조작 */
-#pos1:checked ~ .bullet label:nth-child(1),
-#pos2:checked ~ .bullet label:nth-child(2),
-#pos3:checked ~ .bullet label:nth-child(3),
-#pos4:checked ~ .bullet label:nth-child(4){background: #f5232a;}
+#pos2:checked~ul {
+    margin-left: -100%;
+}
+
+#pos3:checked~ul {
+    margin-left: -200%;
+}
+
+#pos4:checked~ul {
+    margin-left: -300%;
+}
+
+
+/* 단추 조작 */
+
+#pos1:checked~.bullet label:nth-child(1),
+#pos2:checked~.bullet label:nth-child(2),
+#pos3:checked~.bullet label:nth-child(3),
+#pos4:checked~.bullet label:nth-child(4) {
+    background: #f5232a;
+}
