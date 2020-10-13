@@ -8,6 +8,10 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% block link %}{% endblock %}">
+    <style>
+        /* 돋보기 url 가져오기 */
+        .zoom { background: url("{% static 'img/zoom.png' %}") no-repeat 0 0; }
+    </style>
 </head>
 
 <body>
@@ -97,7 +101,8 @@
     </div>
 
 
-    <script script type="text/javascript" src="{% block js %}{% endblock %}">
+    <script>{% block additionalJS %}{% endblock %}</script>
+    <script type="text/javascript" src="{% block js %}{% endblock %}">
         var a = "{{someDjangoVariable}}"
     </script>
     <script src="{% static 'js/base.js' %}"></script>
