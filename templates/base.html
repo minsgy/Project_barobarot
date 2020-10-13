@@ -52,10 +52,21 @@
                     <a href="#" class="zoom"></a>
                 </div>
                 <img src="{% static 'img/imageBanner.png'%}" alt="delivery image">
-                <div class="welcome">
-                    <p>
-                        {{user.name}}
-                    </p>
+                <div class="profile_wrap">
+                    <div class='profile_img'>
+                        <img src="{% static 'img/profile.png' %}" width="50px;" alt="">
+                    </div>
+                    <div class='profile_box'>
+                        <div class='profile_name'>
+                            <span class='name'>{{user.name}}</span>
+                        </div>
+                        <div class='profile_id'>
+                            <span class='id'>{{user.username}}</span>
+                        </div>
+                        <div class='profile_email'>
+                            <span class='email'>{{user.email}}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
