@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="{% block link %}{% endblock %}">
     <style>
         /* 돋보기 url 가져오기 */
-        .zoom { background: url("{% static 'img/zoom.png' %}") no-repeat 0 0; }
+        
+        .zoom {
+            background: url("{% static 'img/zoom.png' %}") no-repeat 0 0;
+        }
     </style>
 </head>
 
@@ -48,6 +51,7 @@
                     <input type="text">
                     <a href="#" class="zoom"></a>
                 </div>
+                <img src="{% static 'img/imageBanner.png'%}" alt="delivery image">
                 <div class="welcome">
                     <p>
                         {{user.name}}
@@ -101,7 +105,11 @@
     </div>
 
 
-    <script>{% block additionalJS %}{% endblock %}</script>
+    <script>
+        { % block additionalJS %
+        } { % endblock %
+        }
+    </script>
     <script type="text/javascript" src="{% block js %}{% endblock %}">
         var a = "{{someDjangoVariable}}"
     </script>
