@@ -423,7 +423,7 @@ ul,li{
 }
 
 .slide{
-    height:300px;
+    height:470px;
     overflow:hidden;
     position:relative;
     text-align: center;
@@ -437,7 +437,7 @@ ul,li{
 
 .slide li{
     width:calc(100% / 4);
-    height:300px;
+    height:470px;
 }
 
 /* 각 슬라이드 배경 색깔 */
@@ -498,4 +498,4 @@ ul,li{
 #pos1:checked ~ .bullet label:nth-child(1),
 #pos2:checked ~ .bullet label:nth-child(2),
 #pos3:checked ~ .bullet label:nth-child(3),
-#pos4:checked ~ .bullet label:nth-child(4){background:#666;}
+#pos4:checked ~ .bullet label:nth-child(4){background: #f5232a;}
