@@ -1,6 +1,7 @@
 {% extends '../base.html' %}
 {% load static %}
 {% load mathfilters %}
+{% load humanize %}
 
 
 {% block link %}{% static 'css/__payment.css' %}{% endblock %}
@@ -39,7 +40,7 @@
                     <li>{{ amount }}</li>
                     <!--수량-->
                     <li>
-                        <span class="second-row-price">{{products.set_saleprice}}</span>원
+                        <span class="second-row-price">{{products.set_saleprice | intcomma}}</span>원
                     </li>
                     <li>
                         <ul class="second-row-seperate">
@@ -55,7 +56,7 @@
                     <p>총 주문금액
                         <br>
                         <span class="red">
-                            <span class="third-row-price">{{products.set_saleprice | mul:amount}}</span>원
+                            <span class="third-row-price">{{products.set_saleprice | mul:amount| intcomma}}</span>원
                         </span>
                     </p>
                 </div>
@@ -210,7 +211,7 @@
                                 <label>카카오페이</label>
                             </div>
                             <div class="pay-table-field">
-                                <p><span class="price">{{products.set_saleprice | mul:amount}}</span>원</p>
+                                <p><span class="price">{{products.set_saleprice | mul:amount| intcomma}}</span>원</p>
                             </div>
                         </li>
                         <li>
@@ -242,11 +243,11 @@
                             <div>
                                 <p>
                                     <label>총 상품금액</label>
-                                    <span><span class="price">{{products.price | mul:amount}}</span>&nbsp;원</span>
+                                    <span><span class="price">{{products.price | mul:amount | intcomma}}</span>&nbsp;원</span>
                                 </p>
                                 <p>
                                     <label>할인금액</label>
-                                    <span>-{{products.price | sub:products.set_saleprice | mul:amount}} 원</span>
+                                    <span>-{{products.price | sub:products.set_saleprice | mul:amount | intcomma}} 원</span>
                                 </p>
                                 <p>
                                     <label>배송비</label>
@@ -257,7 +258,7 @@
                         <li>
                             <div>
                                 <p>최종결제금액</p>
-                                <p><span class="price">{{products.set_saleprice | mul:amount}}</span>원</p>
+                                <p><span class="price">{{products.set_saleprice | mul:amount | intcomma}}</span>원</p>
                             </div>
                         </li>
                         <li>
@@ -267,7 +268,7 @@
                             <div>
                                 <p>신용카드</p>
                                 <p>
-                                    <span class="price">{{products.set_saleprice | mul:amount}}</span>원</span>
+                                    <span class="price">{{products.set_saleprice | mul:amount | intcomma}}</span>원</span>
                                 </p>
                             </div>
                         </li>
