@@ -15,28 +15,48 @@
 
         <!-- Header -->
         <div class="header">
+            <div class="user-box">
+                <ul class="sign-log-group">
+                    <li class="sign-log">
+                        <a class="signin" href="#">회원가입</a>
+                    </li>
+                    <li class="sign-log">
+                        <a class="signin" href="#">로그인</a>
+                    </li>
+                    <li class="sign-log">
+                        <a class="signin" href="#">로그아웃</a>
+                    </li>
+                    <li class="sign-log">
+                        <a class="reservation" href="#">예약확인</a>
+                    </li>
+                </ul>
+            </div>
             <!-- Header 양 쪽 margin 주기 위해 box 따로 만듦 -->
             <div class="header-box">
                 <a href="#">
-                    <img src="../base/img/logo.gif" alt="logo">
+                    <img class="header-img" src="../base/img/logo.gif" alt="logo">
                 </a>
-                <!-- 경로 문제로 zoom.png 뜨지 않음-->
                 <div class="search">
                     <input type="text">
                     <a href="#" class="zoom"></a>
                 </div>
-                <div class="reservation">
-                    <span>
-                        <a href="#" id="reservation">
-                            예약 확인
-                        </a>
-                    </span>
+                <img src="../base/img/imageBanner.png" alt="delivery image">
+                <div class="welcome">
+                    <p>
+                        User
+                    </p>
                 </div>
             </div>
         </div>
 
+        <div class="nav-link">
+            <a href="">홈</a>
+            <span>></span>
+            <a href="" class="bold-text">예약 확인</a>
+        </div>
         <!-- Content -->
         <div class="content">
+
             <!-- 고객 정보 -->
             <div class="category mg-bottom"><span class="bold-text">고객 정보</span></div>
             <hr>
@@ -73,10 +93,9 @@
                 <span class="bold-text ">리뷰</span><button class="button"><span class="span">리뷰
                         쓰러가기</span></button>
             </div>
-            <hr>
+            <hr class="mg-bottom-lg">
         </div>
     </div>
-
 
     <!-- Footer -->
     <div class="footer">
@@ -112,7 +131,6 @@
             </div>
         </div>
     </div>
-
     <script src="../base/base.js"></script>
 </body>
 
