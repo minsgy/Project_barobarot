@@ -6,7 +6,30 @@
 {% block content %}
 
 <!-- Content -->
-<div class="content">
+<!-- 롤링배너 부분 -->
+<div class="slide">
+            <input type="radio" name="pos" id="pos1" checked>
+            <input type="radio" name="pos" id="pos2">
+            <input type="radio" name="pos" id="pos3">
+            <input type="radio" name="pos" id="pos4">
+        
+            <!-- 슬라이드 이미지 -->
+            <ul>
+                <li><img src="{% static 'img/banner1.jpg' %}" alt="logo" width="920px" height="470px"></li>
+                <li><img src="{% static 'img/banner2.jpg' %}" alt="logo" width="920px" height="470px"></li>
+                <li><img src="{% static 'img/banner3.jpg' %}" alt="logo" width="920px" height="470px"></li>
+                <li><img src="{% static 'img/banner4.jpg' %}" alt="logo" width="920px" height="470px"></li>
+            </ul>
+
+            <!-- 슬라이드 단추  -->
+            <p class="bullet">
+                <label for="pos1">1</label>
+                <label for="pos2">2</label>
+                <label for="pos3">3</label>
+                <label for="pos4">4</label>
+            </p>
+        </div>
+        <div class="content">
     <!-- 총 몇 개의 상품이 있는지 알려주는 div 박스  -->
     <div class="first-info-box">
         <!-- 하이마트몰에서는 총 몇 개의 상품이 있는지 알려주는 문구가 있길래 넣어봤습니다..  -->
