@@ -32,7 +32,7 @@ class PaymentproductList(ListView) :
 class payment_do(DetailView):
 
     ''' payment doing cbv '''
-
+    
     model = product_model.Product   
     context_object_name = 'products'      #넘겨지는 변수 이름
     template_name = 'payments/__payment.html' # Default 연결 값 변경 
@@ -55,7 +55,7 @@ class payment_do(DetailView):
 # 결제 상품 생성
 def PaymentproductCreate(request, product_pk, user_pk):
 
-    ''' Create paymentproduct fbv '''
+    ''' Create paymentproduct fbv ''' 
 
     if request.method == 'POST':
         paymentproducts = Paymentproduct() # 객체 클래스 적용
