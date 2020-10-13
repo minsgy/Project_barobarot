@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>기사 선택</title>
 </head>
+
 <body>
     <!-- 기사를 선택할 수 있는 팝업입니다. -->
     <h2>기사를 선택할 수 있는 팝업입니다.</h2>
+
+    <!-- prettier-ignore -->
+    {% for engineer in engineers %}
+    <span>
+        <a href="{% url 'engineers:detail' engineer.pk %}">
+            {{engineer.name}} / {{engineer.number}}
+    </span>
+    <img src="{{ engineer.image.url }}" alt="{{engineer.name}}" width="100px" height="100px">
+
+    </a>
+    {% for a in engineer.schedule.all %}
+    <br> 예약된 날짜 : {{a.scheduled_date | date:"m월-d일"}} , 시간 : {{a.scheduled_time | date:"A f 시"}}
+    {% endfor %}
+    <!-- prettier-ignore -->
+    {% endfor %}
+
+
 </body>
+
 </html>
