@@ -112,7 +112,7 @@ function init() {
             postData(ENGINEER_SELECT_PAGE, selected_data).then(response => {
                 const html = response.text();
                 html.then(text => {
-                    const w = window.open(ENGINEER_SELECT_PAGE, 'test', 'width=500, height=500');
+                    const w = window.open(ENGINEER_SELECT_PAGE, 'test', 'width=900, height=900');
                     w.document.write(text);
                 })
                 // const blob = response.blob();
