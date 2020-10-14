@@ -1,10 +1,8 @@
 <!-- 
-    추후에 base.html 을 상속하여 사용할 것입니다.
     상품 상세 페이지입니다.
-
-    아직 수정이 필요한 코드입니다...
     
     작성일: 2020년 9월 30일(수)
+    수정일: 2020년 10월 14일(수)
     작성자: 이승준
  -->
 
@@ -18,7 +16,6 @@
 <!-- prettier-ignore -->
 {% block content %}
 
-<div class="content-container">
     <!-- 상품 이름 위의 회사 이름 -->
     <div class="manufacturer-wrap">
         <a href="#" class="manufacturer">{{products.manufacture}}</a>
@@ -235,7 +232,8 @@
             </ul>
         </div>
     </div>
-</div>
-<script src="{% static 'js/__product_detail.js' %}"></script>
+
 <!-- prettier-ignore -->
 {% endblock %}
+
+{% block js %}{% static 'js/__product_detail.js' %}{% endblock %}
