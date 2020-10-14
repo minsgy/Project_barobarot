@@ -125,13 +125,14 @@
     </div>
 
 
-    <script>
-        { % block additionalJS %
-        } { % endblock %
-        }
+    <script type="text/javascript">
+        {% block additionalJS %} {% endblock %}
     </script>
     <script type="text/javascript" src="{% block js %}{% endblock %}">
+        <!-- 필요 없는 부분입니다. -->
+        {% comment %}
         var a = "{{someDjangoVariable}}"
+        {% endcomment %}
     </script>
     <script src="{% static 'js/base.js' %}"></script>
 </body>
