@@ -16,13 +16,17 @@ body {
 
 .card-wrap{
     display: inline-block;
-    padding: 30px;
+    margin: 30px;
 }
 
 /* div hover */
 .card-wrap:hover{
     cursor: pointer;
-    border: 1px solid #f5232a;
+    box-shadow: 5px 5px 5px #C6C6C6;
+}
+
+.card-focus{
+    border: 3px solid red;
 }
 
 /* div 안 요소 스타일 */
@@ -52,7 +56,12 @@ body {
 
 .engineer-review-button{
     margin-top: 8px;
+    margin-bottom: 8px;
     font-family: 'Roboto', 'Noto Sans KR', '맑은고딕', Malgun Gothic, dotum, '돋음', arial, sans-serif;
+    background-color: #ffffff;
+    background-color: rgba( 255, 255, 255, 1);
+    border: 1px solid grey;
+    border-radius: 5px;
 }
 
 .engineer-review-button:hover{
