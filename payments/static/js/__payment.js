@@ -110,11 +110,16 @@ function init() {
             };
             // 선택된 날짜, 시간 django 로 post 요청
             postData(ENGINEER_SELECT_PAGE, selected_data).then(response => {
-                const blob = response.blob();
-                blob.then(b => {
-                    const url = URL.createObjectURL(b);
-                    window.open(url, 'schedule', 'width=500, height=543');
+                const html = response.text();
+                html.then(text => {
+                    const w = window.open(ENGINEER_SELECT_PAGE, 'test', 'width=500, height=500');
+                    w.document.write(text);
                 })
+                // const blob = response.blob();
+                // blob.then(b => {
+                //     const url = URL.createObjectURL(b);
+                //     window.open(url, 'schedule', 'width=500, height=543');
+                // })
             });
         }));
         // window.open(ENGINEER_SELECT_PAGE, 'schedule', 'width=500, height=543');
