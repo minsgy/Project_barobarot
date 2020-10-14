@@ -447,11 +447,11 @@ li {
 /* 각 슬라이드 배경 색깔 */
 
 .slide li:nth-child(1) {
-    background: #019BFB;
+    background: #fff8b0;
 }
 
 .slide li:nth-child(2) {
-    background: #E9113A;
+    background: #2138c2;
 }
 
 .slide li:nth-child(3) {
