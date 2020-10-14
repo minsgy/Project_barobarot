@@ -300,9 +300,9 @@
     </div>
 </form>
 {% endblock %}
-{% block js %}{% static 'js/__payment.js' %}{% endblock %}
 {% block additionalJS %}
     <!-- const ENGINEER_SELECT_PAGE = '{% url 'engineers:engineer' %}'; -->
     const ENGINEER_SELECT_PAGE = '{% url 'payments:json_test' %}';
     const CSRF_TOKEN = '{{csrf_token}}';
 {% endblock %}
+{% block js %}{% static 'js/__payment.js' %}{% endblock %}
