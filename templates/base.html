@@ -131,27 +131,27 @@
                         </svg>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="https://github.com/minsgy">
                             <span class="github">최민석</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="https://github.com/g0709-19">
                             <span class="github">이승준</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="https://github.com/white-jang">
                             <span class="github">장하얀</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="https://github.com/thalals/">
                             <span class="github">박형민</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="https://github.com/qhahd78">
                             <span class="github">하유민</span>
                         </a>
                     </li>
@@ -195,16 +195,12 @@
 
 
     <script type="text/javascript">
-        { % block additionalJS %
-        } { % endblock %
-        }
+        {% block additionalJS %} { % endblock %}
     </script>
     <script type="text/javascript" src="{% block js %}{% endblock %}">
         <!-- 필요 없는 부분입니다. -->
-        { % comment %
-        }
-        var a = "{{someDjangoVariable}}" { % endcomment %
-        }
+        {% comment %}
+        var a = "{{someDjangoVariable}}" {% endcomment %}
     </script>
     <script src="{% static 'js/base.js' %}"></script>
 </body>
