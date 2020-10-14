@@ -53,6 +53,7 @@
                 </div>
                 <img src="{% static 'img/imageBanner.png'%}" alt="delivery image">
                 <div class="profile_wrap">
+                    {% if user.is_authenticated %}
                     <div class='profile_img'>
                         <img src="{% static 'img/profile.png' %}" width="50px;" alt="">
                     </div>
@@ -67,6 +68,14 @@
                             <span class='email'>{{user.email}}</span>
                         </div>
                     </div>
+                    {% else %}
+                    <div class='profile_img'>
+                        <img src="{% static 'img/profile.png' %}" width="50px;" alt="">
+                    </div>
+                    <div class='profile_email'>
+                        <span class='email' >로그인을 해야합니다.</span>
+                    </div>
+                    {% endif %}   
                 </div>
             </div>
         </div>
