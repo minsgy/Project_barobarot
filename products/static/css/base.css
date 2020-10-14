@@ -13,8 +13,8 @@
     --red: #f5232a;
     --footer-gray: #6A747C;
     --header-gray: #e2e2e2;
+    --container-width: 70vw;
 }
-
 body {
     font-family: 'Roboto', 'Noto Sans KR', '맑은고딕', Malgun Gothic, dotum, '돋음', arial, sans-serif;
     /* 가로 스크롤 바 없애기 */
@@ -36,11 +36,14 @@ body {
 .header {
     /* width: 80vw; */
     border-bottom: 1px solid var(--red);
-    padding: 0 10vw;
+    /* padding: 0 15vw; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .header-box {
-    width: 80vw;
+    width: var(--container-width);
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -49,11 +52,12 @@ body {
 }
 
 .header-img {
-    width: 241px;
-    height: 83px;
+    max-height: 64px;
+    min-width: 100%;
 }
 
 .search {
+    margin-left: 20px;
     min-width: 507px;
     max-width: 507px;
     margin-right: auto;
@@ -94,6 +98,11 @@ body {
     text-align: right;
     width: 100%;
     font-size: 17px;
+}
+
+/* 유저 박스 오른쪽 공간을 맞추기 위한 스타일 */
+.space-for-margin {
+    width: 167px;
 }
 
 
@@ -187,20 +196,19 @@ body {
     margin-right: 100px;
 } */
 
+.user-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid var(--header-gray);
+}
+
 .user-box {
+    width: var(--container-width);
     display: flex;
     justify-content: flex-end;
     position: relative;
     height: 47px;
-}
-
-.user-box:after {
-    content: '';
-    width: 100vw;
-    border-bottom: 1px solid var(--header-gray);
-    position: absolute;
-    bottom: 0;
-    left: -10vw;
 }
 
 .sign-log-group {
@@ -238,22 +246,87 @@ body {
 /* Footer */
 
 .footer {
-    min-height: 200px;
     background-color: #232a32;
     /* padding: 0 20vw; */
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
 }
 
-.footer .box {
+.footer-box {
+    width: var(--container-width);
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer-down img {
+    margin-right: 30px;
+    max-width: 100%;
+    max-height: 37px;
+}
+
+.footer-up, .footer-down {
+    padding: 17px 0 14px;
+}
+
+/* 이용약관, 개인정보처리방침 ~~ 깃허브 */
+.footer-up {
+    display: flex;
+    border-bottom: 1px solid #384048;
+    font-size: 12px;
+}
+
+.footer-up li {
+    height: 32px;
+    min-width: 30px;
+    margin-right: 13px;
+    color: #aeb3bb;
+    font-size: 12px;
     display: flex;
     align-items: center;
 }
 
-.box img {
-    margin-right: 30px;
+.footer-up a {
+    text-decoration: none;
+    color: #aeb3bb;
 }
+
+.footer-up .gray {
+    color: #aeb3bb;
+}
+
+.footer-up .white {
+    color: #ecedee;
+}
+
+.footer-up .github {
+    display: block;
+    width: 80px;
+    height: 30px;
+    padding: 0 11px;
+    color: #d3d3d5;
+    border: 1px solid #6a747c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-up .github:hover {
+    background-color: #aeb3bb;
+    font-weight: bold;
+    color: #111;
+}
+
+/* 로고 포함 푸터 아래 항목들 */
+.footer-down {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .description {
     /* width: 1080px; */
@@ -298,6 +371,12 @@ body {
 /* Content */
 
 .content {
-    padding: 0px 0;
     flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.content-container {
+    width: var(--container-width);
 }
