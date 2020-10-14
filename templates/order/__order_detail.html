@@ -1,4 +1,4 @@
- {% extends '../base.html' %}
+{% extends '../base.html' %}
 <!-- prettier-ignore -->
 {% load static %}
 <!-- prettier-ignore -->
@@ -9,7 +9,11 @@
 {% block content %}
 <!-- 2020. 10.4 장하얀 예약 확인 페이지 -->
 
-
+<div class="nav-link">
+    <a href="">홈</a>
+    <span>></span>
+    <a href="" class="bold-text">예약 확인</a>
+</div>
 <!-- 고객 정보 -->
 <div class="category mg-bottom"><span class="bold-text">고객 정보</span></div>
 <hr>
@@ -40,8 +44,12 @@
     <span class="bold-text">설치 기사</span><span id="engineerName">{{payments.engineer.name}}</span>
     <span class="bold-text">연락처</span><span id="engineerPhoneNum">{{payments.engineer.number}}</span>
     <span class="bold-text">엔지니어 소속</span><span id="engineerInform">{{payments.engineer.affiliation}}</span>
-    <span class="bold-text">방문 예약 날짜</span><span id="engineerReservationDate">{{payments.visit_date | date:"Y/m/d"}}</span>
-    <span class="bold-text ">방문 예약 시간</span><span id="engineerReservationTime">{{payments.visit_time | time:"A g시"}}</span>
-    <span class="bold-text ">리뷰</span><button class="button" onclick="javascript:void(window.open('{% url 'engineers:detail' payments.engineer.pk %}', 'review', 'width=900, height=600'))"><span class="span">리뷰 쓰러가기</span></button>
+    <span class="bold-text">방문 예약 날짜</span><span
+        id="engineerReservationDate">{{payments.visit_date | date:"Y/m/d"}}</span>
+    <span class="bold-text ">방문 예약 시간</span><span
+        id="engineerReservationTime">{{payments.visit_time | time:"A g시"}}</span>
+    <span class="bold-text ">리뷰</span><button class="button"
+        onclick="javascript:void(window.open('{% url 'engineers:detail' payments.engineer.pk %}', 'review', 'width=900, height=600'))"><span
+            class="span">리뷰 쓰러가기</span></button>
 </div>
-<hr> {% endblock %}
+<hr class="mg-bottom-lg"> {% endblock %}
