@@ -9,6 +9,3 @@ class Comment(core_models.TimeStampedModel):
 
     # 댓글 작성 시간
     created_time = core_models.TimeStampedModel.created # Y.m.d
-
-    def __str__(self):
-        return self.title
