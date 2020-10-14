@@ -17,8 +17,9 @@ body {
     font-size: 12px;
 }
 
-.content-container img {
-    width: 100%;
+.content-container {
+    margin-top: 50px;
+    width: calc(var(--container-width) - 80px);
 }
 
 ul {
@@ -28,13 +29,6 @@ ul {
 a {
     color: var(--black-color);
     text-decoration: none;
-}
-
-.content-container {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    width: 1000px;
 }
 
 .title {
@@ -47,7 +41,6 @@ a {
 }
 
 .product-name {
-    width: 770px;
     font-weight: bold;
     font-size: 26px;
 }
@@ -57,18 +50,30 @@ a {
 }
 
 .product-main {
-    height: 650px;
+    /* height: 650px; */
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.product-main>.profile,
+.product-main>.information {
+    width: 50%;
+    min-width: 450px;
+}
+
+.product-main>.profile>img {
+    max-height: 450px;
 }
 
 .profile {
     padding: 30px 23px 0;
+    display: flex;
+    justify-content: center;
 }
 
 .information {
     margin-top: 23px;
-    width: 448px;
 }
 
 .manufacturer {
@@ -225,14 +230,19 @@ a {
 /* 상품 설명 이미지 */
 
 .images {
-    width: 1006px;
+    /* width: 1006px; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
 
+.images>img {
+    width: 100%;
+}
+
 .md-announcement {
+    width: 100%;
     margin-top: 30px;
     margin-bottom: 150px;
 }
@@ -242,6 +252,10 @@ a {
     flex-direction: column;
     padding: 25px 28px 95px;
     border: 1px solid #d3d3d5;
+}
+
+.md-image img {
+    width: 100%;
 }
 
 .md-title {
@@ -262,12 +276,21 @@ a {
 .other-images {
     margin-top: 20px;
     margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.other-images img {
+    width: 100%;
 }
 
 .emplacement {
     border: 1px solid #d7d7d9;
     padding: 29px 49px 39px;
     margin-bottom: 150px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .emplacement label {
@@ -275,6 +298,10 @@ a {
     font-weight: bold;
     font-size: 16px;
     margin-bottom: 18px;
+}
+
+.emplacement img {
+    width: 100%;
 }
 
 .ship-information {
