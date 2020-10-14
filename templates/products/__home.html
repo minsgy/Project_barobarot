@@ -3,9 +3,8 @@
 <!-- prettier-ignore -->
 {% block link %}{% static 'css/__home.css' %}{% endblock %}
 <!-- prettier-ignore -->
-{% block content %}
 
-<!-- Content -->
+{% block slide %}
 <!-- 롤링배너 부분 -->
 <div class="slide">
     <input type="radio" name="pos" id="pos1" checked>
@@ -29,7 +28,10 @@
         <label for="pos4">4</label>
     </p>
 </div>
+{% endblock %}
+<!-- Content -->
 
+{% block content %}
 <div class="products">
     <!-- 총 몇 개의 상품이 있는지 알려주는 div 박스  -->
     <div class="first-info-box">

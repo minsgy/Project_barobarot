@@ -4,6 +4,7 @@
     padding: 0 calc(10vw + 75px);
 }
 
+
 /* 상품 개수 알려주는 div  */
 
 .first-info-box {
@@ -217,8 +218,9 @@ li {
 }
 
 .slide {
+    width: 100vw;
     height: 500px;
-    overflow: hidden;
+    /* overflow: hidden; */
     position: relative;
     text-align: center;
 }
