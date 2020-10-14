@@ -426,7 +426,7 @@ li {
 }
 
 .slide {
-    height: 470px;
+    height: 500px;
     overflow: hidden;
     position: relative;
     text-align: center;
@@ -440,7 +440,7 @@ li {
 
 .slide li {
     width: calc(100% / 4);
-    height: 470px;
+    height: 500px;
 }
 
 
@@ -455,11 +455,11 @@ li {
 }
 
 .slide li:nth-child(3) {
-    background: #006442;
+    background: #b9bfd9;
 }
 
 .slide li:nth-child(4) {
-    background: #E0EEF7;
+    background: #b9bfd9;
 }
 
 .slide input {

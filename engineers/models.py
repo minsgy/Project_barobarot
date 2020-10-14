@@ -9,7 +9,7 @@ class Engineer(models.Model):
     image = models.ImageField(upload_to="engineer_photos") # 설치기사 사진
     affiliation = models.CharField(max_length=20) # 설치기사 소속
     
-
+    
     def __str__(self):
         return self.name
         
