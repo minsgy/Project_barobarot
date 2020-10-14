@@ -112,7 +112,7 @@ body {
 .profile_wrap {
     /* width: 200px; */
     height: 50px;
-    padding: 5px 15px;
+    padding: 5px 15px 5px 5px;
     text-align: center;
     margin-left: 1vw;
     /* padding: 10px; */
@@ -163,6 +163,20 @@ body {
 }
 
 .profile_email .email {
+    font-size: 11px;
+    color: grey;
+}
+
+.profile_not_login {
+    float: left;
+    padding-left: 10px;
+    height: 50px;
+    line-height: 50px;
+    /* line-height: 20px; */
+    text-align: center;
+}
+
+.profile_not_login .not_login {
     font-size: 11px;
     color: grey;
 }
