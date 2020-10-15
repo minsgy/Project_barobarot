@@ -9,7 +9,7 @@
 <!--  <link rel="stylesheet" href="__payment.css"> -->
 
 <!-- 엔지니어 데이터 값 불러와서 저장해야됨 -->
-<form action="{% url 'payments:paymentproduct_create' products.id user.id  %}" method="post">
+<form action="{% url 'payments:paymentproduct_create' products.id user.id %}" method="POST">
     {% csrf_token %}
     <!-- product 데이터, products 안에 값 -->
 
