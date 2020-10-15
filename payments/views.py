@@ -58,63 +58,57 @@ def PaymentproductCreate(request, product_pk, user_pk):
     ''' Create paymentproduct fbv ''' 
 
     if request.method == 'POST':
-        print('engineer-pk -----------', request.POST.get('engineer-pk'))
-        print('date -----------', request.POST.get('date'))
-        print('time -----------', request.POST.get('time'))
+        # print('engineer-pk -----------', request.POST.get('engineer-pk'))
+        # print('date -----------', request.POST.get('date'))
+        # print('time -----------', request.POST.get('time'))
         paymentproducts = Paymentproduct() # 객체 클래스 적용
         products_data = product_model.Product.objects.get(pk=product_pk)
         user_data = user_model.User.objects.get(pk=user_pk)
         engineer_data = engineer_model.Engineer.objects.get(pk=(request.POST.get('engineer-pk')))   #엔지니어 연결
 
-        form = MyForm(request.POST, request.FILES)      #form 파일로 데이터 받아오기
+        # form = MyForm(request.POST, request.FILES)      #form 파일로 데이터 받아오기
 
-        if form.is_valid() :
+        # --------------------------------------------------------------------------
+        receiver_data = Receiver()
+        receiver_data.receiver_name = request.POST.get('receiver_name')
+        receiver_data.receiver_number = request.POST.get('receiver_number')
+        receiver_data.receiver_plus_number = request.POST.get('receiver_number2')
+        receiver_data.zip_code = request.POST.get('zip_code')
+        receiver_data.address = request.POST.get('address')
+        receiver_data.delivery_message = request.POST.get('delivery_message')
 
-            print("확시 : ", form.cleaned_data['scheduled_time'])
-            # --------------------------------------------------------------------------
-            receiver_data = Receiver()
-            receiver_data.receiver_name = request.POST.get('receiver_name')
-            receiver_data.receiver_number = request.POST.get('receiver_number')
-            receiver_data.receiver_plus_number = request.POST.get('receiver_number2')
-            receiver_data.zip_code = request.POST.get('zip_code')
-            receiver_data.address = request.POST.get('address')
-            receiver_data.delivery_message = request.POST.get('delivery_message')
+        receiver_data.save()
 
-            receiver_data.save()
+        # --------------------------------------------------------------------------------------
+        print("엔지니어 pk : ",request.POST.get('engineer-pk'))
+        paymentproducts.product = products_data
+        paymentproducts.user = user_data
+        paymentproducts.engineer = engineer_data
+        paymentproducts.receiver = receiver_data
 
-            # --------------------------------------------------------------------------------------
-            print("엔지니어 pk : ",request.POST.get('engineer-pk'))
-            paymentproducts.product = products_data
-            paymentproducts.user = user_data
-            paymentproducts.engineer = engineer_data
-            paymentproducts.receiver = receiver_data
+        paymentproducts.amount = request.POST.get('amount') # 수량값 저장되게
+        paymentproducts.address = request.POST.get('address')
 
-            paymentproducts.amount = request.POST.get('amount') # 수량값 저장되게
-            paymentproducts.address = request.POST.get('address')
+        # paymentproducts.created_time = core_models.TimeStampedModel.created
+        paymentproducts.visit_date = request.POST.get('visit_date')
+        paymentproducts.visit_time = form.cleaned_data['scheduled_time']    #form fields 값 가져오기
 
-            # paymentproducts.created_time = core_models.TimeStampedModel.created
-            paymentproducts.visit_date = request.POST.get('visit_date')
-            paymentproducts.visit_time = form.cleaned_data['scheduled_time']    #form fields 값 가져오기
+        # -------------------------------------------------------------------------------------
 
-            # -------------------------------------------------------------------------------------
-
-            # amount 값과 물건 가격의 값을 곱해 합 가격을 구합니다.
-            # paymentproducts.total_price = paymentproducts.amount * paymentproducts.product.price 
+        # amount 값과 물건 가격의 값을 곱해 합 가격을 구합니다.
+        # paymentproducts.total_price = paymentproducts.amount * paymentproducts.product.price 
             
-            schedule = Schedule()
-            schedule.engineer = engineer_data
-            schedule.scheduled_date = request.POST.get('visit_date')
-            schedule.scheduled_time = form.cleaned_data['scheduled_time']
+        schedule = Schedule()
+        schedule.engineer = engineer_data
+        schedule.scheduled_date = request.POST.get('date')
+        schedule.scheduled_time = request.POST.get('time')
             
-            schedule.save()
+        schedule.save()
 
-            paymentproducts.save()
+        paymentproducts.save()
 
-            return redirect('payments:order_success', user_pk, paymentproducts.pk )
+        return redirect('payments:order_success', user_pk, paymentproducts.pk )
             # 생성 된 주문 아이템 pk, 로그인한 user_pk 가지고 가기
-
-        else :
-            print("form none valided")
 
     return render(request, 'payments/__payment.html')
 
