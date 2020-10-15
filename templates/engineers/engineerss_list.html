@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineer_List</title>
+    <link rel="stylesheet" href="{% static 'css/engineers_list.css' %}">
+</head>
+
+<body>
+    <div class="engineer-list-nav-bar">
+        <h1 class='engineer-list-center'>
+            <span class='engineer-text'>설치 기사 선택</span>
+        </h1>
+        <a href='#'>
+            <span class='engineer-close' onclick="window.close();">X</span>
+        </a>
+    </div>
+
+    {% for engineer in engineers %}
+
+    <div class="card-list">
+        {% if not engineer.schedule.exists %}
+        <div class="card-wrap">
+            <!-- 기사님 이미지 -->
+            <div class="pic-border">
+                <img class="engineer_pic" alt="{{engineer.name}}" src="{{ engineer.image.url }}" width="306px"
+                    height="306px"> <br>
+            </div>
+            <!-- 기사님 설명 -->
+            <!-- 이름+번호 링크 -->
+            <div class="text-group">
+                <p>
+                    <span class="engineer-name">{{engineer.name}}</span> <br>
+                    <span class="engineer-num">{{engineer.number}}</span> <br>
+                    <div class="engineer-addline">
+                        <!-- 소속회사 링크 -->
+                        <a href="#">
+                            <span class="engineer-in">{{engineer.affiliation}}</span> <br>
+                        </a>
+                        <!-- 리뷰보기 버튼 링크 -->
+                        <a href="{% url 'engineers:read_review' engineer.pk %}">
+                            <button type=button class="engineer-review-button">리뷰 보기</button>
+                        </a>
+                        <!--부모창에 전달 숨김 데이터-->
+                        <a id="engineer-info" href="{% url 'engineers:detail' engineer.pk %}">
+                            <span id="pk" style="display:none">{{engineer.pk}}</span>
+                            <span id="name" style="display:none">{{engineer.name}}</span>
+                            <span id="number" style="display:none">{{engineer.number}}</span>
+                            <span id="affiliation" style="display:none">{{engineer.affiliation}}</span>
+                            <span id="image" style="display:none">{{ engineer.image.url }}</span>
+                        </a>
+                        <button class="engineer-review-button" id="engineer-decide">설치기사 선택</button>
+                    </div>
+                </p>
+            </div>
+        </div>
+
+        {% else %}
+        {% for a in engineer.schedule.all %}
+        <!-- 이날이 기사님의 스케쥴에 있지 않으면-->
+        
+        <!--and 연산자로 바꿔야 됨-->
+        {% if a.scheduled_date|date:"Y-m-d" != date %}  
+        {% if a.scheduled_time|date:"H:i:s" != time %}
+
+        <div class="card-wrap">
+            <!-- 기사님 이미지 -->
+            <div class="pic-border">
+                <img class="engineer_pic" alt="{{engineer.name}}" src="{{ engineer.image.url }}" width="306px"
+                    height="306px"> <br>
+            </div>
+            <!-- 기사님 설명 -->
+            <!-- 이름+번호 링크 -->
+            <div class="text-group">
+                <p>
+                    <span class="engineer-name">{{engineer.name}}</span> <br>
+                    <span class="engineer-num">{{engineer.number}}</span> <br>
+                    <div class="engineer-addline">
+                        <!-- 소속회사 링크 -->
+                        <a href="#">
+                            <span class="engineer-in">{{engineer.affiliation}}</span> <br>
+                        </a>
+                        <!-- 리뷰보기 버튼 링크 -->
+                        <a href="{% url 'engineers:read_review' engineer.pk %}">
+                            <button type=button class="engineer-review-button">리뷰 보기</button>
+                        </a>
+                        <!--부모창에 전달 숨김 데이터-->
+                        <a id="engineer-info" href="{% url 'engineers:detail' engineer.pk %}">
+                            <span id="pk" style="display:none">{{engineer.pk}}</span>
+                            <span id="name" style="display:none">{{engineer.name}}</span>
+                            <span id="number" style="display:none">{{engineer.number}}</span>
+                            <span id="affiliation" style="display:none">{{engineer.affiliation}}</span>
+                            <span id="image" style="display:none">{{ engineer.image.url }}</span>
+                        </a>
+                        <button class="engineer-review-button" id="engineer-decide">설치기사 선택</button>
+                    </div>
+                </p>
+            </div>
+        </div>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+
+    </div>
+    {% endfor %}
+
+
+    <script src="{% static 'js/engineers_list.js' %}"></script>
+</body>
+
+</html>
