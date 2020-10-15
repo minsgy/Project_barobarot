@@ -25,6 +25,7 @@ const ACTIVE_CLASS = 'active';
 
 // 달력 선택을 위한 변수
 let selected_calendar;
+const today = getToday();
 
 // 시간 선택을 위한 변수
 const schedule = document.getElementById('js-schedule'),
@@ -38,21 +39,31 @@ function formatDate(number) {
     return number < 10 ? `0${number}` : number;
 }
 
-// 달력 생성
-const js_days = document.getElementById('js-days');
-function createCalendar() {
+function getToday() {
     const today = new Date();
     const day = today.getDate();
     const month = today.getMonth();
     const year = today.getFullYear();
-    const startDayOfWeek = new Date(
-        year,
+    return {
+        today,
+        day,
         month,
+        year
+    };
+}
+
+// 달력 생성
+const js_days = document.getElementById('js-days');
+function createCalendar() {
+    const today = getToday();
+    const startDayOfWeek = new Date(
+        today.year,
+        today.month,
         1
     ).getDay();
     const endDay = new Date(
-        year,
-        month,
+        today.year,
+        today.month,
         0
     ).getDate();
     // 달력 공백 채우기
@@ -64,17 +75,67 @@ function createCalendar() {
     for (let i = 1; i <= endDay; ++i) {
         const li = document.createElement('li');
         // 2020-10-10
-        if (i > day) {
+        if (i > today.day) {
             li.classList.add('enable');
-            const option = document.createElement('option');
-            option.value = `${year}-${formatDate(month + 1)}-${formatDate(i)}`;
-            option.innerText = i;
-            li.appendChild(option);
+            const span = document.createElement('span');
+            span.innerText = i;
+            li.appendChild(span);
+            // const option = document.createElement('option');
+            // option.value = `${today.year}-${formatDate(today.month + 1)}-${formatDate(i)}`;
+            // option.innerText = i;
+            // li.appendChild(option);
         } else {
             li.innerText = i;
         }
         js_days.appendChild(li);
     }
+}
+
+function selectCalendar(item) {
+    if (selected_calendar) {
+        selected_calendar.classList.remove(ACTIVE_CLASS);
+        const input = selected_calendar.querySelector('input');
+        selected_calendar.removeChild(input);
+    }
+    selected_calendar = item;
+    item.classList.add(ACTIVE_CLASS);
+
+    // form 으로 넘겨줄 input 데이터 생성
+    const input = document.createElement('input');
+    input.name = 'date';
+    input.value = `${today.year}-${formatDate(today.month + 1)}-${formatDate(today.day)}`;
+    item.appendChild(input);
+}
+
+function selectSchedule(item) {
+    if (selected_schedule) {
+        selected_schedule.classList.remove(ACTIVE_CLASS);
+        const input = selected_schedule.querySelector('input');
+        selected_schedule.removeChild(input);
+    }
+    selected_schedule = item;
+    item.classList.add(ACTIVE_CLASS);
+
+    // form 으로 넘겨줄 input 데이터 생성
+    const input = document.createElement('input');
+    input.name = 'time';
+    const value = item.querySelector('option').innerText;
+    input.value = `${value}:00`;
+
+    item.appendChild(input);
+
+    const selected_data = {
+        date: document.querySelector('#js-days>li.active>input').value,
+        time: document.querySelector('#js-schedule>li.active>input').value
+    };
+    // 선택된 날짜, 시간 django 로 post 요청
+    postData(ENGINEER_SELECT_PAGE, selected_data).then(response => {
+        const html = response.text();
+        html.then(text => {
+            const w = window.open(ENGINEER_SELECT_PAGE, 'engineer_select', 'width=900, height=900');
+            w.document.write(text);
+        })
+    });
 }
 
 function init() {
@@ -83,46 +144,12 @@ function init() {
     // 달력 선택 이벤트
     const days_items = document.querySelectorAll('#js-days>li.enable');
     if (days_items) {
-        days_items.forEach(item => item.addEventListener('click', () => {
-            if (selected_calendar) {
-                selected_calendar.classList.remove(ACTIVE_CLASS);
-                selected_calendar.querySelector('option').name = '';
-            }
-            selected_calendar = item;
-            item.classList.add(ACTIVE_CLASS);
-            item.querySelector('option').name = 'date';
-        }));
+        days_items.forEach(item => item.addEventListener('click', () => selectCalendar(item)));
     }
 
     // 시간 선택 이벤트
     if (schedule_items) {
-        [...schedule_items].forEach(item => item.addEventListener('click', () => {
-            if (selected_schedule) {
-                selected_schedule.classList.remove(ACTIVE_CLASS);
-                selected_schedule.querySelector('option').name = '';
-            }
-            selected_schedule = item;
-            item.classList.add(ACTIVE_CLASS);
-            item.querySelector('option').name = 'date';
-            const selected_data = {
-                date: document.querySelector('#js-days>li.active>option').value,
-                time: document.querySelector('#js-schedule>li.active>option').value
-            };
-            // 선택된 날짜, 시간 django 로 post 요청
-            postData(ENGINEER_SELECT_PAGE, selected_data).then(response => {
-                const html = response.text();
-                html.then(text => {
-                    const w = window.open(ENGINEER_SELECT_PAGE, 'test', 'width=900, height=900');
-                    w.document.write(text);
-                })
-                // const blob = response.blob();
-                // blob.then(b => {
-                //     const url = URL.createObjectURL(b);
-                //     window.open(url, 'schedule', 'width=500, height=543');
-                // })
-            });
-        }));
-        // window.open(ENGINEER_SELECT_PAGE, 'schedule', 'width=500, height=543');
+        [...schedule_items].forEach(item => item.addEventListener('click', () => selectSchedule(item)));
     }
 }
 

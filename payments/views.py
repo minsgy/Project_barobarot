@@ -58,6 +58,9 @@ def PaymentproductCreate(request, product_pk, user_pk):
     ''' Create paymentproduct fbv ''' 
 
     if request.method == 'POST':
+        print('engineer-pk -----------', request.POST.get('engineer-pk'))
+        print('date -----------', request.POST.get('date'))
+        print('time -----------', request.POST.get('time'))
         paymentproducts = Paymentproduct() # 객체 클래스 적용
         products_data = product_model.Product.objects.get(pk=product_pk)
         user_data = user_model.User.objects.get(pk=user_pk)

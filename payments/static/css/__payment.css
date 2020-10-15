@@ -403,6 +403,10 @@ select {
     cursor: default;
 }
 
+.days li>input {
+    display: none;
+}
+
 .days li.enable {
     color: #000;
 }
@@ -449,6 +453,10 @@ select {
     height: 40px;
     margin-bottom: 15px;
     text-align: center;
+}
+
+.schedule li>input {
+    display: none;
 }
 
 .schedule>li.active {
