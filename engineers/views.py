@@ -26,3 +26,8 @@ class DetailEngineer(DetailView): # DetailView 리스트 값을 전부 반환함
     model = models.Engineer
     context_object_name = 'engineers' # 객체를 부르는 이름
     template_name = 'engineers/__reviews.html' # Default 연결 값 변경    
+
+class DetailReview(DetailView):
+    model = models.Engineer
+    context_object_name = 'engineers' # 객체를 부르는 이름
+    template_name = 'engineers/__reviews_only_read.html' # Default 연결 값 변경    

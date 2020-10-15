@@ -61,7 +61,7 @@ def PaymentproductCreate(request, product_pk, user_pk):
         paymentproducts = Paymentproduct() # 객체 클래스 적용
         products_data = product_model.Product.objects.get(pk=product_pk)
         user_data = user_model.User.objects.get(pk=user_pk)
-        engineer_data = engineer_model.Engineer.objects.get(pk=(request.POST.get('engineer')))   #엔지니어 연결
+        engineer_data = engineer_model.Engineer.objects.get(pk=(request.POST.get('engineer-pk')))   #엔지니어 연결
 
         form = MyForm(request.POST, request.FILES)      #form 파일로 데이터 받아오기
 
@@ -80,7 +80,7 @@ def PaymentproductCreate(request, product_pk, user_pk):
             receiver_data.save()
 
             # --------------------------------------------------------------------------------------
-            print("엔지니어 pk : ",request.POST.get('engineer'))
+            print("엔지니어 pk : ",request.POST.get('engineer-pk'))
             paymentproducts.product = products_data
             paymentproducts.user = user_data
             paymentproducts.engineer = engineer_data
