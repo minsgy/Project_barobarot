@@ -36,25 +36,20 @@
     <div class="review-content-box">
         <div class="review-user-box">
             <!--리뷰가 존재하지 않을 때-->
-            
+
             {% if not engineers.comments.exists %}
-                <div class="p-border">
-                    <div class="review-review-box">
-                        아직 리뷰가 없습니다. 리뷰를 달아주세요
-                    </div>
+            <div class="p-border">
+                <div class="review-review-box">
+                    아직 리뷰가 없습니다. 리뷰를 달아주세요
                 </div>
-            {% else %}
-            {% for comment in engineers.comments.all %}
+            </div>
+            {% else %} {% for comment in engineers.comments.all %}
 
             <div>
                 <!-- user 아이디 나오게 -->
                 <span class="review-user-name">{{comment.user.username}}</span>
                 <!-- 삭제 버튼 -->
-                {% if user == comment.user %}
-                <a href="{% url 'comments:delete_comment' engineers.id comment.id %}">
-                    <button class="review-delete-button">삭제</button>
-                </a>
-                {% endif %}
+
                 <!-- 올린 날짜 -->
                 <span class="review-date">{{comment.created_time | date:"Y.m.d"}}</span>
             </div>
@@ -63,9 +58,8 @@
                     {{comment.content}}
                 </div>
             </div>
-         
-            {% endfor %}
-            {% endif %}
+
+            {% endfor %} {% endif %}
         </div>
     </div>
     {% comment %} {% endfor %} {% endcomment %}
