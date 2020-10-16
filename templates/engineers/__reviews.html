@@ -26,21 +26,13 @@
             <!-- 설치기사 이름 -->
             <span class="engineer-name">{{engineers.name}}</span><br>
             <span class="engineer-job">설치기사 
-                {% comment %} {% for comment in engineers.comments.all %} {% endcomment %}
             </span>
         </div>
     </div>
-
+    {% for comment in engineers.comments.all %}
     <div class="review-content-box">
         <div class="review-user-box">
-            {% if not engineers.comments.exists %}
-            <div class="p-border">
-                <div class="review-review-box">
-                    아직 리뷰가 없습니다. 리뷰를 달아주세요
-                </div>
-            </div>
-            {% else %}
-            {% for comment in engineers.comments.all %}
+            
             <div>
                 <!-- user 아이디 나오게 -->
                 <span class="review-user-name">{{comment.user.username}}</span>
@@ -60,8 +52,8 @@
             </div>
         </div>
     </div>
+    {% comment %} {% endfor %}  {% endcomment %}
     {% endfor %} 
-    {% endif %}
     <form action="{% url 'comments:create_comment' engineers.id %}" method='POST'>
         {% csrf_token %}
         <div class="review-input-box">

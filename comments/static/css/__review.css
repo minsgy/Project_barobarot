@@ -163,12 +163,6 @@ body {
 
 /* input 박스 */
 
-
-/* 
-.review-input:nth-child(1) {
-    margin-left: 0px;
-} */
-
 .review-input {
     float: left;
     padding: 10px;
