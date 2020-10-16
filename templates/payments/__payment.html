@@ -37,6 +37,7 @@
                             <li class="item-id">{{products.model_code}}</li>
                         </ul>
                     </li>
+        
                     <li>{{ amount }}</li>
                     <!--수량-->
                     <li>
@@ -47,6 +48,7 @@
                             <li>무료배송</li>
                             <li>
                                 <span class="flagicon">직접배송</span>
+                                <input type="text" class="amount" name="amount" value="{{ amount }}"><br>
                             </li>
                         </ul>
                     </li>
@@ -124,7 +126,7 @@
                             </li>
                             <li>
                                 <!-- 배송지 주소 -->
-                                <input class="ship-info-input" type="text" name='address' id="address" disabled>
+                                <input class="ship-info-input" type="text" name='address' id="address" onclick="javascript:void(window.open('{% url 'payments:popup' %}', 'hi', 'width=500, height=543'))">
                                 <button type='button' class="address-button"
                                     onclick="javascript:void(window.open('{% url 'payments:popup' %}', 'hi', 'width=500, height=543'))">검색
                                 </button>
@@ -177,13 +179,13 @@
                             <li>배송 메세지</li>
                             <li>
                                 <select class="ship-info-input" name="ship-message">
-                                    <option value="none">메세지를 선택해 주세요.</option>
-                                    <option value="to-office">부재 시 경비(관리)실에 맡겨주세요.</option>
-                                    <option value="front-of-door">부재 시 문 앞에 놓아주세요.</option>
-                                    <option value="before-call">배송 전에 연락주세요.</option>
-                                    <option value="careful">파손 위험이 있으니 조심히 보내주세요.</option>
-                                    <option value="phone-call">부재 시 휴대폰으로 연락주세요.</option>
-                                    <option value="post-box">부재 시 택배함에 넣어주세요.</option>
+                                    <option value="희망사항 없습니다.">메세지를 선택해 주세요.</option>
+                                    <option value="부재 시 경비(관리)실에 맡겨주세요.">부재 시 경비(관리)실에 맡겨주세요.</option>
+                                    <option value="부재 시 문 앞에 놓아주세요.">부재 시 문 앞에 놓아주세요.</option>
+                                    <option value="배송 전에 연락주세요.">배송 전에 연락주세요.</option>
+                                    <option value="파손 위험이 있으니 조심히 보내주세요.">파손 위험이 있으니 조심히 보내주세요.</option>
+                                    <option value="부재 시 휴대폰으로 연락주세요.">부재 시 휴대폰으로 연락주세요.</option>
+                                    <option value="부재 시 택배함에 넣어주세요.">부재 시 택배함에 넣어주세요.</option>
                                 </select>
                                 <p class="star-to-left">하이마트 배송기사 또는 해당 상품을 배송하는 업체의 배송기사가&nbsp;<span
                                         class="blue-text">설치를
