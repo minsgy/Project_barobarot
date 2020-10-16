@@ -103,7 +103,8 @@ function selectCalendar(item) {
     // form 으로 넘겨줄 input 데이터 생성
     const input = document.createElement('input');
     input.name = 'date';
-    input.value = `${today.year}-${formatDate(today.month + 1)}-${formatDate(today.day)}`;
+    const day = item.innerText;
+    input.value = `${today.year}-${formatDate(today.month + 1)}-${formatDate(day)}`;
     item.appendChild(input);
 }
 
