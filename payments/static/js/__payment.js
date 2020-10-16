@@ -26,6 +26,7 @@ const ACTIVE_CLASS = 'active';
 // 달력 선택을 위한 변수
 let selected_calendar;
 const today = getToday();
+const today_month = document.getElementById('today-month');
 
 // 시간 선택을 위한 변수
 const schedule = document.getElementById('js-schedule'),
@@ -71,6 +72,8 @@ function createCalendar() {
         const li = document.createElement('li');
         js_days.appendChild(li);
     }
+    // 월 적어주기
+    today_month.innerText = `${today.month+1}월`;
     // 날짜 채우기
     for (let i = 1; i <= endDay; ++i) {
         const li = document.createElement('li');

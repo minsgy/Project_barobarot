@@ -334,6 +334,7 @@ h2 {
 
 #address {
     width: 653px;
+    margin-left: 5px;
 }
 
 #address,
@@ -360,6 +361,7 @@ select {
 
 .ship-info-field:last-child select {
     width: 487px;
+    margin-left: 5px;
 }
 
 .ship-info-field:last-child p {
@@ -403,7 +405,14 @@ select {
 /* 달력 */
 
 .ship-info-calendar {
-    height: 311px;
+    height: 350px;
+}
+
+.calendar>h2 {
+    margin: 0;
+    padding: 10px 0 5px;
+    display: flex;
+    justify-content: center;
 }
 
 
