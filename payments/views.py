@@ -66,6 +66,12 @@ def PaymentproductCreate(request, product_pk, user_pk):
         user_data = user_model.User.objects.get(pk=user_pk)
         engineer_data = engineer_model.Engineer.objects.get(pk=(request.POST.get('engineer-pk')))   #엔지니어 연결
 
+        print('address---------',request.POST.get('ship-message'))
+    
+        split_address = request.POST.get('address')
+        addresss_zip_code = int(float(split_address[1:6]))  # 주소창에서 우편번호 뽑기 , int 형 변환을 위해서 먼저 float로 해야함.
+        address_name = split_address[7:] # 주소창에서 주소 이름 뽑기
+
         # form = MyForm(request.POST, request.FILES)      #form 파일로 데이터 받아오기
 
         # --------------------------------------------------------------------------
@@ -73,9 +79,9 @@ def PaymentproductCreate(request, product_pk, user_pk):
         receiver_data.receiver_name = request.POST.get('receiver_name')
         receiver_data.receiver_number = request.POST.get('receiver_number')
         receiver_data.receiver_plus_number = request.POST.get('receiver_number2')
-        receiver_data.zip_code = request.POST.get('zip_code')
-        receiver_data.address = request.POST.get('address')
-        receiver_data.delivery_message = request.POST.get('delivery_message')
+        receiver_data.zip_code = addresss_zip_code
+        receiver_data.address = address_name
+        receiver_data.delivery_message = request.POST.get('ship-message')
 
         receiver_data.save()
 
@@ -87,11 +93,11 @@ def PaymentproductCreate(request, product_pk, user_pk):
         paymentproducts.receiver = receiver_data
 
         paymentproducts.amount = request.POST.get('amount') # 수량값 저장되게
-        paymentproducts.address = request.POST.get('address')
+        paymentproducts.address = address_name
 
         # paymentproducts.created_time = core_models.TimeStampedModel.created
-        paymentproducts.visit_date = request.POST.get('visit_date')
-        paymentproducts.visit_time = form.cleaned_data['scheduled_time']    #form fields 값 가져오기
+        paymentproducts.visit_date = request.POST.get('date')
+        paymentproducts.visit_time = request.POST.get('time')    #form fields 값 가져오기
 
         # -------------------------------------------------------------------------------------
 
