@@ -1,14 +1,21 @@
 /* Content */
 
-.content {
+/* .content {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 80px 30px 80px 30px;
-}
+} */
 
+/* 중앙 정렬 */
+.content-container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 /* TextBox 주문 완료, 안내 텍스트 */
 
