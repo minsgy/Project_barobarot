@@ -163,11 +163,18 @@ body {
 
 /* input 박스 */
 
+
+/* 
+.review-input:nth-child(1) {
+    margin-left: 0px;
+} */
+
 .review-input {
     float: left;
     padding: 10px;
     width: 595px;
     height: 100px;
+    /* 아 ~ 마진 left ㅈㄴ 킹받네~~~ 댓글있으면 멀쩡하고 없으면 오류뜨고 아아악!!!! */
     margin-left: 150px;
     margin-bottom: 30px;
     margin-top: 30px;
