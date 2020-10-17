@@ -12,28 +12,7 @@
 
 .nav-link-container {
     width: 100%;
-    margin: 20px 0 5vh 5px;
-}
-
-.bold-text {
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-.nav-link>a,
-.nav-link>a:visited {
-    color: black;
-    text-decoration: none;
-    font-size: 13pt;
-}
-
-.nav-link>a:hover {
-    color: var(--red);
-    text-decoration: underline;
-}
-
-.nav-link>span {
-    color: gray;
+    margin: 20px 0 20px 0;
 }
 
 /* 예약정보 div */
@@ -48,7 +27,8 @@
 /* 예약정보 글씨에 패딩 */
 
 .reservation-info {
-    padding: 20px;
+    padding: 20px 0 8px 0;
+    font-size: 15pt;
 }
 
 

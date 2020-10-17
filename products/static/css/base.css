@@ -15,6 +15,7 @@
     --header-gray: #e2e2e2;
     --container-width: 70vw;
 }
+
 body {
     font-family: 'Roboto', 'Noto Sans KR', '맑은고딕', Malgun Gothic, dotum, '돋음', arial, sans-serif;
     /* 가로 스크롤 바 없애기 */
@@ -105,6 +106,27 @@ body {
     width: 167px;
 }
 
+/* nav link 관련 클래스들  */
+
+.nav-link>a,
+.nav-link>a:visited {
+    color: black;
+    text-decoration: none;
+    font-size: 13pt;
+}
+
+.nav-link>a:hover {
+    color: var(--red);
+    text-decoration: underline;
+}
+
+.nav-link>span {
+    color: gray;
+}
+
+.bold-text {
+    font-weight: bold;
+}
 
 /* 예약확인도 로그인 .. 이랑 묶어서 해서 필요 없어졌어요  */
 
@@ -268,7 +290,8 @@ body {
     max-height: 37px;
 }
 
-.footer-up, .footer-down {
+.footer-up,
+.footer-down {
     padding: 17px 0 14px;
 }
 

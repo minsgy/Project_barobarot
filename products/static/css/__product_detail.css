@@ -18,7 +18,8 @@ body {
 }
 
 .content-container {
-    margin-top: 50px;
+    /* 내브 링크 때문에 margin 수정 */
+    margin-top: 20px;
     width: calc(var(--container-width) - 80px);
 }
 
@@ -29,6 +30,26 @@ ul {
 a {
     color: var(--black-color);
     text-decoration: none;
+}
+
+/*nav-link 네브 링크*/
+
+.nav-link-container {
+    width: 100%;
+    margin-bottom: 40px;
+    font-family: 'Noto Sans kr';
+}
+
+.nav-link>a,
+.nav-link>a:visited {
+    font-size: 13pt;
+    margin-right: 3px;
+}
+
+.nav-link>span {
+    margin-right: 3px;
+    font-family: 'Noto Sans kr';
+    font-size: 12pt;
 }
 
 .title {
@@ -352,7 +373,8 @@ a {
     border-top: 1px solid #d2d3d5;
 }
 
-.item-in-menu li label, .item-in-menu li ul {
+.item-in-menu li label,
+.item-in-menu li ul {
     padding: 15px 0;
 }
 
