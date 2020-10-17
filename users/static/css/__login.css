@@ -86,9 +86,9 @@ button {
 
 .login_account .login_input li,
 ul {
-    text-align: left;
+    /* text-align: left;
     display: inline-block;
-    width: 400px;
+    width: 400px; */
 }
 
 .login_input li:first-child {
