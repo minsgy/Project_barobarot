@@ -58,11 +58,10 @@
         </div>
          {% else %}
         {% for a in engineer.schedule.all %}
+        
         <!-- 이날이 기사님의 스케쥴에 있지 않으면-->
-            
-        <!--and 연산자로 바꿔야 됨-->
-        {% if a.scheduled_date|date:"Y-m-d" != date %}  
-        {% if a.scheduled_time|date:"H:i:s" != time %}
+        {% if a.scheduled_date|date:"Y-m-d" != date or a.scheduled_time|date:"H:i:s" != time%}  
+        {% comment %} {% if a.scheduled_time|date:"H:i:s" != time %} {% endcomment %}
         </div>
             <div class="card-wrap">
                 <!-- 기사님 이미지 -->
@@ -102,7 +101,7 @@
                 </div>
             </div>
 
-        {% endif %}
+        
         {% endif %}
         {% endfor %}
         {% endif %}

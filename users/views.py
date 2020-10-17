@@ -31,7 +31,7 @@ def userSignup(request):
                 username=request.POST.get('username'), password=request.POST.get('password1'), name=request.POST.get('name'),email=request.POST.get('email'), number=request.POST.get('number')
             )
             auth.login(request, user)
-            return redirect('engineers:engineer')
+            return redirect('products:home')
         print("생성안됌.")
         return redirect('users:signup')
     else:
