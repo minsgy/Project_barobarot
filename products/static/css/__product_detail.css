@@ -382,15 +382,19 @@ a {
     font-weight: bold;
     color: #333333;
     width: 150px;
-    text-align: center;
     background-color: #fbfbfb;
     border-right: 1px solid #d2d3d5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .item-in-menu li ul {
     color: #666666;
     width: 798px;
-    padding-left: 50px;
+    padding-left: 35px;
+    padding-right: 35px;
     list-style-type: disc;
     line-height: 17px;
 }

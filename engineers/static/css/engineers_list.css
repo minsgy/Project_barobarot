@@ -49,14 +49,23 @@ a:visited {
 
 .card-list {
     /* text-align: center; */
-    width: 750px;
+    width: 780px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     margin: 0 auto;
+}
+
+.card-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .card-wrap {
     display: inline-block;
     margin: 10px;
     width: 220px;
+    padding: 10px;
 }
 
 .text-group {
@@ -68,7 +77,7 @@ a:visited {
 
 .card-wrap:hover {
     cursor: pointer;
-    box-shadow: 5px 5px 5px #C6C6C6;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 
