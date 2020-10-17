@@ -17,23 +17,7 @@ span {
 
 .nav-link-container {
     width: 100%;
-    margin-bottom: 9vh;
-}
-
-.nav-link>a,
-.nav-link>a:visited {
-    color: black;
-    text-decoration: none;
-    font-size: 13pt;
-}
-
-.nav-link>a:hover {
-    color: var(--red);
-    text-decoration: underline;
-}
-
-.nav-link>span {
-    color: gray;
+    margin-bottom: 40px;
 }
 
 /* 마진 class들 */
@@ -57,10 +41,9 @@ span {
 }
 
 hr {
-    width: 72vw;
+    width: 70vw;
     margin: 8px 0 20px 0;
-    opacity: 0.4;
-    border: 1px solid #6A747C;
+    border: 1px solid black;
 }
 
 /* OrderBox 고객, 배송 정보 */
@@ -78,7 +61,6 @@ hr {
 }
 
 .bold-text {
-    font-weight: bold;
     margin-right: 10px;
 }
 
