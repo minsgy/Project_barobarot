@@ -55,7 +55,7 @@ hr {
     align-items: center;
     gap: 30px 20px;
     width: 70vw;
-    padding: 10px 0 10px 0;
+    padding: 10px 0 10px 10px;
     margin-bottom: 15px;
     /* background-color: #F6F6F6; */
 }
