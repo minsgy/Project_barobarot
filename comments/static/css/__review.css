@@ -163,6 +163,10 @@ body {
 
 /* input 박스 */
 
+.review-user-id {
+    padding-top: 30px;
+}
+
 .review-input {
     float: left;
     padding: 10px;

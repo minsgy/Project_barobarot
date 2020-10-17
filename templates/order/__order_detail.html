@@ -11,11 +11,11 @@
 
 <div class="nav-link-container">
     <div class="nav-link">
-        <a href="">홈</a>
+        <a href="{% url 'products:home' %}">홈</a>
         <span>></span>
-        <a href="">주문 내역</a>
+        <a href="{% url 'payments:order_list' %}">주문 내역</a>
         <span>></span>
-        <a href="" class="bold-text">주문 상세</a>
+        <a href="#" class="bold-text">주문 상세</a>
     </div>
 </div>
 <!-- 고객 정보 -->
@@ -48,12 +48,9 @@
     <span class="bold-text">설치 기사</span><span id="engineerName">{{payments.engineer.name}}</span>
     <span class="bold-text">연락처</span><span id="engineerPhoneNum">{{payments.engineer.number}}</span>
     <span class="bold-text">엔지니어 소속</span><span id="engineerInform">{{payments.engineer.affiliation}}</span>
-    <span class="bold-text">방문 예약 날짜</span><span
-        id="engineerReservationDate">{{payments.visit_date | date:"Y/m/d"}}</span>
-    <span class="bold-text ">방문 예약 시간</span><span
-        id="engineerReservationTime">{{payments.visit_time | time:"A g시"}}</span>
-    <span class="bold-text ">리뷰</span><button class="button"
-        onclick="javascript:void(window.open('{% url 'engineers:detail' payments.engineer.pk %}', 'review', 'width=900, height=600'))"><span
+    <span class="bold-text">방문 예약 날짜</span><span id="engineerReservationDate">{{payments.visit_date | date:"Y/m/d"}}</span>
+    <span class="bold-text ">방문 예약 시간</span><span id="engineerReservationTime">{{payments.visit_time | time:"A g시"}}</span>
+    <span class="bold-text ">리뷰</span><button class="button" onclick="javascript:void(window.open('{% url 'engineers:detail' payments.engineer.pk %}', 'review', 'width=900, height=600'))"><span
             class="span">리뷰 쓰러가기</span></button>
 </div>
 <hr class="mg-bottom-lg"> {% endblock %}
