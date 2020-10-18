@@ -37,7 +37,7 @@
     <div class="first-info-box">
         <!-- 하이마트몰에서는 총 몇 개의 상품이 있는지 알려주는 문구가 있길래 넣어봤습니다..  -->
         <!-- 상품 모델의 총 개수를 n 에 넣으면 될 것 같은데 구현 불가능 하면 빼면 될 것 같아요 . -->
-        <span id="first-info-bold">총 {{products.count}}개</span>
+        <span id="first-info-bold">총 {{paginator.count}}개</span>
         <span id="first-info-normal">의 상품이 있습니다. </span>
     </div>
     <!-- 메인 페이지 상품 사진, 설명 시작 -->
@@ -92,10 +92,9 @@
     </div>
     <div>
         <ul id="page-num-group">
-            <li class="page-num-list"><a class="page-num" href="#">1</a></li>
-            <li class="page-num-list"><a class="page-num" href="#">2</a></li>
-            <li class="page-num-list"><a class="page-num" href="#">3</a></li>
-            <li class="page-num-list"><a class="page-num" href="#">4</a></li>
+        {% for page_number in paginator.page_range %}
+            <li class="page-num-list"><a class="page-num" href="?page={{page_number}}">{{page_number}}</a></li>
+        {% endfor %}
         </ul>
     </div>
 </div>
