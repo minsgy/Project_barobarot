@@ -29,7 +29,22 @@ class ProductDetail(DetailView):
     template_name = 'products/__product_detail.html' # 전달 연결 값 변경
 
         
-    
+
+# Create DB File
+def create_products(request):
+    file = open('testfile/product_test.txt', mode='rt', encoding='UTF-8')
+    file_list = file.readlines()
+    for lists in file_list:
+        temp = lists.split(',')
+        # product = Product(
+        #     product_name = temp[0],
+        #     sale = temp[1],
+        #     price = temp[2],
+        #     manufacture = temp[3],
+        #     rating = temp[4],
+        #     product_image = temp[5]
+        # )
+        # products.save()
 
 # def getHome(request):
 #     return render(request, 'products/home.html')
