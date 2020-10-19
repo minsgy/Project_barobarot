@@ -2,7 +2,7 @@ from django.views.generic.detail import DetailView
 from django.core.paginator import Paginator # paginator 적용
 from products.models import Product
 # from payments.models import Payments?
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.list import ListView
 from . import models
 
@@ -36,15 +36,17 @@ def create_products(request):
     file_list = file.readlines()
     for lists in file_list:
         temp = lists.split(',')
-        # product = Product(
-        #     product_name = temp[0],
-        #     sale = temp[1],
-        #     price = temp[2],
-        #     manufacture = temp[3],
-        #     rating = temp[4],
-        #     product_image = temp[5]
-        # )
-        # products.save()
-
+        product = Product(
+            product_name = temp[1],
+            sale = 20.0,
+            price = temp[2],
+            manufacture = temp[0],
+            rating = 4.5,
+            product_image = 'product/image1.jpg',
+            image_description = 'product/image1.jpg',
+        )
+        # print(product.__dict__)
+        product.save()
+    return redirect('products:home')
 # def getHome(request):
 #     return render(request, 'products/home.html')
