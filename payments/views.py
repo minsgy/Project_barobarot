@@ -1,4 +1,7 @@
-from engineers.models import Schedule
+from datetime import datetime
+from django.db.models import query
+
+from engineers.models import Engineer, Schedule
 from django.http import request
 from django.views.generic.base import TemplateView
 import engineers
@@ -15,7 +18,6 @@ from engineers import models as engineer_model
 from core import models as core_model
 
 from engineers.forms import MyForm  #엔지니어 폼(스케줄) - 시간단위 입력
-
 # [형민] reservation view
  
 # 결제 상품(예약상품) 리스트
@@ -162,6 +164,23 @@ def engineer_json_test(request):
         from engineers import models as engineer_model
         engineers = engineer_model.Engineer.objects.all()
         json_dic['engineers'] = engineers;
+        
+        view_dic = [] 
+        count =0
 
-        # json_dic 에 담기는 정보:dict => date(날짜):str, time(시간):str
+        for one in engineers:           
+            for a in one.schedule.all() :      
+                if str(a.scheduled_date) == json_dic['date'] and str(a.scheduled_time) == json_dic['time'] :
+                    count+=1
+            
+            if(count==0):
+                print(one)
+                view_dic.append(one)
+            
+            count=0
+            
+        print("뷰딕",view_dic), 
+        json_dic['variable_angs'] = view_dic
+        print("재딕",json_dic)
+        # json_dic 에 담기는 정보:dict => date(날짜):str, time(시간):str, variable : 가능한 엔지니어 정보
         return render(request, 'engineers/engineers_list.html', json_dic)
