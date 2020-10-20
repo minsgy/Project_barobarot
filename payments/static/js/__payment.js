@@ -10,14 +10,12 @@ function postData(url = '', data = {}) {
     headers.append('Accept', 'application/json, text/plain, */*');
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
-    return fetch(url,
-        {
-            method: 'post',
-            headers: headers,
-            credentials: 'include',
-            body: JSON.stringify(data)
-        }
-    );
+    return fetch(url, {
+        method: 'post',
+        headers: headers,
+        credentials: 'include',
+        body: JSON.stringify(data)
+    });
 }
 
 // 달력, 시간 선택 시 css 에서 활성화 시켜줄 때 쓰는 클래스 이름
@@ -55,6 +53,7 @@ function getToday() {
 
 // 달력 생성
 const js_days = document.getElementById('js-days');
+
 function createCalendar() {
     const today = getToday();
     const startDayOfWeek = new Date(
@@ -136,7 +135,7 @@ function selectSchedule(item) {
     postData(ENGINEER_SELECT_PAGE, selected_data).then(response => {
         const html = response.text();
         html.then(text => {
-            const w = window.open(ENGINEER_SELECT_PAGE, 'engineer_select', 'width=900, height=900');
+            const w = window.open(ENGINEER_SELECT_PAGE, 'engineer_select', 'width=900, height=900,scrollbars=yes');
             w.document.write(text);
         })
     });
@@ -157,4 +156,4 @@ function init() {
     }
 }
 
-init(); 
+init();
