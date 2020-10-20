@@ -38,14 +38,14 @@
         <!-- 상품 사진 -->
         <!-- 사진 누르면 상세페이지로 이동 -->
         <span class="reservation-product-pic">
-            <a href="#">
+            <a href="{% url 'payments:order_detail' paymentproduct.pk %}">
                 <img class="reservation-product-image" src="{{paymentproduct.product.product_image.url}}"
                     alt="{{paymentproduct.product_name}}">
             </a>
         </span>
         <!-- 상품명 누르면 상세페이지로 이동 -->
         <span class="reservation-product-name">
-            <a class="reservation-product-name-a-tag" href="#">
+            <a class="reservation-product-name-a-tag" href="{% url 'payments:order_detail' paymentproduct.pk %}">
                 {{paymentproduct.product.product_name}}
             </a>
         </span>
