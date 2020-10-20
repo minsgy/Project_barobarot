@@ -1,6 +1,7 @@
 from django.views.generic.detail import DetailView
 from django.core.paginator import Paginator # paginator 적용
 from products.models import Product
+from engineers.models import Engineer
 # from payments.models import Payments?
 from django.shortcuts import render, redirect
 from django.views.generic.list import ListView
@@ -35,7 +36,7 @@ class ProductDetail(DetailView):
 def create_products(request):
     image_count = 0
     file = open('testfile/product_test.txt', mode='rt', encoding='UTF-8')
-    file_list = file.readlines()
+    file_list = file.readlines() # 라인단위로 읽어서 list 형식으로 저장
     for lists in file_list:
         image_count += 1
         temp = lists.split(',')
@@ -50,6 +51,24 @@ def create_products(request):
         )
         # print(product.__dict__)
         product.save()
+    file.close()
+
+    # Engineer db 추가
+    file2 = open('testfile/engineer_test.txt', mode='rt', encoding='UTF-8')
+    file2_list = file2.readlines()
+    image_count = 0 # 이미지 번호 초기화
+
+    for lists2 in file2_list: 
+        image_count += 1
+        temp = lists2.split(',') 
+        engineer = Engineer(
+            name = temp[0],
+            number = temp[1],
+            affiliation = temp[2],
+            image =  f"engineer_photos/engineer{(image_count)}.jpg",
+        )
+        engineer.save()
+    file2.close()
     return redirect('products:home')
 # def getHome(request):
 #     return render(request, 'products/home.html')
