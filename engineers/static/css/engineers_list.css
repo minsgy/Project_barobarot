@@ -1,4 +1,6 @@
 /* engineers */
+
+
 /* 글씨체 설정 */
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
@@ -49,7 +51,6 @@ a:visited {
 /* 전체 div 정렬, 속성값들 */
 
 .card-list {
-    /* text-align: center; */
     width: 780px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -57,7 +58,8 @@ a:visited {
 }
 
 .card-list-item {
-    display: flex;
+    width: 788px;
+    display: block;
     align-items: center;
     justify-content: center;
 }
