@@ -5,6 +5,7 @@ from products.models import Product
 from django.shortcuts import render, redirect
 from django.views.generic.list import ListView
 from . import models
+import random
 
 # [형민] homeview
 # minseok : 10. 18. paginator 추가
@@ -32,18 +33,20 @@ class ProductDetail(DetailView):
 
 # Create DB File
 def create_products(request):
+    image_count = 0
     file = open('testfile/product_test.txt', mode='rt', encoding='UTF-8')
     file_list = file.readlines()
     for lists in file_list:
+        image_count += 1
         temp = lists.split(',')
         product = Product(
             product_name = temp[1],
-            sale = 20.0,
+            sale = float(round(random.uniform(10, 30))),
             price = temp[2],
             manufacture = temp[0],
-            rating = 4.5,
-            product_image = 'product/image1.jpg',
-            image_description = 'product/image1.jpg',
+            rating = float(round(random.uniform(1, 5),1)), # 1.0~5.0 사이 실수 소수 첫째자리
+            product_image = f"product/product_image/image{(image_count)}.jpg",
+            image_description = f"product/product_image/image{(image_count)}.jpg",
         )
         # print(product.__dict__)
         product.save()
