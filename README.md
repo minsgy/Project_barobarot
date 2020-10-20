@@ -39,6 +39,10 @@
 
 - `python manage.py createsuperuser`
 
+5. Database File Create
+
+- URL `/products_test` 붙혀서 입력. 엔지니어 모델 11개, 상품 모델 40개 DB CREATE
+
 ## Installation
 
 - Python3 == 3.8.4
