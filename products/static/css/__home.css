@@ -239,19 +239,19 @@ li {
 
 /* 각 슬라이드 배경 색깔 */
 
-.slide li:nth-child(1) {
+.slide li:nth-child(3) {
     background: #fff8b0;
 }
 
-.slide li:nth-child(2) {
+.slide li:nth-child(4) {
     background: #2138c2;
 }
 
-.slide li:nth-child(3) {
+.slide li:nth-child(1) {
     background: #b9bfd9;
 }
 
-.slide li:nth-child(4) {
+.slide li:nth-child(2) {
     background: #b9bfd9;
 }
 

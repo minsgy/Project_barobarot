@@ -14,10 +14,10 @@
 
     <!-- 슬라이드 이미지 -->
     <ul>
-        <li><img src="{% static 'img/banner1.png' %}" alt="logo" width="920px" height="470px"></li>
-        <li><img src="{% static 'img/banner2.jpg' %}" alt="logo" width="920px" height="470px"></li>
         <li><img src="{% static 'img/banner_front.png' %}" alt="logo" width="920px" height="470px"></li>
         <li><img src="{% static 'img/banner_back.png' %}" alt="logo" width="920px" height="470px"></li>
+        <li><img src="{% static 'img/banner1.png' %}" alt="logo" width="920px" height="470px"></li>
+        <li><img src="{% static 'img/banner2.jpg' %}" alt="logo" width="920px" height="470px"></li>
     </ul>
 
     <!-- 슬라이드 단추  -->
@@ -92,9 +92,9 @@
     </div>
     <div>
         <ul id="page-num-group">
-        {% for page_number in paginator.page_range %}
+            {% for page_number in paginator.page_range %}
             <li class="page-num-list"><a class="page-num" href="?page={{page_number}}">{{page_number}}</a></li>
-        {% endfor %}
+            {% endfor %}
         </ul>
     </div>
 </div>
