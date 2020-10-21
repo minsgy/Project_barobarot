@@ -164,17 +164,6 @@ AWS_QUERYSTRING_AUTH = False   # 쿼리셋으로 보내지 않고, jpg url 값�
 MEDIAFILES_LOCATION = 'media'
 # STATICFILES_LOCATION = 'static'
 
-DEFAULT_FILE_STORAGE = 'config.storages.MediaStorage'
-# STATICFILES_STORAGE = 'postproject.storages.StaticStorage'
-
-MEDIAFILES_LOCATION = 'media'
-# STATICFILES_LOCATION = 'static'
-
-# AWS_ACCESS_KEY_ID = 'AKIAVAXCAYWKPLFVBM3B'
-# AWS_SECRET_ACCESS_KEY = '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'
-# AWS_STORAGE_BUCKET_NAME = 'barobarot'
-
-
 AWS_STORAGE_BUCKET_NAME = 'barobarot' # bucket 이름
 AWS_S3_REGION_NAME = "ap-northeast-2" # bucket - region (서울)
 AWS_S3_SIGNATURE_VERSION = "s3v4" # s3 의 버전 4
