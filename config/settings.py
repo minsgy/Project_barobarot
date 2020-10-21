@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os, dj_database_url
-
+from boto.s3.connection import S3Connection # heroku 연결 매핑
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -149,14 +149,21 @@ AUTH_USER_MODEL = "users.User"
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
+
+
+''' AWS S3 저장 '''
+
 # Django 기본 저장 시스템을 지정
 DEFAULT_FILE_STORAGE = 'config.storages.MediaStorage'
 # static 파일들을 s3 버킷에 저장하는 설정
 # STATICFILES_STORAGE = 'config.storages.StaticStorage'
+
+AWS_S3_SECURE_URLS = False     # HTTPS 주소를 빼고 전송함.
+AWS_QUERYSTRING_AUTH = False   # 쿼리셋으로 보내지 않고, jpg url 값을 보냄. access key, id 다가림.
 # media, static 폴더를 만들어 저장함.
 MEDIAFILES_LOCATION = 'media'
 # STATICFILES_LOCATION = 'static'
-#
-AWS_ACCESS_KEY_ID = 'AKIAVAXCAYWKPLFVBM3B'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'barobarot'
+AWS_STORAGE_BUCKET_NAME = 'barobarot' # bucket 이름
+AWS_S3_REGION_NAME = "ap-northeast-2" # bucket - region (서울)
+AWS_S3_SIGNATURE_VERSION = "s3v4" # s3 의 버전 4
+
