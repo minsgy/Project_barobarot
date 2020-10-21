@@ -157,13 +157,11 @@ DATABASES['default'].update(db_from_env)
 DEFAULT_FILE_STORAGE = 'config.storages.MediaStorage'
 # static 파일들을 s3 버킷에 저장하는 설정
 # STATICFILES_STORAGE = 'config.storages.StaticStorage'
-
+MEDIAFILES_LOCATION = 'media'
 AWS_S3_SECURE_URLS = False     # HTTPS 주소를 빼고 전송함.
 AWS_QUERYSTRING_AUTH = False   # 쿼리셋으로 보내지 않고, jpg url 값을 보냄. access key, id 다가림.
 # media, static 폴더를 만들어 저장함.
-MEDIAFILES_LOCATION = 'media'
 # STATICFILES_LOCATION = 'static'
-
 AWS_STORAGE_BUCKET_NAME = 'barobarot' # bucket 이름
 AWS_S3_REGION_NAME = "ap-northeast-2" # bucket - region (서울)
 AWS_S3_SIGNATURE_VERSION = "s3v4" # s3 의 버전 4
