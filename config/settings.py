@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 THIRD_PARTY_APPS = [
     'django.contrib.humanize', # 금액 표시 ',' 표시용
     'mathfilters',# 템플릿 필터 수학 연산용
+    'storages',
 ]  # 패키지 기능 app
 
 PROJECT_APPS = [  # ADMIN이 만든 APP
@@ -147,3 +148,15 @@ AUTH_USER_MODEL = "users.User"
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
+
+# Django 기본 저장 시스템을 지정
+DEFAULT_FILE_STORAGE = 'config.storages.MediaStorage'
+# static 파일들을 s3 버킷에 저장하는 설정
+# STATICFILES_STORAGE = 'config.storages.StaticStorage'
+# media, static 폴더를 만들어 저장함.
+MEDIAFILES_LOCATION = 'media'
+# STATICFILES_LOCATION = 'static'
+#
+AWS_ACCESS_KEY_ID = 'AKIAVAXCAYWKPLFVBM3B'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'barobarot'
