@@ -1,10 +1,19 @@
+/* ************************************************************ */
+
 /* Content */
 
 .reservation-content {
-    width: 70vw;
+    width: 100%;
     margin: 0 auto;
 }
 
+
+/*nav-link 네브 링크*/
+
+.nav-link-container {
+    width: 100%;
+    margin: 20px 0 20px 0;
+}
 
 /* 예약정보 div */
 
@@ -18,7 +27,8 @@
 /* 예약정보 글씨에 패딩 */
 
 .reservation-info {
-    padding: 20px;
+    padding: 20px 0 8px 0;
+    font-size: 15pt;
 }
 
 

@@ -1,5 +1,4 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-
 :root {
     --red-color: #ed1c24;
     --black-color: #232a32;
@@ -8,17 +7,14 @@
 }
 
 body {
-    font-family: '맑은고딕',
-        Malgun Gothic,
-        dotum,
-        '돋음',
-        arial,
-        sans-serif;
+    font-family: '맑은고딕', Malgun Gothic, dotum, '돋음', arial, sans-serif;
     font-size: 12px;
 }
 
-.content-container img {
-    width: 100%;
+.content-container {
+    /* 내브 링크 때문에 margin 수정 */
+    margin-top: 20px;
+    width: calc(var(--container-width) - 80px);
 }
 
 ul {
@@ -30,11 +26,25 @@ a {
     text-decoration: none;
 }
 
-.content-container {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    width: 1000px;
+
+/*nav-link 네브 링크*/
+
+.nav-link-container {
+    width: 100%;
+    margin-bottom: 40px;
+    font-family: 'Noto Sans kr';
+}
+
+.nav-link>a,
+.nav-link>a:visited {
+    font-size: 13pt;
+    margin-right: 3px;
+}
+
+.nav-link>span {
+    margin-right: 3px;
+    font-family: 'Noto Sans kr';
+    font-size: 12pt;
 }
 
 .title {
@@ -47,7 +57,6 @@ a {
 }
 
 .product-name {
-    width: 770px;
     font-weight: bold;
     font-size: 26px;
 }
@@ -57,18 +66,53 @@ a {
 }
 
 .product-main {
-    height: 650px;
+    /* height: 650px; */
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+
+/* top button */
+
+.top-button {
+    position: fixed;
+    bottom: 200px;
+    right: 5%;
+    z-index: 100;
+}
+
+.top-button .goTop {
+    display: block;
+    height: 29px;
+    line-height: 29px;
+    padding: 0 20px 0 29px;
+    text-align: center;
+    color: #a7a8a7;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    font-size: 12px;
+    background: #fafafa url(../img/arrTop.png) 17px 12px no-repeat;
+}
+
+.product-main>.profile,
+.product-main>.information {
+    width: 50%;
+    min-width: 450px;
+}
+
+.product-main>.profile>img {
+    max-height: 450px;
 }
 
 .profile {
     padding: 30px 23px 0;
+    display: flex;
+    justify-content: center;
 }
 
 .information {
     margin-top: 23px;
-    width: 448px;
 }
 
 .manufacturer {
@@ -92,7 +136,9 @@ a {
     font-size: 13px;
 }
 
+
 /* 판매가, 최대혜택가 */
+
 .information-list li:nth-of-type(2) li label {
     font-size: 15px;
     line-height: 25px;
@@ -134,12 +180,16 @@ a {
     margin-bottom: 15px;
 }
 
+
 /* 상품 정보 모델명 ~ 배송방법까지 내용의 가로 길이 고정 */
+
 .information-list>li:not(:last-child) li :last-child {
     width: 338px;
 }
 
+
 /* 상품 정보 속성 간 간격 */
+
 .information-list>li {
     padding: 13px 0;
 }
@@ -149,9 +199,8 @@ a {
 }
 
 
-
-
 /* 주문 수량 컨트롤러 */
+
 .amount-controller {
     color: #666;
     display: flex;
@@ -185,9 +234,6 @@ a {
     height: 27px;
 }
 
-
-
-
 .price-text {
     font-family: 'tahoma';
     font-size: 24px;
@@ -197,8 +243,6 @@ a {
 .information-item li:last-child .price-text {
     color: var(--red-color);
 }
-
-
 
 
 /* 구매 버튼 */
@@ -221,18 +265,22 @@ a {
 }
 
 
-
 /* 상품 설명 이미지 */
 
 .images {
-    width: 1006px;
+    /* width: 1006px; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
 
+.images>img {
+    width: 100%;
+}
+
 .md-announcement {
+    width: 100%;
     margin-top: 30px;
     margin-bottom: 150px;
 }
@@ -242,6 +290,10 @@ a {
     flex-direction: column;
     padding: 25px 28px 95px;
     border: 1px solid #d3d3d5;
+}
+
+.md-image img {
+    width: 100%;
 }
 
 .md-title {
@@ -262,12 +314,21 @@ a {
 .other-images {
     margin-top: 20px;
     margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.other-images img {
+    width: 100%;
 }
 
 .emplacement {
     border: 1px solid #d7d7d9;
     padding: 29px 49px 39px;
     margin-bottom: 150px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .emplacement label {
@@ -275,6 +336,10 @@ a {
     font-weight: bold;
     font-size: 16px;
     margin-bottom: 18px;
+}
+
+.emplacement img {
+    width: 100%;
 }
 
 .ship-information {
@@ -325,7 +390,8 @@ a {
     border-top: 1px solid #d2d3d5;
 }
 
-.item-in-menu li label, .item-in-menu li ul {
+.item-in-menu li label,
+.item-in-menu li ul {
     padding: 15px 0;
 }
 
@@ -333,15 +399,19 @@ a {
     font-weight: bold;
     color: #333333;
     width: 150px;
-    text-align: center;
     background-color: #fbfbfb;
     border-right: 1px solid #d2d3d5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .item-in-menu li ul {
     color: #666666;
     width: 798px;
-    padding-left: 50px;
+    padding-left: 35px;
+    padding-right: 35px;
     list-style-type: disc;
     line-height: 17px;
 }

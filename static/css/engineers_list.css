@@ -1,0 +1,148 @@
+/* engineers */
+
+
+/* 글씨체 설정 */
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {
+    font-family: 'Roboto', 'Noto Sans KR', '맑은고딕', Malgun Gothic, dotum, '돋음', arial, sans-serif;
+    /* 가로 스크롤 바 없애기 */
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+
+/* 네브바 */
+
+.engineer-list-nav-bar {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background-color: #f5232a;
+}
+
+.engineer-text {
+    line-height: 50px;
+    font-size: 25px;
+    color: #fff;
+}
+
+.engineer-close {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    padding: 16.6px 30px;
+    font-size: 17px;
+    color: #fff;
+}
+
+
+/* 링크방문시 컬러 변경x */
+
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+
+/* 전체 div 정렬, 속성값들 */
+
+.card-list {
+    width: 780px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+}
+
+.card-list-item {
+    width: 788px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-wrap {
+    display: inline-block;
+    margin: 10px;
+    width: 220px;
+    padding: 10px;
+}
+
+.text-group {
+    text-align: left;
+}
+
+
+/* div hover */
+
+.card-wrap:hover {
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* div 안 요소 스타일 */
+
+.engineer-name {
+    display: inline-block;
+    padding-top: 8px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.engineer-num {
+    display: inline-block;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 15px;
+    color: #757575;
+}
+
+.engineer-addline {
+    border-top: 2px solid #8a888848;
+}
+
+.engineer-in {
+    display: inline-block;
+    padding-top: 20px;
+    color: rgb(0, 132, 255);
+    font-size: 15px;
+}
+
+
+/* 소속회사 hover */
+
+.engineer-in:hover {
+    text-decoration: underline;
+}
+
+
+/* 리뷰보기 버튼 */
+
+.engineer-review-button {
+    width: 220px;
+    height: 30px;
+    margin-top: 30px;
+    font-family: 'Roboto', 'Noto Sans KR', '맑은고딕', Malgun Gothic, dotum, '돋음', arial, sans-serif;
+    background-color: #ffffff;
+    background-color: rgba( 255, 255, 255, 1);
+    border: 1px solid #C6C6C6;
+}
+
+.engineer-review-button:nth-last-child(1) {
+    margin-top: 10px;
+}
+
+
+/* 버튼 hover */
+
+.engineer-review-button:hover {
+    cursor: pointer;
+    background-color: #f5232a;
+    color: white;
+    border: 0;
+    outline: 0;
+}

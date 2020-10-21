@@ -1,10 +1,15 @@
 /* Content */
 
+.content {
+    padding: 0 calc(10vw + 75px);
+}
+
+
 /* 상품 개수 알려주는 div  */
 
 .first-info-box {
-    margin: 20px auto;
-    width: 1100px;
+    margin: 70px auto 20px;
+    width: 100%;
 }
 
 #first-info-normal {
@@ -23,14 +28,6 @@
     /* text-align: center; */
     overflow: hidden;
     margin: 20px;
-}
-
-
-/* 사진 통째로 (div) class  */
-
-.product {
-    /* 상품들 가로 정렬  */
-    display: inline-block;
 }
 
 
@@ -63,6 +60,7 @@
     text-decoration: none;
     color: black;
     font-size: 13px;
+    /* 말줄임 효과*/
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -84,9 +82,10 @@
 
 /* 원가 id */
 
-#product-original-price {
+.product-original-price {
     /* 패딩 주기 위해 블록으로 설정 */
     display: inline-block;
+    /* width: 62px; */
     font-weight: bold;
     color: black;
     font-size: 18px;
@@ -95,7 +94,7 @@
     padding-bottom: 10px;
 }
 
-#product-original-price2 {
+.product-original-price2 {
     display: inline-block;
     color: black;
     font-size: 12px;
@@ -107,6 +106,7 @@
 
 .product-price {
     display: inline-block;
+    /* width: 62px; */
     font-weight: bold;
     color: #f5232a;
     font-size: 18px;
@@ -121,13 +121,15 @@
     font-weight: normal;
 }
 
-.list {
+.product-list {
     position: relative;
     /* 위쪽 선 */
     border-top: 1px solid black;
     /* 5개씩 띄우려고 너비 값 줬습니다  */
-    width: 1215px;
+    width: 100%;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
 }
 
 
@@ -169,7 +171,7 @@
 
 #page-num-group {
     text-align: center;
-    margin-bottom: 20px;
+    margin-top: 50px;
 }
 
 
@@ -200,4 +202,111 @@
     color: #f5232a;
     font-size: 15px;
     text-shadow: 1px 1px 1px rgb(207, 207, 207);
+}
+
+
+/* 롤링배너 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.slide {
+    width: 100vw;
+    height: 500px;
+    /* overflow: hidden; */
+    position: relative;
+    text-align: center;
+}
+
+.slide ul {
+    width: calc(100% * 4);
+    display: flex;
+    transition: 1s;
+}
+
+.slide li {
+    width: calc(100% / 4);
+    height: 500px;
+}
+
+
+/* 각 슬라이드 배경 색깔 */
+
+.slide li:nth-child(3) {
+    background: #fff8b0;
+}
+
+.slide li:nth-child(4) {
+    background: #2138c2;
+}
+
+.slide li:nth-child(1) {
+    background: #b9bfd9;
+}
+
+.slide li:nth-child(2) {
+    background: #b9bfd9;
+}
+
+.slide input {
+    display: none;
+}
+
+
+/* 슬라이드 넘기는 단추 */
+
+.slide .bullet {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.slide .bullet label {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    background: #fff;
+    font-size: 0;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+
+/* 슬라이드 조작 */
+
+#pos1:checked~ul {
+    margin-left: 0;
+}
+
+#pos2:checked~ul {
+    margin-left: -100%;
+}
+
+#pos3:checked~ul {
+    margin-left: -200%;
+}
+
+#pos4:checked~ul {
+    margin-left: -300%;
+}
+
+
+/* 단추 조작 */
+
+#pos1:checked~.bullet label:nth-child(1),
+#pos2:checked~.bullet label:nth-child(2),
+#pos3:checked~.bullet label:nth-child(3),
+#pos4:checked~.bullet label:nth-child(4) {
+    background: #f5232a;
 }
