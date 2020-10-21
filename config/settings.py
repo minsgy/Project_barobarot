@@ -145,5 +145,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 # 원래의 User 모델의 값을 Custom 해주기 위해, USER MODEL을 CUSTOM 한 User 모델 지정
 AUTH_USER_MODEL = "users.User"
 
-dj_from_env = dj_database_url.config(conn_max_age=500)
+db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
