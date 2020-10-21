@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
-import os
+import os, dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,12 +20,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ff+)kt1i=zjv-u20+1&5j#il*@^xl88@10mi7$q#1e3w(y!%-s'
+#'ff+)kt1i=zjv-u20+1&5j#il*@^xl88@10mi7$q#1e3w(y!%-s'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(os.environ.get('DJANGO_DEBUG'), False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 THIRD_PARTY_APPS = [
     'django.contrib.humanize', # 금액 표시 ',' 표시용
@@ -54,6 +55,7 @@ DJANGO_APPS = [ # 장고 기본 app
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -141,4 +143,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 
 
 # 원래의 User 모델의 값을 Custom 해주기 위해, USER MODEL을 CUSTOM 한 User 모델 지정
-AUTH_USER_MODEL = "users.User" 
+AUTH_USER_MODEL = "users.User"
+
+dj_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
