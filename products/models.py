@@ -17,7 +17,7 @@ def model_code():
 class Product(models.Model):
 
     ''' Product model '''
-    product_name = models.CharField(max_length=50) #물건 이름
+    product_name = models.CharField(max_length=150) #물건 이름
     sale = models.FloatField() #할인율
     price = models.PositiveIntegerField(default=0, blank=True)
     manufacture = models.CharField(max_length=50)     #제조사
