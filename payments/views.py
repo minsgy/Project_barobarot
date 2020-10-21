@@ -184,3 +184,6 @@ def engineer_json_test(request):
         print("재딕",json_dic)
         # json_dic 에 담기는 정보:dict => date(날짜):str, time(시간):str, variable : 가능한 엔지니어 정보
         return render(request, 'engineers/engineers_list.html', json_dic)
+
+def error500(request):
+    return render(request, "500.html", status=500)

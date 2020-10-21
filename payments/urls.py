@@ -1,7 +1,9 @@
 from os import name
 from django.urls import path
 from . import views
+from django.conf.urls import url, handler500, handler404
 
+handler500 = "chatbot_app.views.error500"
 
 app_name='payments'
 
