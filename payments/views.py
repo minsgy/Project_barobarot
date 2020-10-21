@@ -11,6 +11,8 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 
+from django.template import RequestContext
+
 from . import models
 from products import models as product_model
 from users import models as user_model
@@ -186,4 +188,4 @@ def engineer_json_test(request):
         return render(request, 'engineers/engineers_list.html', json_dic)
 
 def error500(request):
-    return render(request, "500.html", status=500)
+    return render(request, 'payments/500.html', status=500)
