@@ -1,3 +1,5 @@
+from django.http import request
+from django.views.generic.base import View
 from django.views.generic.detail import DetailView
 from django.core.paginator import Paginator # paginator 적용
 from products.models import Product
@@ -14,11 +16,25 @@ class HomeView(ListView):
 
     ''' home view cbv '''
 
-    model = models.Product
+    model = Product
     paginate_by = 10                    #한 페이지에 10 개 
     context_object_name = 'products'      #넘겨지는 변수 이름
     template_name = 'products/__home.html' # Default 연결 값 변경
+    
+def Searching_HomeView(request) :
 
+    ''' Product Searching fbv '''
+
+    Products = Product.objects.all()
+    if request.GET.get:
+        search = request.GET.get('search')
+        print("검색어 확인",search, type(search))
+        
+        Products = Product.objects.all().filter(product_name__icontains = search)
+        print("필터링",Products)
+        return render(request, 'products/__search_home.html',{"products" : Products})
+    
+    return render(request, 'products/__home.html',{"products" : Products})
 
 
 # [형민] product detail view
@@ -26,7 +42,7 @@ class ProductDetail(DetailView):
 
     ''' product detail view cbv'''
 
-    model = models.Product  # Detailview를 사용하면 자동적으로 pk를 찾음
+    model = Product  # Detailview를 사용하면 자동적으로 pk를 찾음
     context_object_name = 'products'                #넘겨지는 변수 이름
     template_name = 'products/__product_detail.html' # 전달 연결 값 변경
 
