@@ -51,10 +51,12 @@
                 <a href="{% url 'products:home' %}">
                     <img class="header-img" src="{% static 'img/logo.gif' %}" alt="logo">
                 </a>
-                <div class="search">
-                    <input type="text">
-                    <a href="#" class="zoom"></a>
-                </div>
+                <form action="{% url 'products:search' %}">
+                    <div class="search">
+                        <input type="text" name="search" value="{{products.product_name}}">
+                        <a href="{% url 'products:search' %}" class="zoom"></a>
+                    </div>
+                </form>
                 <img src="{% static 'img/imageBanner.png'%}" alt="delivery image">
                 <div class="profile_wrap">
                     {% if user.is_authenticated %}
@@ -195,12 +197,16 @@
 
 
     <script type="text/javascript">
-        {% block additionalJS %} {% endblock %}
+        { % block additionalJS %
+        } { % endblock %
+        }
     </script>
     <script type="text/javascript" src="{% block js %}{% endblock %}">
         <!-- 필요 없는 부분입니다. -->
-        {% comment %}
-        var a = "{{someDjangoVariable}}" {% endcomment %}
+        { % comment %
+        }
+        var a = "{{someDjangoVariable}}" { % endcomment %
+        }
     </script>
     <script src="{% static 'js/base.js' %}"></script>
 </body>

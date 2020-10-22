@@ -19,7 +19,20 @@ class HomeView(ListView):
     context_object_name = 'products'      #넘겨지는 변수 이름
     template_name = 'products/__home.html' # Default 연결 값 변경
 
+def Searching_HomeView(request) :
 
+    ''' Product Searching fbv '''
+
+    Products = Product.objects.all()
+    if request.GET.get:
+        search = request.GET.get('search')
+        print("검색어 확인",search, type(search))
+        
+        Products = Product.objects.all().filter(product_name__icontains = search)
+        print("필터링",Products)
+        return render(request, 'products/__search_home.html',{"products" : Products})
+    
+    return render(request, 'products/__home.html',{"products" : Products})
 
 # [형민] product detail view
 class ProductDetail(DetailView):
