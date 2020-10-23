@@ -311,6 +311,8 @@
     </div>
 </form>
 {% endblock %}
+
+{% comment %} 안되는 오류찾기 {% endcomment %}
 {% block additionalJS %}
     <!-- const ENGINEER_SELECT_PAGE = '{% url 'engineers:engineer' %}'; -->
     const ENGINEER_SELECT_PAGE = '{% url 'payments:json_test' %}';
