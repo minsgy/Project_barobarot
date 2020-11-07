@@ -2,7 +2,7 @@
 ## 🥈 2020. 11. 03. - 롯데 해커톤 **은상** 수상작  
 
 🏆 LIKELION&amp;LOTTE 8th - Hackathon Project BaroBarot
-![image](https://user-images.githubusercontent.com/60251579/97999751-1506de80-1e2f-11eb-9c57-841142052ed3.png)
+![image](https://user-images.githubusercontent.com/60251579/98437952-e425f280-2129-11eb-83ba-ef88e1f12511.png)
 
 
 
