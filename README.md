@@ -1,4 +1,4 @@
-# Project_barobarot
+# 📆Project_barobarot
 ## 🥈 2020. 11. 03. - 롯데 해커톤 **은상** 수상작  
 
 🏆 LIKELION&amp;LOTTE 8th - Hackathon Project BaroBarot
