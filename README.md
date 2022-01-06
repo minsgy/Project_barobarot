@@ -4,7 +4,7 @@
 ## ✔서비스 링크
 -  https://barobarot.herokuapp.com/
 
-🏆 LIKELION&amp;LOTTE 8th - Hackathon Project
+## 🏆 LIKELION&amp;LOTTE 8th - Hackathon Project
 ![image](https://user-images.githubusercontent.com/60251579/98437952-e425f280-2129-11eb-83ba-ef88e1f12511.png)
 
 ## 🖥 DEMO
